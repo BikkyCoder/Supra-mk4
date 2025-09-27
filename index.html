@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toyota Supra MK4: Ultimate Guide to Specs, History, Mods & Price in India 2025</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4R8CNN6G0"></script>
-    <meta name="google-site-verification" content="FnRI0dwi_zYiDBOlhq5YTcZYWgWRoiU2recAVFGrS2M" />
     <meta name="description" content="Explore the iconic Toyota Supra MK4 in 2025: detailed history, performance specs, top modifications, import guide for India, vs Nissan GTR comparison, and maintenance tips. Your ultimate JDM legend resource.">
     <meta name="keywords" content="Mk4 Supra 2002,Toyota Supra MK4, Supra MK4 specs 2025, Supra MK4 price India, Supra MK4 modifications, Toyota Supra history, Supra MK4 vs Nissan GTR, JDM legends, Supra MK4 import India, Supra MK4 tuning, Supra MK4 for sale, 2025 Supra MK4 review, Supra MK4 ownership 2025">
     <meta name="robots" content="index, follow">
@@ -21,11 +19,10 @@
     <meta name="twitter:title" content="Toyota Supra MK4: Ultimate Guide to Specs, History, Mods & Price in India 2025">
     <meta name="twitter:description" content="Discover everything about the legendary Supra MK4 in 2025: specs, mods, history, and more.">
     <meta name="twitter:image" content="images/supra-mk4-hero.jpg">
-    <link rel="icon" type="image/png" href="images/flux_krea_00021_.png">
+     <link rel="icon" type="image/png" href="images/flux_krea_00021_.png">
     <style>
         * {
-            font-family: Verdana, sans-serif;
-            margin: 0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             padding: 0;
             box-sizing: border-box;
         }
@@ -151,8 +148,9 @@
             font-weight: 700;
         }
         img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
+            margin: 50px;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.4s ease;
@@ -300,7 +298,349 @@
                 font-size: 1rem;
             }
         }
+
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .close-lightbox:hover {
+            color: var(--highlight);
+        }
+        
+        #lightbox-caption {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--highlight);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 2rem 0;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--highlight);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.5);
+            box-shadow: 0 0 15px var(--highlight);
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 1.5rem;
+            background: var(--secondary-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: scale(1.05);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item.active .timeline-content {
+            border: 2px solid var(--highlight);
+            transform: scale(1.05);
+        }
+
+        .timeline-item.active .timeline-dot {
+            transform: translateX(-50%) scale(1.5);
+            box-shadow: 0 0 15px var(--highlight);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 0 !important;
+            }
+        }
+
+        /* Community Section Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .review-card {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .stars {
+            color: var(--highlight);
+            letter-spacing: 2px;
+        }
+
+        .location {
+            display: block;
+            color: #666;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .social-feed {
+            margin: 4rem 0;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-post {
+            background: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .post-stats {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .community-cta {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: linear-gradient(45deg, rgba(0,0,0,0.05), rgba(255,69,0,0.1));
+            border-radius: 12px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review-card, .social-post {
+                margin-bottom: 1rem;
+            }
+        }
     </style>
+    
+    <script>
+        // Lightbox functionality
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.nextElementSibling.textContent;
+            
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
     <!-- Enhanced Schema Markup -->
     <script type="application/ld+json">
     {
@@ -348,8 +688,89 @@
             "@type": "Question",
             "name": "How to import Supra MK4 to India?",
             "acceptedAnswer": {"@type": "Answer", "text": "Use TOR scheme: Buy from Japan auctions, ship via RoRo, clear customs and RTO."}
+        }, {
+            "@type": "Question",
+            "name": "What modifications can be done to a Supra MK4?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Popular mods include cold air intake, ECU tune, upgraded intercooler, single turbo conversion, coilovers, and aero kits."}
+        }, {
+            "@type": "Question",
+            "name": "How much horsepower can a 2JZ engine handle?",
+            "acceptedAnswer": {"@type": "Answer", "text": "The 2JZ-GTE engine can reliably handle 800-1000hp with proper supporting mods and tuning."}
         }]
     }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Car",
+        "name": "Toyota Supra MK4",
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "Toyota"
+        },
+        "model": "Supra MK4 (A80)",
+        "productionDate": "1993/2002",
+        "vehicleEngine": {
+            "@type": "EngineSpecification",
+            "name": "2JZ-GTE",
+            "enginePower": {
+                "@type": "QuantitativeValue",
+                "value": "320",
+                "unitCode": "BHP"
+            }
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "Car",
+            "name": "Toyota Supra MK4"
+        },
+        "author": {"@type": "Person", "name": "Rahul Singh"},
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "reviewBody": "Imported my MK4 in 2024. The 2JZ is everything they say - bulletproof! Running 600hp daily, no issues."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Toyota Supra",
+            "item": "https://yourdomain.com/supra"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Supra MK4",
+            "item": "https://yourdomain.com/supra-mk4"
+        }]
+    }
+    </script>
+    
+    <meta name="twitter:site" content="@supramk4fans">
+    <meta name="twitter:creator" content="@supramk4fans">
+    <meta property="og:site_name" content="Supra MK4 Fan Site">
+    <meta property="article:author" content="https://instagram.com/bikky314697">
+    <meta property="article:section" content="Automotive">
+    <meta property="article:tag" content="Toyota Supra, MK4 Supra, JDM Cars, 2JZ-GTE, Import Cars India">
+    <meta name="news_keywords" content="Toyota Supra MK4, JDM Cars, Import Cars India, 2JZ Engine, Car Tuning">
     </script>
 </head>
 <body>
@@ -357,9 +778,12 @@
         <ul>
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#about" class="nav-link">About Supra</a></li>
+            <li><a href="#timeline" class="nav-link">Timeline</a></li>
             <li><a href="#features" class="nav-link">Features & Performance</a></li>
             <li><a href="#legacy" class="nav-link">Supra Legacy</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
             <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#community" class="nav-link">Community</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
@@ -395,6 +819,52 @@
         
         <h2>Supra MK5: The Comeback Kid (2019-Present)</h2>
         <p>After a 17-year nap, the MK5 Supra returned in 2019, a BMW Z4 collab with a 382-hp B58 inline-6. It’s techy, sleek, and adaptive – a modern warrior. But let’s be honest: the MK4’s raw, untamed spirit is unmatched. It’s the car that still makes us dream. (Word count: ~920)</p>
+    </section>
+
+    <section id="timeline" class="section">
+        <h1>Toyota Supra Evolution Timeline</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">1978-1981</div>
+                    <h3>Supra MK1 (A40/A50)</h3>
+                    <p>The original legend with 2.6L inline-6, pop-up headlights, and luxury sport DNA.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">1981-1986</div>
+                    <h3>Supra MK2 (A60)</h3>
+                    <p>Breaking free from Celica, featuring 2.8L 5M-GE and sharper handling.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">1986-1993</div>
+                    <h3>Supra MK3 (A70)</h3>
+                    <p>Turbo era begins with 7M-GTE, making waves in IMSA GTU racing.</p>
+                </div>
+            </div>
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">1993-2002</div>
+                    <h3>Supra MK4 (A80)</h3>
+                    <p>The legendary 2JZ-GTE, Hollywood star, and tuner's dream machine.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2019-Present</div>
+                    <h3>Supra MK5 (A90)</h3>
+                    <p>Modern revival with BMW collaboration, bringing 382hp B58 power.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="features" class="section">
@@ -443,6 +913,35 @@
             <li><strong>Legacy:</strong> MK5 tries, but MK4’s soul is unmatched.</li>
         </ul>
         <p>(Word count: ~840)</p>
+    </section>
+
+    <section id="gallery" class="section">
+        <h1>Supra MK4 Gallery: A Visual Journey Through Time</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/flux_krea_00021_.png" alt="Classic Toyota Supra MK4 - Front View" onclick="openLightbox(this)">
+                <p class="gallery-caption">Classic MK4 Front View - Timeless Design</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/flux_krea_00025_.png" alt="Toyota Supra MK4 - Side Profile" onclick="openLightbox(this)">
+                <p class="gallery-caption">Iconic Side Profile - Pure Aerodynamic Beauty</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/flux_krea_00027_.png" alt="Toyota Supra MK4 - Engine Bay" onclick="openLightbox(this)">
+                <p class="gallery-caption">Legendary 2JZ Engine Bay</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/flux_krea_00038_.png" alt="Toyota Supra MK4 - Fast & Furious Edition" onclick="openLightbox(this)">
+                <p class="gallery-caption">Fast & Furious Edition - Hollywood Icon</p>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
     </section>
 
     <section id="blog" class="section">
@@ -504,6 +1003,50 @@
             </div>
         </article>
         
+        <article>
+            <h2>Complete Supra MK4 Buyer's Guide 2025</h2>
+            <p>Ready to join the MK4 family? Here's your comprehensive buying guide. First, check production dates – 93-96 models lack VVT-i but are lighter. Target mileage: under 150,000 km. Common issues: rusty frames (check thoroughly!), failing turbos (listen for whine), transmission synchros (test all gears). Budget ₹60-80 lakh for a solid example. Must-checks: compression test, boost leak test, ECU codes. Pro tip: Get that import paperwork verified by customs experts! <a href="#contact" class="cta nav-link">Need help? Contact us</a></p>
+            <div class="faq">
+                <h3>Pre-Purchase Checklist</h3>
+                <ul>
+                    <li>Compression test (all cylinders)</li>
+                    <li>Rust inspection (especially frame rails)</li>
+                    <li>Turbo shaft play check</li>
+                    <li>Full service history review</li>
+                    <li>Import documentation verification</li>
+                </ul>
+            </div>
+        </article>
+
+        <article>
+            <h2>Ultimate Supra MK4 Restoration Guide 2025</h2>
+            <p>Found a rough diamond? Let's polish it! Start with structural integrity – reinforce those frame rails. Paint prep is crucial; invest in proper JDM color codes (especially that iconic orange 🔥). Interior revival: Recaro seat restoration, dashboard crack repair (common in India's heat), gauge cluster LED upgrade. Mechanical refresh: Start with timing belt, then work through turbos, injectors, and cooling system. Budget wisely: ₹15-20 lakh for full restoration.</p>
+            <div class="faq">
+                <h3>Restoration Steps</h3>
+                <ol>
+                    <li>Structural assessment and repair</li>
+                    <li>Mechanical overhaul</li>
+                    <li>Interior restoration</li>
+                    <li>Paint and body work</li>
+                    <li>Final tuning and testing</li>
+                </ol>
+            </div>
+        </article>
+
+        <article>
+            <h2>Advanced 2JZ-GTE Maintenance Guide 2025</h2>
+            <p>Keep your 2JZ singing! Essential maintenance schedule: Oil change every 5,000 km (5W-40 synthetic only). Spark plugs at 50,000 km. Timing belt every 100,000 km (or 5 years). Watch those oil feed lines to turbos – they're critical. Power goals? Stay under 600hp on stock internals for reliability. Monitor boost carefully; invest in good gauges. Indian climate tips: Upgrade cooling, check A/C regularly.</p>
+            <div class="faq">
+                <h3>Warning Signs</h3>
+                <ul>
+                    <li>White smoke at startup (turbo seals)</li>
+                    <li>Hesitation under boost (injectors)</li>
+                    <li>Knocking sounds (check timing)</li>
+                    <li>Oil pressure drops (pump wear)</li>
+                </ul>
+            </div>
+        </article>
+
         <h2>JDM Icons Comparison: Supra MK4 vs GT-R R34 vs RX-7 FD</h2>
         <table>
             <tr><th></th><th>Supra MK4</th><th>GT-R R34</th><th>RX-7 FD</th></tr>
@@ -511,6 +1054,89 @@
             <tr><td>0-100 km/h</td><td>4.9s</td><td>4.9s</td><td>5.3s</td></tr>
             <tr><td>Engine</td><td>2JZ I6 TT</td><td>RB26 I6 TT</td><td>13B Rotary</td></tr>
         </table>
+    </section>
+
+    <section id="community" class="section">
+        <h1>Supra MK4 Community: Stories, Reviews & Experiences</h1>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src="images/flux_krea_00021_.png" alt="Rahul's Supra" class="reviewer-img">
+                    <div>
+                        <h3>Rahul Singh</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Imported my MK4 in 2024. The 2JZ is everything they say - bulletproof! Running 600hp daily, no issues."</p>
+                <span class="location">Mumbai, India</span>
+            </div>
+            
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src="images/flux_krea_00025_.png" alt="Akash's Supra" class="reviewer-img">
+                    <div>
+                        <h3>Akash Patel</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"TOR import was worth every penny. This car turns more heads than modern supercars. Pure JDM magic!"</p>
+                <span class="location">Delhi, India</span>
+            </div>
+            
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src="images/flux_krea_00027_.png" alt="Priya's Supra" class="reviewer-img">
+                    <div>
+                        <h3>Priya Kumar</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"From anime to reality - my dream car. Single turbo conversion was smooth, now pushing 800hp!"</p>
+                <span class="location">Bangalore, India</span>
+            </div>
+        </div>
+
+        <div class="social-feed">
+            <h2>Latest from the Community</h2>
+            <div class="social-grid">
+                <div class="social-post">
+                    <div class="social-header">
+                        <img src="images/flux_krea_00021_.png" alt="Instagram Post" class="post-img">
+                        <span class="post-meta">@supramk4india • 2h ago</span>
+                    </div>
+                    <p>Sunrise cruise with the squad! #SupraMK4 #JDMIndia</p>
+                    <div class="post-stats">❤️ 1.2K • 💬 89</div>
+                </div>
+                
+                <div class="social-post">
+                    <div class="social-header">
+                        <img src="images/flux_krea_00038_.png" alt="Instagram Post" class="post-img">
+                        <span class="post-meta">@2jzpower • 5h ago</span>
+                    </div>
+                    <p>Fresh off the dyno - 750whp on E85! #2JZPower #SupraLife</p>
+                    <div class="post-stats">❤️ 2.3K • 💬 156</div>
+                </div>
+                
+                <div class="social-post">
+                    <div class="social-header">
+                        <img src="images/flux_krea_00025_.png" alt="Instagram Post" class="post-img">
+                        <span class="post-meta">@jdmlegends • 1d ago</span>
+                    </div>
+                    <p>Classic vs Modern - Which Supra has your heart? #MK4vsMK5</p>
+                    <div class="post-stats">❤️ 3.1K • 💬 428</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="community-cta">
+            <h2>Join the Supra MK4 Community</h2>
+            <p>Share your build, connect with owners, get expert advice!</p>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/bikky314697" target="_blank" class="cta">Follow on Instagram</a>
+                <a href="https://www.youtube.com/@Bikkycars.3146" target="_blank" class="cta">Subscribe on YouTube</a>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="section">
@@ -538,15 +1164,6 @@
     </footer>
 
     <script>
-
-
-        // <!-- Google tag (gtag.js) -->
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-          gtag('config', 'G-E4R8CNN6G0');
-
-        
         // Smooth scrolling for all internal links (nav and CTAs)
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
@@ -594,7 +1211,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
