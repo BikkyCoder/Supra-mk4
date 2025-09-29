@@ -18,9 +18,11 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Toyota Supra MK4: Ultimate Guide to Specs, History, Mods & Price in India 2025">
+    <link rel="stylesheet" href="css/homepage.css">
     <meta name="twitter:description" content="Discover everything about the legendary Supra MK4 in 2025: specs, mods, history, and more.">
     <meta name="twitter:image" content="images/supra-mk4-hero.jpg">
-     <link rel="icon" type="image/png" href="images/flux_krea_00021_.png">
+    <link rel="icon" type="image/png" href="images/flux_krea_00021_.png">
+    <script defer src="js/menu.js"></script>
     <style>
         * {
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -47,16 +49,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
-        header {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('images/supra-mk4-hero.jpg') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+        /* Header styling moved to homepage.css */
         header::before {
             content: '';
             position: absolute;
@@ -80,7 +73,7 @@
             z-index: 2;
         }
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             padding: 1rem;
             position: fixed;
@@ -88,24 +81,64 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
-        nav:hover {
-            background: var(--secondary-color);
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease-in-out;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             gap: 2rem;
+            margin: 0;
+            padding: 0;
         }
+
         nav li {
             margin: 0;
         }
+
         nav a {
             color: var(--text-light);
             text-decoration: none;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
             text-transform: uppercase;
             padding: 0.5rem 1rem;
             transition: color 0.3s ease, transform 0.3s ease;
@@ -775,10 +808,78 @@
     </script>
 </head>
 <body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>TOYOTA SUPRA MK4</h1>
+            <p class="hero-subtitle">A Legend That Defined an Era. Experience the Timeless Icon That Changed the Game Forever.</p>
+            <div class="hero-buttons">
+                <a href="#specs" class="cta">Explore Specs</a>
+                <a href="#legacy" class="cta secondary">Discover Legacy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stories Section -->
+    <section class="featured-section">
+        <div class="story-grid">
+            <article class="story-card main-story">
+                <h2>The Birth of a Legend</h2>
+                <p class="story-highlight">"The MK4 Supra wasn't just a car; it was a revolution in automotive engineering that would inspire generations."</p>
+                <p>When Toyota unveiled the fourth generation Supra in 1993, they didn't just release a car – they unleashed a legend that would define an era of Japanese performance vehicles.</p>
+                
+                <div class="fact-box">
+                    <h3>Legacy Highlights</h3>
+                    <ul>
+                        <li>2JZ-GTE Engine: An engineering masterpiece capable of handling 1000+ horsepower</li>
+                        <li>Iconic Design: Timeless aesthetics that influenced automotive design for decades</li>
+                        <li>Racing Heritage: Dominated motorsports and street performance scenes worldwide</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="story-card">
+                <h3>Market Impact</h3>
+                <div class="price-chart">
+                    <div class="price-point">
+                        <span class="year">1993</span>
+                        <span class="line"></span>
+                        <span class="price">$34,000</span>
+                    </div>
+                    <div class="price-point highlight">
+                        <span class="year">2023</span>
+                        <span class="line"></span>
+                        <span class="price">$100,000+</span>
+                    </div>
+                </div>
+                <p>The MK4 Supra's value has skyrocketed, becoming one of the most sought-after collector cars.</p>
+            </article>
+
+            <article class="story-card">
+                <h3>Performance Legacy</h3>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <span class="number">320</span>
+                        <span class="label">Stock HP</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">1000+</span>
+                        <span class="label">Potential HP</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">4.6</span>
+                        <span class="label">0-60 (sec)</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
     <nav>
         <ul>
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#about" class="nav-link">About Supra</a></li>
+            <li><a href="pages/specifications.html">Specifications</a></li>
+            <li><a href="pages/components.html">Components</a></li>
             <li><a href="#timeline" class="nav-link">Timeline</a></li>
             <li><a href="#features" class="nav-link">Features & Performance</a></li>
             <li><a href="#legacy" class="nav-link">Supra Legacy</a></li>
@@ -789,13 +890,103 @@
         </ul>
     </nav>
 
-    <header id="home">
-        <div>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search specifications, features, modifications...">
+        <div class="search-results"></div>
+    </div>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
             <h1>Toyota Supra MK4: The Ultimate JDM Legend 2025</h1>
-            <p>Ignite your passion for the ultimate JDM icon. From drag strips to Hollywood, the MK4 redefined what a sports car could be.</p>
-            <a href="#about" class="cta nav-link">Dive into the History</a>
+            <p class="hero-subtitle">Ignite your passion for the ultimate JDM icon. From drag strips to Hollywood, the MK4 redefined what a sports car could be.</p>
+            <div class="hero-buttons">
+                <a href="#featured-story" class="cta nav-link">Read Featured Story</a>
+                <a href="#about" class="cta nav-link secondary">Explore History</a>
+            </div>
         </div>
     </header>
+
+    <section id="featured-story" class="featured-section">
+        <div class="story-grid">
+            <div class="story-card main-story">
+                <h2>The 2JZ Legacy: More Than Just an Engine</h2>
+                <p class="story-highlight">"It's what happens when overengineering meets passion. The 2JZ wasn't just built to perform—it was built to outlast legends."</p>
+                <div class="story-content">
+                    <p>In an era when most manufacturers were chasing efficiency, Toyota's engineers had a different vision. They created an engine so robust that even today, 30 years later, it's still setting records and breaking expectations. The 2JZ-GTE isn't just an engine; it's a masterclass in automotive engineering.</p>
+                    <div class="fact-box">
+                        <h3>Did You Know?</h3>
+                        <ul>
+                            <li>The 2JZ block can handle over 1000hp with stock internals</li>
+                            <li>Each engine was hand-assembled by dedicated technicians</li>
+                            <li>The sequential twin-turbo system was revolutionary for its time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card quick-facts">
+                <h3>Power Through the Years</h3>
+                <div class="fact-timeline">
+                    <div class="timeline-item">
+                        <span class="year">1993</span>
+                        <span class="fact">320hp Stock</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1999</span>
+                        <span class="fact">500hp Mods Common</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2010</span>
+                        <span class="fact">800hp Builds</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2025</span>
+                        <span class="fact">1000hp+ Regular</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card culture-impact">
+                <h3>Cultural Impact</h3>
+                <p>From "The Fast and the Furious" to countless video games, the MK4 Supra has transcended its role as a sports car to become a cultural icon. It represents not just speed, but the pinnacle of Japanese engineering and tuning culture.</p>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <span class="number">2.5M+</span>
+                        <span class="label">Instagram Posts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">500K+</span>
+                        <span class="label">Active Builds</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">100+</span>
+                        <span class="label">World Records</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card market-trends">
+                <h3>Market Evolution: 1993 to 2025</h3>
+                <div class="price-chart">
+                    <div class="price-point">
+                        <span class="year">1993</span>
+                        <span class="price">$40,000</span>
+                        <span class="note">Launch Price</span>
+                    </div>
+                    <div class="price-point">
+                        <span class="year">2010</span>
+                        <span class="price">$30,000</span>
+                        <span class="note">Used Market</span>
+                    </div>
+                    <div class="price-point highlight">
+                        <span class="year">2025</span>
+                        <span class="price">$120,000+</span>
+                        <span class="note">Collector's Item</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="about" class="section">
         <h1>Toyota Supra MK4 History: From MK1 to MK5 Evolution 2025</h1>
