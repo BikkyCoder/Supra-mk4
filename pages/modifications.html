@@ -12,6 +12,42 @@
     <meta property="og:description" content="Expert guide to modifying and upgrading your Supra MK4.">
     <meta property="og:type" content="article">
     <meta property="og:image" content="../images/flux_krea_00021_.png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const body = document.body;
+
+            // Toggle menu with improved touch handling
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+
+            // Close menu when clicking on links
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+        });
+    </script>
     <style>
         .specs-container {
             padding: 2rem;
@@ -78,21 +114,30 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="components.html">Components</a></li>
-            <li><a href="modifications.html" class="active">Specifications & Modifications</a></li>
-            <li><a href="maintenance.html">Maintenance</a></li>
-        </ul>
+    <nav class="main-nav" role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">SUPRA</span>
+                <span class="logo-highlight">MK4</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+             <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="/index.html" class="active" role="menuitem">HOME</a></li>
+                <li role="none"><a href="./specifications.html" role="menuitem">SPECIFICATIONS</a></li>
+                <li role="none"><a href="modifications.html" role="menuitem">Modification</a></li>
+                <li role="none"><a href="./components.html" role="menuitem">COMPONENTS</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="breadcrumbs">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li>Modifications</li>
-        </ul>
-    </div>
+  <br>
+  <br>
+  <br>
+  <br>
 
     <section class="section-header">
         <h1 class="section-title">Supra MK4 Modification Guide</h1>

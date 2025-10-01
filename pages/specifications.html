@@ -204,14 +204,20 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="specifications.html" class="active">Specifications</a></li>
-            <li><a href="components.html">Components</a></li>
-            <li><a href="modifications.html">Modifications</a></li>
-            <li><a href="maintenance.html">Maintenance</a></li>
-        </ul>
+   <nav class="main-nav" role="navigation">
+        <div class="nav-container">
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="/index.html" class="active" role="menuitem">HOME</a></li>
+                <li role="none"><a href="specifications.html" role="menuitem">SPECIFICATIONS</a></li>
+                <li role="none"><a href="./modifications.html" role="menuitem">Modification</a></li>
+                <li role="none"><a href="/pages/components.html" role="menuitem">COMPONENTS</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="breadcrumbs">
