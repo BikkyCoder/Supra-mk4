@@ -6,247 +6,260 @@
     <title>Toyota Supra MK4 Technical Specifications | Complete Guide 2025</title>
     <meta name="description" content="Complete technical specifications of the Toyota Supra MK4. Engine specs, dimensions, performance figures, and detailed analysis of all features.">
     <meta name="keywords" content="Supra MK4 specifications, 2JZ-GTE specs, Supra dimensions, MK4 performance specs, Supra technical data">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Additional SEO Meta Tags -->
     <meta property="og:title" content="Toyota Supra MK4 Technical Specifications | 2025 Guide">
     <meta property="og:description" content="Detailed technical specifications and performance data for the Toyota Supra MK4.">
     <meta property="og:type" content="article">
     <meta property="og:image" content="../images/flux_krea_00021_.png">
     <style>
-        /* Enhanced Typography */
-        body {
-            line-height: 1.8;
-            color: #333;
-            background-color: #f8f9fa;
+        body { 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
         }
 
-        /* Header Styling */
-        .section-header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .section-description {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* Specs Container */
-        .specs-container {
+        /* Content Spacing */
+        .content-wrapper {
+            padding-top: 80px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        /* Specs Cards */
-        .specs-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .specs-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-        }
-
-        .specs-card h2 {
-            color: #1a1a1a;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid #ff4500;
-        }
-
-        /* Table Styling */
-        .specs-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 1rem;
-        }
-
-        .specs-table th,
-        .specs-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-
-        .specs-table th {
-            font-weight: 600;
-            color: #1a1a1a;
-            background: #f8f9fa;
-            font-size: 1.1rem;
-        }
-
-        .specs-table td {
-            font-size: 1.05rem;
-            color: #444;
-        }
-
-        .specs-table tr:hover {
-            background-color: rgba(255,69,0,0.03);
-        }
-
-        /* Value Highlights */
-        .spec-value {
-            font-weight: 500;
-            color: #ff4500;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .specs-card {
-                padding: 1.5rem;
-            }
-
-            .specs-table th,
-            .specs-table td {
-                padding: 0.8rem;
-                font-size: 0.95rem;
-            }
-        }
-
-        /* Navigation Enhancement */
-        nav {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: #ff4500;
-            background: rgba(255,69,0,0.1);
-        }
-
-        /* Breadcrumbs */
-        .breadcrumbs {
-            background: white;
-            padding: 1rem 2rem;
+        /* Breadcrumb Styling */
+        .breadcrumb {
+            padding: 1rem 0;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .breadcrumbs ul {
-            display: flex;
-            gap: 0.5rem;
-            list-style: none;
-        }
-
-        .breadcrumbs a {
+        .breadcrumb a {
             color: #666;
             text-decoration: none;
         }
 
-        .breadcrumbs a:hover {
-            color: #ff4500;
+        .breadcrumb a:hover {
+            color: var(--highlight);
         }
 
-        /* Additional Visual Enhancements */
-        ::selection {
-            background: rgba(255,69,0,0.2);
+        /* Page Title Styling */
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .page-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Table Styling */
+        .specs-section {
+            margin-bottom: 3rem;
+        }
+
+        .specs-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #333;
         }
 
-        /* Table Row Alternating Colors */
-        .specs-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            font-weight: 600;
+            background: #f8f8f8;
+            color: #333;
+        }
+
+        td {
+            color: #666;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            th, td {
+                padding: 0.75rem;
+            }
+        }
+
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            display: block !important;
+            width: 100%;
+        }
+        .main-nav.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .logo-text { color: #fff; }
+        .logo-highlight { color: var(--highlight); margin-left: 0.5rem; }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 4rem 2rem;
+                transition: 0.5s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-menu li { margin: 0; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            body.menu-open { overflow: hidden; }
+        }
+        @media (min-width: 769px) {
+            .nav-menu {
+                display: flex !important;
+                gap: 0rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            .nav-menu a {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s ease;
+                font-size: 1rem;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+                display: block;
+                padding: 0.5rem 1rem;
+            }
+            .nav-menu a:hover,
+            .nav-menu a.active { color: var(--highlight); }
         }
     </style>
 </head>
 <body>
-   <nav class="main-nav" role="navigation">
+    <nav class="main-nav" role="navigation">
         <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">SUPRA</span>
+                <span class="logo-highlight">MK4</span>
+            </a>
             <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="/index.html" class="active" role="menuitem">HOME</a></li>
-                <li role="none"><a href="specifications.html" role="menuitem">SPECIFICATIONS</a></li>
+                <li role="none"><a href="../index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a href="specifications.html" class="active" role="menuitem">SPECIFICATIONS</a></li>
                 <li role="none"><a href="./modifications.html" role="menuitem">Modification</a></li>
-                <li role="none"><a href="/pages/components.html" role="menuitem">COMPONENTS</a></li>
+                <li role="none"><a href="components.html" role="menuitem">COMPONENTS</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="breadcrumbs">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li>Specifications</li>
-        </ul>
-    </div>
+    <div class="content-wrapper">
+    <br>
 
+<!-- 
     <div class="search-container">
         <input type="text" class="search-input" placeholder="Search specifications, features, or performance data...">
         <div class="search-results"></div>
-    </div>
+    </div> -->
 
-    <section class="section-header">
-        <h1 class="section-title">Supra MK4 Technical Specifications</h1>
-        <p class="section-description">Complete breakdown of the Toyota Supra MK4's technical specifications and performance data.</p>
-    </section>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> > Specifications
+        </div>
 
-    <section class="specs-container">
-        <div class="specs-grid">
-            <!-- Engine Specifications -->
-            <div class="specs-card">
-                <h2>Engine Specifications</h2>
-                <table class="specs-table">
-                    <tr>
-                        <th>Specification</th>
-                        <th>Details</th>
-                    </tr>
+        <h1 class="page-title">SUPRA MK4 TECHNICAL SPECIFICATIONS</h1>
+        <p class="page-description">Complete breakdown of the Toyota Supra MK4's technical specifications and performance data.</p>
+
+        <div class="specs-section">
+            <h2>Engine Specifications</h2>
+            <table>
+                <tr>
+                    <td>Specification</td>
+                    <td>Details</td>
+                </tr>
                     <tr>
                         <td>Engine Code</td>
                         <td class="spec-value">2JZ-GTE</td>
@@ -286,10 +299,11 @@
                 </table>
             </div>
 
-            <!-- Performance Specifications -->
-            <div class="specs-card">
-                <h2>Performance Data</h2>
-                <table class="specs-table">
+        </div>
+
+        <div class="specs-section">
+            <h2>Performance Data</h2>
+            <table>
                     <tr>
                         <th>Metric</th>
                         <th>Value</th>
@@ -325,10 +339,11 @@
                 </table>
             </div>
 
-            <!-- Dimensions -->
-            <div class="specs-card">
-                <h2>Dimensions & Weight</h2>
-                <table class="specs-table">
+        </div>
+
+        <div class="specs-section">
+            <h2>Dimensions & Weight</h2>
+            <table>
                     <tr>
                         <th>Measurement</th>
                         <th>Value</th>
@@ -366,10 +381,9 @@
                         <td class="spec-value">53/47 (front/rear)</td>
                     </tr>
                 </table>
-            </div>
+        </div>
 
-            <!-- Drivetrain Specifications -->
-            <div class="specs-card">
+        <div class="specs-section">
                 <h2>Drivetrain & Chassis</h2>
                 <table class="specs-table">
                     <tr>
@@ -409,10 +423,47 @@
                         <td class="spec-value">17×8.5" (front), 17×9.5" (rear)</td>
                     </tr>
                 </table>
-            </div>
         </div>
-    </section>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const body = document.body;
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+            document.addEventListener('click', function(e) {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('.main-nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
     <script src="../js/search.js"></script>
 </body>
 </html>

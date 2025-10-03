@@ -6,7 +6,10 @@
     <title>Toyota Supra MK4 Modifications Guide | Performance Upgrades 2025</title>
     <meta name="description" content="Complete guide to Toyota Supra MK4 modifications. From engine tuning to body kits, learn about popular upgrades and performance enhancements.">
     <meta name="keywords" content="Supra MK4 mods, 2JZ-GTE tuning, Supra performance parts, MK4 upgrades, Supra body kits">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Additional SEO Meta Tags -->
     <meta property="og:title" content="Toyota Supra MK4 Modifications Guide | 2025">
     <meta property="og:description" content="Expert guide to modifying and upgrading your Supra MK4.">
@@ -46,9 +49,118 @@
                     body.classList.remove('menu-open');
                 });
             });
+
+            // Add scroll class to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('.main-nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
         });
     </script>
     <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            display: block !important;
+            width: 100%;
+        }
+        .main-nav.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .logo-text { color: #fff; }
+        .logo-highlight { color: var(--highlight); margin-left: 0.5rem; }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 4rem 2rem;
+                transition: 0.5s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-menu li { margin: 0; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            body.menu-open { overflow: hidden; }
+        }
+        @media (min-width: 769px) {
+            .nav-menu {
+                display: flex !important;
+                gap: 0rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            .nav-menu a {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s ease;
+                font-size: 1rem;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+                display: block;
+                padding: 0.5rem 1rem;
+            }
+            .nav-menu a:hover,
+            .nav-menu a.active { color: var(--highlight); }
+        }
         .specs-container {
             padding: 2rem;
             margin-top: 2rem;
@@ -126,19 +238,16 @@
                 <span></span>
             </button>
              <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="/index.html" class="active" role="menuitem">HOME</a></li>
-                <li role="none"><a href="./specifications.html" role="menuitem">SPECIFICATIONS</a></li>
-                <li role="none"><a href="modifications.html" role="menuitem">Modification</a></li>
-                <li role="none"><a href="./components.html" role="menuitem">COMPONENTS</a></li>
+                <li role="none"><a href="../index.html" role="menuitem">HOME</a></li>
+                <li role="none"><a href="specifications.html" role="menuitem">SPECIFICATIONS</a></li>
+                <li role="none"><a href="modifications.html" class="active" role="menuitem">Modification</a></li>
+                <li role="none"><a href="components.html" role="menuitem">COMPONENTS</a></li>
             </ul>
         </div>
     </nav>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
+<br>
+<br>
+<br>
     <section class="section-header">
         <h1 class="section-title">Supra MK4 Modification Guide</h1>
         <p class="section-description">From mild to wild, discover the most popular and effective modifications for your MK4 Supra.</p>
