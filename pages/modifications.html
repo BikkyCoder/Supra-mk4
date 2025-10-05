@@ -62,7 +62,42 @@
         });
     </script>
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { 
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .build-section {
+            margin: 5rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .build-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .build-power {
+            font-size: 1.1rem;
+            color: var(--highlight);
+            background: rgba(var(--highlight-rgb), 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-left: 1rem;
+        }
+
         .main-nav {
             position: fixed;
             top: 0;
