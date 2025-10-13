@@ -1,0 +1,225 @@
+.components-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.component-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.component-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.component-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #e50914, #ff454f);
+}
+
+.component-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.component-icon {
+    width: 50px;
+    height: 50px;
+    background: #e50914;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.component-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.component-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.component-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.component-details {
+    color: #666;
+}
+
+.component-specs {
+    margin-top: 1rem;
+    background: rgba(229, 9, 20, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.spec-list li:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.spec-value {
+    color: #e50914;
+}
+
+.component-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.action-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.primary-button {
+    background: #e50914;
+    color: white;
+}
+
+.primary-button:hover {
+    background: #cc0812;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: transparent;
+    color: #e50914;
+    border: 2px solid #e50914;
+}
+
+.secondary-button:hover {
+    background: rgba(229, 9, 20, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Component Categories */
+.component-categories {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.category-tag {
+    padding: 0.5rem 1rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-tag:hover,
+.category-tag.active {
+    background: #e50914;
+    color: white;
+}
+
+/* Animations */
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.component-card {
+    animation: cardEnter 0.5s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .components-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .component-title {
+        font-size: 1.25rem;
+    }
+    
+    .component-actions {
+        flex-direction: column;
+    }
+}
+
+/* Search and Filter */
+.components-search {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #e50914;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.1);
+}
