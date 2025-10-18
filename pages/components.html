@@ -6,7 +6,7 @@
     <meta name="description" content="Find complete details about Supra MK4 turbo kits, engine components, and performance parts. Comprehensive guide to Supra tuning parts, TRD 3000GT components, and headlight upgrades. Updated prices and specifications for 2025.">
     <meta name="keywords" content="supra mk4 turbo kit, supra mk4 engine parts, supra mk4 turbo headlight, supra mk4 trd 3000gt parts, supra mk4 twin turbo components, supra mk4 single turbo conversion, supra mk4 turbo manifold, supra mk4 performance parts price india">
     <title>Supra MK4 Turbo Kits & Performance Parts Price Guide [2025]</title>
-    <meta name="author" content="Supra Performance Experts">
+    <meta name="author" content="Bikky Coder">
     <meta name="geo.region" content="IN">
     <meta name="geo.placename" content="India">
     <meta name="topic" content="Supra MK4 Performance Parts and Components">
@@ -41,7 +41,10 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/components-enhanced.css">
+    <link rel="stylesheet" href="../css/components-enhanced-2025.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Preload key images -->
     <link rel="preload" as="image" href="../images/components/2jz-gte.jpg">
@@ -52,7 +55,472 @@
     <meta property="og:type" content="article">
     <meta property="og:image" content="../images/flux_krea_00021_.png">
     <style>
-        body { 
+        :root {
+            --primary-color: #ff4d00;
+            --secondary-color: #1a1a1a;
+            --accent-color: #ffc107;
+            --gradient-start: #ff4d00;
+            --gradient-end: #ff8533;
+            --card-bg: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+        }
+
+        /* Enhanced Component Cards */
+        .component-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .component-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .component-card:hover .component-image {
+            transform: scale(1.05);
+        }
+
+        .component-content {
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Enhanced Typography */
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -1px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        /* Enhanced Price Tags */
+        .price-tag {
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            box-shadow: 0 4px 10px rgba(255,77,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .price-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Stats Display */
+        .performance-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced Lists */
+        .compatibility-list {
+            margin: 1.5rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .compatibility-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .compatibility-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .performance-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .component-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .component-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .component-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Main Content Structure -->
+    <main class="content-wrapper">
+        <!-- Enhanced Header Section -->
+        <header class="page-header">
+            <h1 class="page-title">Complete Supra MK4 Components Guide 2025 🔧</h1>
+            <div class="header-content">
+                <div class="header-badges">
+                    <span class="badge">Updated October 2025</span>
+                    <span class="badge">Price Guide Included</span>
+                    <span class="badge">Expert Recommended</span>
+                </div>
+                <p class="header-description">Discover premium performance parts and upgrades for your Supra MK4. From engine components to suspension systems, find everything you need with current prices in India.</p>
+            </div>
+        </header>
+
+        <!-- Quick Navigation -->
+        <nav class="component-nav">
+            <div class="nav-wrapper">
+                <div class="nav-group">
+                    <a href="#engine-components" class="nav-item active">
+                        <i class="fas fa-engine"></i>
+                        Engine Parts
+                    </a>
+                    <a href="#drivetrain" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        Drivetrain
+                    </a>
+                    <a href="#suspension" class="nav-item">
+                        <i class="fas fa-car"></i>
+                        Suspension
+                    </a>
+                    <a href="#exterior" class="nav-item">
+                        <i class="fas fa-car-side"></i>
+                        Exterior
+                    </a>
+                    <a href="#interior" class="nav-item">
+                        <i class="fas fa-car-alt"></i>
+                        Interior
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Engine Components Section -->
+        <style>
+            /* Enhanced Header Styles */
+            .page-header {
+                text-align: center;
+                padding: 3rem 0;
+                margin-bottom: 3rem;
+                background: linear-gradient(135deg, rgba(255,77,0,0.05) 0%, rgba(255,133,51,0.05) 100%);
+                border-radius: 20px;
+            }
+
+            .header-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .header-badges {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                margin: 2rem 0;
+                flex-wrap: wrap;
+            }
+
+            .badge {
+                background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                box-shadow: 0 2px 4px rgba(255,77,0,0.2);
+            }
+
+            .header-description {
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+                line-height: 1.6;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            /* Enhanced Navigation */
+            .component-nav {
+                margin: 6rem 0 4rem;
+                padding: 1rem;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-wrapper {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .nav-group {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1rem 1.5rem;
+                color: var(--text-secondary);
+                text-decoration: none;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+                background: #f8f9fa;
+            }
+
+            .nav-item:hover, .nav-item.active {
+                background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            .nav-item i {
+                font-size: 1.2rem;
+            }
+        </style>
+        <section id="engine-components" class="components-section">
+            <h2>2JZ-GTE Engine Components & Upgrades [2025 Price List]</h2>
+            <div class="component-grid">
+                <!-- Single Turbo Conversion Kit -->
+                <article class="component-card">
+                    <img src="../images/components/single-turbo-kit.jpg" alt="Supra MK4 Single Turbo Kit" class="component-image">
+                    <div class="component-content">
+                        <h3>Premium Single Turbo Conversion Kit</h3>
+                        <p class="component-description">Complete bolt-on single turbo upgrade kit capable of 800+ HP</p>
+                        <span class="price-tag">₹4,50,000 - ₹6,00,000</span>
+                        <ul class="compatibility-list">
+                            <li>Precision 6466 Gen 2 Turbocharger</li>
+                            <li>CNC Manifold</li>
+                            <li>44mm Wastegate</li>
+                            <li>Complete Installation Hardware</li>
+                        </ul>
+                        <div class="performance-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">800+</div>
+                                <div class="stat-label">HP Potential</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">15</div>
+                                <div class="stat-label">PSI Stock</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">25+</div>
+                                <div class="stat-label">PSI Max</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Fuel System Upgrade -->
+                <article class="component-card">
+                    <img src="../images/components/fuel-system.jpg" alt="Supra MK4 Fuel System Upgrade" class="component-image">
+                    <div class="component-content">
+                        <h3>Complete Fuel System Upgrade</h3>
+                        <p class="component-description">High-flow fuel system capable of supporting 1000+ HP builds</p>
+                        <span class="price-tag">₹2,25,000 - ₹3,00,000</span>
+                        <ul class="compatibility-list">
+                            <li>1000cc Injectors</li>
+                            <li>Dual Walbro 450 Pumps</li>
+                            <li>Upgraded Fuel Rails</li>
+                            <li>AN Fittings & Lines</li>
+                        </ul>
+                        <div class="performance-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">1000+</div>
+                                <div class="stat-label">HP Support</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">E85</div>
+                                <div class="stat-label">Compatible</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Transmission & Drivetrain Section -->
+        <section id="drivetrain" class="components-section">
+            <h2>Transmission & Drivetrain Upgrades [Latest 2025]</h2>
+            <div class="component-grid">
+                <!-- V160/V161 Transmission -->
+                <article class="component-card">
+                    <img src="../images/components/v160-transmission.jpg" alt="Getrag V160/V161 Transmission" class="component-image">
+                    <div class="component-content">
+                        <h3>Getrag V160/V161 Transmission</h3>
+                        <p class="component-description">The legendary transmission capable of handling 1000+ HP</p>
+                        <span class="price-tag">₹7,00,000 - ₹9,00,000</span>
+                        <ul class="compatibility-list">
+                            <li>6-Speed Manual</li>
+                            <li>Forged Internals</li>
+                            <li>Triple Cone Synchros</li>
+                            <li>1000+ HP Rating</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- OS Giken Clutch -->
+                <article class="component-card">
+                    <img src="../images/components/os-giken-clutch.jpg" alt="OS Giken Clutch Kit" class="component-image">
+                    <div class="component-content">
+                        <h3>OS Giken Triple Plate Clutch</h3>
+                        <p class="component-description">Premium triple plate clutch for high-power applications</p>
+                        <span class="price-tag">₹1,80,000 - ₹2,50,000</span>
+                        <ul class="compatibility-list">
+                            <li>Triple Carbon Plates</li>
+                            <li>1200+ HP Rating</li>
+                            <li>Street/Track Capable</li>
+                            <li>Includes Flywheel</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Suspension & Handling Section -->
+        <section id="suspension" class="components-section">
+            <h2>Premium Suspension Components [Track-Ready Builds]</h2>
+            <div class="component-grid">
+                <!-- HKS Coilovers -->
+                <article class="component-card">
+                    <img src="../images/components/hks-coilovers.jpg" alt="HKS Hipermax Coilovers" class="component-image">
+                    <div class="component-content">
+                        <h3>HKS Hipermax IV SP Coilovers</h3>
+                        <p class="component-description">Professional-grade coilover system for maximum performance</p>
+                        <span class="price-tag">₹1,50,000 - ₹2,00,000</span>
+                        <ul class="compatibility-list">
+                            <li>32-Way Adjustable</li>
+                            <li>Spring Rate Optimized</li>
+                            <li>Track Tested</li>
+                            <li>Includes Pillowball Mounts</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Big Brake Kit -->
+                <article class="component-card">
+                    <img src="../images/components/brake-kit.jpg" alt="Brembo GT Big Brake Kit" class="component-image">
+                    <div class="component-content">
+                        <h3>Brembo GT Big Brake Kit</h3>
+                        <p class="component-description">Complete brake upgrade for superior stopping power</p>
+                        <span class="price-tag">₹3,50,000 - ₹4,50,000</span>
+                        <ul class="compatibility-list">
+                            <li>6-Piston Front Calipers</li>
+                            <li>4-Piston Rear Calipers</li>
+                            <li>355mm 2-Piece Rotors</li>
+                            <li>Performance Brake Pads</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <style>
+        body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             color: #333;
@@ -195,6 +663,79 @@
             margin: 5rem 0;
             position: relative;
         }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .component-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .component-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .component-content {
+            padding: 1.5rem;
+        }
+
+        .price-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .compatibility-list {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+
+        .compatibility-list li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .performance-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
 
         .components-section::before {
             content: '';
