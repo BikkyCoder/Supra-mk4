@@ -11,9 +11,10 @@
 }
 
 .nav-container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +28,37 @@
     font-weight: 700;
     color: #fff;
     z-index: 1001;
+}
+
+@media screen and (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        transition: color 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        color: var(--highlight, #ff4500);
+    }
 }
 
 .logo-text {

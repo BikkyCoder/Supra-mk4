@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/enhanced-ui.css">
+    <link rel="stylesheet" href="css/mobile-optimized.css">
+    <link rel="stylesheet" href="css/kolam-nav.css">
     <title>Toyota Supra MK4 Price in India 2025 | Specifications, Top Speed & Modified Builds</title>
     <meta name="description" content="Find Toyota Supra MK4 price in India 2025, top speed, modified versions & turbo kits. Comprehensive guide for Supra MK4 specifications, second-hand prices in Rajasthan, and 1200HP+ builds. Updated for 2025!">
     <meta name="author" content="Bikky Coder">
@@ -121,12 +123,18 @@
       }]
     }
     </script>
+    <link rel="stylesheet" href="css/mobile-optimized.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/nav-enhanced-2025.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/generations.css">
     <link rel="stylesheet" href="css/seo-enhanced.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#ff4500">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Structured Data Breadcrumbs -->
     <script type="application/ld+json">
@@ -155,6 +163,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
+            height: 90px;
             background: rgba(0, 0, 0, 0.95);
             padding: 1rem 0;
             transition: all 0.3s ease;
@@ -306,12 +315,17 @@
     </style>
     <meta name="twitter:description" content="Discover everything about the legendary Supra MK4 in 2025: specs, mods, history, and more.">
     <meta name="twitter:image" content="images/supra-mk4-hero.jpg">
-    <link rel="icon" type="image/png" href="images/flux_krea_00858_.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="images/flux_krea_00021_.png">
+    <!-- Favicon configuration -->
+    <link rel="icon" type="image/png" href="/Supra-mk4/images/flux_krea_00858_.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/Supra-mk4/images/flux_krea_00858_.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/Supra-mk4/images/flux_krea_00021_.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Supra-mk4/images/flux_krea_00021_.png">
+    <link rel="mask-icon" href="/Supra-mk4/images/flux_krea_00858_.png" color="#ff4500">
     <meta name="theme-color" content="#ff4500">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/Supra-mk4/manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="js/social-share.js" defer></script>
+    <script src="js/kolam-nav.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
@@ -1306,25 +1320,58 @@
                 <span class="logo-text">SUPRA</span>
                 <span class="logo-highlight">MK4</span>
             </a>
-            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Regular Navigation for Desktop -->
             <ul class="nav-menu" role="menubar">
                 <li role="none"><a href="index.html" class="active" role="menuitem">HOME</a></li>
-                <li role="none"><a href="#about" role="menuitem">ABOUT SUPRA</a></li>
+                <li role="none"><a href="#about" role="menuitem">ABOUT</a></li>
                 <li role="none"><a href="pages/specifications.html" role="menuitem">SPECIFICATIONS</a></li>
                 <li role="none"><a href="pages/components.html" role="menuitem">COMPONENTS</a></li>
-                <li role="none"><a href="pages/modifications.html" role="menuitem">modifications</a></li>
+                <li role="none"><a href="pages/modifications.html" role="menuitem">MODIFICATIONS</a></li>
                 <li role="none"><a href="#timeline" role="menuitem">TIMELINE</a></li>
                 <li role="none"><a href="#features" role="menuitem">FEATURES</a></li>
                 <li role="none"><a href="#legacy" role="menuitem">LEGACY</a></li>
                 <li role="none"><a href="#gallery" role="menuitem">GALLERY</a></li>
-                <li role="none"><a href="#blog" role="menuitem">BLOG</a></li>
                 <li role="none"><a href="#community" role="menuitem">COMMUNITY</a></li>
                 <li role="none"><a href="#contact" role="menuitem">CONTACT</a></li>
             </ul>
+            <!-- Kolam Navigation for Mobile -->
+            <button class="kolam-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+                <svg class="kolam-icon" viewBox="0 0 100 100" width="40" height="40">
+                    <circle class="kolam-circle" cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle class="kolam-dot" cx="50" cy="50" r="4" fill="currentColor"/>
+                </svg>
+            </button>
+            <div class="kolam-nav">
+                <div class="kolam-menu">
+                    <a href="index.html" class="kolam-item active" data-label="HOME">
+                        <span class="kolam-text">HOME</span>
+                    </a>
+                    <a href="#about" class="kolam-item" data-label="ABOUT">
+                        <span class="kolam-text">ABOUT</span>
+                    </a>
+                    <a href="pages/specifications.html" class="kolam-item" data-label="SPECS">
+                        <span class="kolam-text">SPECS</span>
+                    </a>
+                    <a href="pages/components.html" class="kolam-item" data-label="PARTS">
+                        <span class="kolam-text">PARTS</span>
+                    </a>
+                    <a href="pages/modifications.html" class="kolam-item" data-label="MODS">
+                        <span class="kolam-text">MODS</span>
+                    </a>
+                    <a href="#timeline" class="kolam-item" data-label="TIME">
+                        <span class="kolam-text">TIME</span>
+                    </a>
+                    <a href="#features" class="kolam-item" data-label="FEAT">
+                        <span class="kolam-text">FEAT</span>
+                    </a>
+                    <a href="#legacy" class="kolam-item" data-label="LEGACY">
+                        <span class="kolam-text">LEGACY</span>
+                    </a>
+                    <a href="#gallery" class="kolam-item" data-label="GALLERY">
+                        <span class="kolam-text">GALLERY</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
     <!-- Hero Section -->
@@ -1339,20 +1386,17 @@
                 loading="eager"
                 fetchpriority="high"
             >
-        </div>
-        <div class="hero-content">
-            <div class="hero-buttons">
-                <a href="pages/generations.html" class="hero-button generations-btn">Explore All Generations</a>
-            </div>
-        </div>
             <div class="overlay gradient-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 style="color: #ffffff;">TOYOTA SUPRA MK4</h1>
+            <h1>TOYOTA SUPRA MK4</h1>
             <p class="hero-subtitle">A Legend That Defined an Era. Experience the Timeless Icon That Changed the Game Forever.</p>
             <div class="hero-buttons">
+                <a href="pages/generations.html" class="hero-button generations-btn">Explore All Generations</a>
                 <a href="pages/specifications.html" class="cta" role="button">Explore Specs</a>
                 <a href="#legacy" class="cta secondary" role="button">Discover Legacy</a>
+            </div>
+        </div>
             </div>
         </div>
     </section>
