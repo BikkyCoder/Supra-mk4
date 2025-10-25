@@ -1,0 +1,45 @@
+.hero-section {
+    background-image: url('../images/2jz-gte-engine.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content .subtitle {
+    font-size: 0.5em;
+    color: #ff4500;
+    letter-spacing: 6px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Enhanced CTA Buttons for Specs Page */
+.hero-buttons .cta-button {
+    min-width: 180px;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.hero-buttons .primary {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.hero-buttons .secondary {
+    background: transparent;
+    border: 2px solid #ff4500;
+    color: #ff4500;
+    font-weight: 600;
+}
+
+.hero-buttons .secondary:hover {
+    background: rgba(255, 69, 0, 0.1);
+}
+
+/* Ensure consistent spacing */
+.hero-content {
+    gap: 2rem;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supra MK4 Tuning Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tuning-simulator.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="tuning-simulator">
+        <div class="simulator-container">
+            <!-- Car Display Section -->
+            <div class="car-display">
+                <img src="../images/supra-base.png" alt="Toyota Supra MK4" class="car-image" id="carImage">
+                <div class="effects-container">
+                    <div class="turbo-flames" id="turboFlames"></div>
+                </div>
+                
+                <!-- Performance Stats -->
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-value" id="hpStat">320</div>
+                        <div class="stat-label">Horsepower</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="torqueStat">315</div>
+                        <div class="stat-label">Torque (Nm)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="accelerationStat">4.6</div>
+                        <div class="stat-label">0-100 km/h (s)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="topSpeedStat">250</div>
+                        <div class="stat-label">Top Speed (km/h)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parts Selection Section -->
+            <div class="tuning-controls">
+                <h2>Performance Upgrades</h2>
+                <div class="parts-grid" id="partsGrid"></div>
+                
+                <!-- Performance Chart -->
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/tuning-simulator.js"></script>
+</body>
+</html>
