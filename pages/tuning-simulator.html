@@ -8,12 +8,158 @@
     <link rel="stylesheet" href="../css/tuning-simulator.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<style>
+    :root {
+        --highlight: #ff8c00;
+        --text-light: #ffffff;
+        --text-muted: #888888;
+        --bg-dark: #121212;
+        --bg-card: #1e1e1e;
+        --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+        margin: 0;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-light);
+    }
+
+    .performance-guide {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+
+    .performance-guide h1 {
+        text-align: center;
+        color: var(--highlight);
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+    }
+
+    .guide-description {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    .parts-categories {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .category-btn {
+        background: var(--bg-card);
+        color: var(--text-light);
+        border: 1px solid var(--border-color);
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .category-btn:hover {
+        background: var(--highlight);
+        border-color: var(--highlight);
+    }
+
+    .category-btn.active {
+        background: var(--highlight);
+        border-color: var(--highlight);
+        box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+    }
+
+    .parts-table-container {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        overflow-x: auto;
+    }
+
+    .parts-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    .parts-table th,
+    .parts-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .parts-table th {
+        color: var(--highlight);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+    }
+
+    .parts-table td {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    .parts-table tr:hover {
+        background: rgba(255, 140, 0, 0.1);
+    }
+
+    .parts-table .hp-gain,
+    .parts-table .torque-gain {
+        color: var(--highlight);
+        font-weight: bold;
+    }
+
+    .parts-table .notes {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        max-width: 300px;
+    }
+
+    .part-row {
+        transition: all 0.3s ease;
+    }
+
+    .part-row:hover {
+        transform: translateX(10px);
+    }
+
+    @media (max-width: 768px) {
+        .performance-guide {
+            padding: 1rem;
+        }
+
+        .parts-table th,
+        .parts-table td {
+            padding: 0.8rem;
+            font-size: 0.8rem;
+        }
+
+        .category-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+    }
+</style>
 <body>
+ 
+
     <div class="tuning-simulator">
         <div class="simulator-container">
             <!-- Car Display Section -->
             <div class="car-display">
-                <img src="../images/supra-base.png" alt="Toyota Supra MK4" class="car-image" id="carImage">
+                <img src="../images/Toyota Supra MK4.png" alt="Toyota Supra MK4" class="car-image" id="carImage">
                 <div class="effects-container">
                     <div class="turbo-flames" id="turboFlames"></div>
                 </div>
@@ -52,6 +198,41 @@
         </div>
     </div>
 
+
+       <!-- Performance Parts Guide -->
+    <section class="performance-guide">
+        <h1>🔧 Performance Parts Guide</h1>
+        <div class="guide-description">
+            <p>Explore the potential gains from various modifications for your Supra MK4. All values are estimated ranges and may vary based on supporting modifications and tuning quality.</p>
+        </div>
+
+        <div class="parts-categories">
+            <button class="category-btn active" data-category="all">All Parts</button>
+            <button class="category-btn" data-category="power">Power Mods</button>
+            <button class="category-btn" data-category="handling">Handling</button>
+            <button class="category-btn" data-category="supporting">Supporting Mods</button>
+        </div>
+
+        <div class="parts-table-container">
+            <table class="parts-table">
+                <thead>
+                    <tr>
+                        <th>Part</th>
+                        <th>HP Gain</th>
+                        <th>Torque Gain</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="partsTableBody">
+                    <!-- Dynamic content will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <script src="../js/tuning-simulator.js"></script>
+    <script src="../js/parts-data.js"></script>
+    <script src="js/product-schema.js"></script>
 </body>
 </html>
+
