@@ -324,6 +324,132 @@
             font-size: 0.9rem;
         }
     }
+
+    /* Styling for information_heading_para section */
+    .information_heading_para {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: var(--bg-dark);
+    }
+
+    .information_heading_para h1 {
+        text-align: center;
+        color: var(--highlight);
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
+        position: relative;
+    }
+
+    .information_heading_para h1::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 4px;
+        background: var(--highlight);
+        border-radius: 2px;
+    }
+
+    .information_heading_para h2 {
+        color: var(--text-light);
+        font-size: 1.8rem;
+        margin: 2.5rem 0 1rem;
+        font-family: 'Orbitron', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: linear-gradient(90deg, var(--bg-card) 0%, transparent 100%);
+        padding: 1rem;
+        border-radius: 10px;
+        border-left: 4px solid var(--highlight);
+    }
+
+    .information_heading_para h2::before {
+        content: '🔧';
+        font-size: 1.5rem;
+    }
+
+    .information_heading_para p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        border-left: 2px solid var(--border-color);
+    }
+
+    .information_heading_para ul {
+        background: var(--bg-card);
+        padding: 1.5rem 2rem;
+        border-radius: 10px;
+        margin: 1rem 0 2rem;
+        list-style-type: none;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .information_heading_para li {
+        color: var(--text-light);
+        margin: 0.8rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .information_heading_para li::before {
+        content: '➤';
+        position: absolute;
+        left: 0;
+        color: var(--highlight);
+    }
+
+    .information_heading_para li:hover {
+        transform: translateX(5px);
+        transition: transform 0.3s ease;
+    }
+
+    /* Highlight important information */
+    .information_heading_para li:nth-child(1) {
+        color: var(--highlight);
+        font-weight: bold;
+    }
+
+    .information_heading_para li:nth-child(2) {
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 0.8rem;
+    }
+
+    /* Add hover effects */
+    .information_heading_para ul:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+        box-shadow: 0 6px 25px rgba(255, 140, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .information_heading_para {
+            padding: 1rem;
+        }
+
+        .information_heading_para h1 {
+            font-size: 2rem;
+        }
+
+        .information_heading_para h2 {
+            font-size: 1.4rem;
+        }
+
+        .information_heading_para ul {
+            padding: 1rem;
+        }
+    }
 </style>
 <body>
  
@@ -402,6 +528,123 @@
             </table>
         </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <section class="information_heading_para">
+        <h1>Ultimate Supra MK4 Tuning Guide</h1>
+        
+        <!-- Stage 1 ECU -->
+        <h2>Stage 1: ECU Performance Unleashed</h2>
+        <p>The entry point for Supra MK4 tuning, focusing on optimizing the stock hardware:</p>
+        <ul>
+            <li>Power Gain: 40-60 HP</li>
+            <li>Cost: ₹45,000 - ₹65,000</li>
+            <li>Features: Increased boost pressure, optimized fuel maps, revised ignition timing</li>
+            <li>Benefits: Better throttle response, improved mid-range torque</li>
+            <li>Prerequisites: Good mechanical condition, fresh spark plugs</li>
+        </ul>
+
+        <!-- Single Turbo -->
+        <h2>Single Turbo Conversion (Garrett GT3582R)</h2>
+        <p>Popular upgrade replacing the sequential twin-turbo setup:</p>
+        <ul>
+            <li>Power Potential: 600-800 HP</li>
+            <li>Cost: ₹2,85,000 - ₹3,25,000 (complete kit)</li>
+            <li>Components: Turbo, manifold, wastegate, BOV</li>
+            <li>Spool Characteristics: Full boost by 3800 RPM</li>
+            <li>Required Supporting Mods: Intercooler, fuel system upgrades</li>
+        </ul>
+
+        <!-- Twin Turbo Upgrade -->
+        <h2>Twin Turbo Upgrade (HKS GT-SS Kit)</h2>
+        <p>Enhanced version of the stock twin-turbo setup:</p>
+        <ul>
+            <li>Power Output: 450-550 HP</li>
+            <li>Cost: ₹3,50,000 - ₹4,00,000</li>
+            <li>Benefits: Better response than single turbo</li>
+            <li>Features: Steel turbine wheels, billet compressor wheels</li>
+            <li>Boost Pressure: 1.2-1.4 bar safely</li>
+        </ul>
+
+        <!-- Hybrid Turbos -->
+        <h2>Turbocharger Hybrid Upgrade</h2>
+        <p>Modified stock turbocharger housing with upgraded internals:</p>
+        <ul>
+            <li>Power Range: 400-480 HP</li>
+            <li>Cost: ₹1,75,000 - ₹2,25,000</li>
+            <li>Advantages: Uses stock mounting points</li>
+            <li>Spool: Similar to stock turbos</li>
+            <li>Durability: Enhanced bearings and seals</li>
+        </ul>
+
+        <!-- Exhaust System -->
+        <h2>Performance Exhaust System</h2>
+        <p>Full exhaust system upgrades for improved flow:</p>
+        <ul>
+            <li>Power Gain: 15-25 HP</li>
+            <li>Cost: ₹85,000 - ₹1,25,000</li>
+            <li>Options: HKS, GReddy, Blitz systems</li>
+            <li>Features: 3" or 3.5" diameter, titanium options</li>
+            <li>Sound: Deep tone, reduced backpressure</li>
+        </ul>
+
+        <!-- Intake System -->
+        <h2>Cold Air Intake System</h2>
+        <p>Enhanced air delivery system:</p>
+        <ul>
+            <li>Power Gain: 8-12 HP</li>
+            <li>Cost: ₹35,000 - ₹45,000</li>
+            <li>Types: Pod filter, enclosed airbox</li>
+            <li>Benefits: Better induction sound, improved airflow</li>
+            <li>Brands: HKS, AEM, K&N</li>
+        </ul>
+
+        <!-- Intercooler -->
+        <h2>Front Mount Intercooler (FMIC)</h2>
+        <p>Essential cooling upgrade for increased boost:</p>
+        <ul>
+            <li>Core Size: 600x300x100mm typical</li>
+            <li>Cost: ₹75,000 - ₹1,15,000</li>
+            <li>Materials: Bar & plate construction</li>
+            <li>Benefits: Reduced intake temperatures</li>
+            <li>Brands: HKS, GReddy, Plazmaman</li>
+        </ul>
+
+        <!-- Fuel System -->
+        <h2>Fuel System Upgrades</h2>
+        <p>Complete fuel delivery enhancement:</p>
+        <ul>
+            <li>Components: Injectors, pump, rail, regulator</li>
+            <li>Cost: ₹1,25,000 - ₹1,75,000 (complete)</li>
+            <li>Injector Sizes: 850cc to 2000cc</li>
+            <li>Fuel Pump: Walbro 450/Bosch 044</li>
+            <li>Supports: Up to 1000+ HP setups</li>
+        </ul>
+
+        <!-- Engine Internals -->
+        <h2>Forged Engine Internals</h2>
+        <p>Built bottom end for maximum power:</p>
+        <ul>
+            <li>Components: Pistons, rods, bearings</li>
+            <li>Cost: ₹3,50,000 - ₹4,50,000 (parts only)</li>
+            <li>Brands: CP, Wiseco, Brian Crower</li>
+            <li>Power Capacity: 1200+ HP capable</li>
+            <li>Compression Ratio: 8.5:1 to 9.5:1</li>
+        </ul>
+
+        <!-- Transmission -->
+        <h2>Transmission Upgrades</h2>
+        <p>Strengthened drivetrain components:</p>
+        <ul>
+            <li>Parts: Clutch, flywheel, gearset</li>
+            <li>Cost: ₹1,85,000 - ₹2,75,000</li>
+            <li>Clutch Options: Twin/Triple plate</li>
+            <li>Torque Capacity: Up to 1000 Nm</li>
+            <li>Brands: OS Giken, HKS, ACT</li>
+        </ul>
+    </section>
+    
 
     <script src="../js/tuning-simulator.js"></script>
     <script src="../js/parts-data.js"></script>

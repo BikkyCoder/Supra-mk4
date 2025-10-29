@@ -26,6 +26,167 @@
     <link rel="stylesheet" href="css/simulator-promo.css">
     <link rel="stylesheet" href="css/hero-enhanced.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('images/supra-mk4-hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff4e50, #f9d423);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleFade 1s ease-in;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #f9f9f9;
+            animation: subtitleSlide 1s ease-in-out;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            color: #e0e0e0;
+            animation: descriptionFade 1.5s ease-in;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            animation: ctaFade 2s ease-in;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #ff4e50, #f9d423);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 78, 80, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 78, 80, 0.4);
+        }
+
+        /* Quick Stats Section */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            margin-top: 4rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ff4e50, #f9d423);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #e0e0e0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes titleFade {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes subtitleSlide {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes descriptionFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes ctaFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            .hero-cta {
+                flex-direction: column;
+            }
+            .quick-stats {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
     <title>Toyota Supra MK4 Price in India 2025 | Specs, 0-100, Twin Turbo Engine Guide</title>
     <meta name="description" content="【2025 Complete Guide】Toyota Supra MK4 price in India ₹85-95L. 2JZ-GTE twin turbo specs: 320-1200HP, 0-100 km/h in 4.6s. Expert guide on modifications, JDM builds & tuning stages.">
     <meta name="keywords" content="toyota supra mk4 price in india, supra mk4 specs, mk4 supra engine, supra mk4 0-100, twin turbo mk4, jdm build, supra mk4 mods">
@@ -48,6 +209,38 @@
     <meta property="article:modified_time" content="2025-10-23">
     <meta property="article:section" content="Automotive Performance">
     <meta property="article:tag" content="Toyota Supra MK4">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Toyota Supra MK4 Guide 2025",
+      "description": "Comprehensive guide for the Toyota Supra MK4 including specifications, modifications, pricing, and technical details.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Supra MK4 Guide",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://supramk4.bikkycoder.com/images/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "Car",
+        "name": "Toyota Supra MK4",
+        "manufacturer": "Toyota",
+        "model": "Supra A80",
+        "vehicleEngine": {
+          "@type": "EngineSpecification",
+          "engineType": "2JZ-GTE Twin Turbo",
+          "engineDisplacement": {
+            "@type": "QuantitativeValue",
+            "value": "3.0",
+            "unitCode": "L"
+          }
+        }
+      }
+    }
+    </script>
     
     <!-- Website Schema -->
     <script type="application/ld+json">
@@ -1653,7 +1846,8 @@
     </script>
 </head>
 <body>
-    <!-- Navigation Section -->
+    <!-- Hero Section -->
+   
     <nav class="main-nav" role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -2684,6 +2878,397 @@
                 View Complete Technical Guide →
             </a>
         </div>
+    </section>
+
+    <section class="SEO_content">
+        <div class="seo-container">
+            <h2>Toyota Supra MK4: The Ultimate Guide (2025)</h2>
+            <p style="color: #000000;">Discover everything about the legendary Toyota Supra MK4, from its iconic 2JZ engine to modern-day market values. Whether you're a potential buyer, enthusiast, or collector, this comprehensive guide covers all aspects of this Japanese sports car icon.</p>
+
+            <h3>2025 Market Analysis and Price Trends</h3>
+            <p style="color: #000000;">The Toyota Supra MK4 market continues to evolve in 2025, with prices showing strong appreciation across all variants. Stock examples with documented history command premium prices, while modified vehicles offer varying value propositions based on build quality and modification choices.</p>
+            
+            <div class="market-stats">
+                <div class="stat-box">
+                    <h4>Price Ranges by Condition (2025)</h4>
+                    <ul>
+                        <li>Concours Condition: ₹2.8-3.5 crore</li>
+                        <li>Excellent Condition: ₹1.8-2.5 crore</li>
+                        <li>Good Condition: ₹95 lakhs-1.5 crore</li>
+                        <li>Project Cars: ₹65-85 lakhs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Regional Market Insights</h3>
+            <p style="color: #000000;">Market trends vary significantly by region, with certain areas showing distinct preferences and value propositions:</p>
+            <ul class="region-list">
+                <li><strong>North India:</strong> Premium on low-mileage, stock examples</li>
+                <li><strong>South India:</strong> Strong demand for modified variants</li>
+                <li><strong>West India:</strong> Collector-grade vehicles command top prices</li>
+                <li><strong>East India:</strong> Growing enthusiast market with focus on preservation</li>
+            </ul>
+
+            <h3>2025 Performance Upgrades and Modifications</h3>
+            <p style="color: #000000;"> Modern technology has revolutionized the Supra tuning landscape. Latest developments include:</p>
+            <div class="mod-categories">
+                <div class="mod-category">
+                    <h4>Engine Management</h4>
+                    <ul>
+                        <li>AI-assisted ECU mapping</li>
+                        <li>Wireless tuning interfaces</li>
+                        <li>Real-time performance monitoring</li>
+                        <li>Advanced boost control systems</li>
+                    </ul>
+                </div>
+                <div class="mod-category">
+                    <h4>Drivetrain Innovations</h4>
+                    <ul>
+                        <li>Carbon fiber driveshafts</li>
+                        <li>Sequential transmission upgrades</li>
+                        <li>Advanced LSD technologies</li>
+                        <li>Reinforced clutch systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Ownership Experience in 2025</h3>
+            <p style="color: #000000;">Modern Supra MK4 ownership brings unique challenges and opportunities:</p>
+            <div class="ownership-aspects">
+                <div class="aspect">
+                    <h4>Parts Availability</h4>
+                    <p style="color: #000000;">Toyota's heritage parts program continues to support the MK4 platform, while 3D printing technology has revolutionized rare component reproduction. Aftermarket support remains strong with new manufacturers entering the market.</p>
+                </div>
+                <div class="aspect">
+                    <h4>Service Network</h4>
+                    <p style="color: #000000;">Specialized workshops across India now offer comprehensive maintenance packages, including:</p>
+                    <ul>
+                        <li>Advanced diagnostics with AI-powered fault detection</li>
+                        <li>Preventive maintenance programs</li>
+                        <li>Authentication and documentation services</li>
+                        <li>Performance optimization packages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Investment Potential (2025-2030)</h3>
+            <p style="color: #000000;">Market analysts project continued value appreciation for the MK4 Supra, particularly for:</p>
+            <ul class="investment-points">
+                <li>Original TRD-equipped vehicles</li>
+                <li>Factory-fresh examples with documentation</li>
+                <li>Historically significant builds</li>
+                <li>Limited edition variants</li>
+            </ul>
+
+            <div class="expert-insights">
+                <h4>Expert Predictions</h4>
+                <blockquote>
+                    "The MK4 Supra continues to represent one of the most robust investment opportunities in the JDM collector car market, with projected annual appreciation rates of 15-20% for premium examples." - Asian Classic Car Market Report 2025
+                </blockquote>
+            </div>
+
+            <h3>2025 Buyer's Guide: Authentication & Verification</h3>
+            <div class="authentication-guide">
+                <h4>Essential Verification Steps</h4>
+                <div class="verification-steps">
+                    <div class="step">
+                        <h5>1. VIN Authentication</h5>
+                        <ul>
+                            <li>Decode manufacturer stamps</li>
+                            <li>Cross-reference with Toyota database</li>
+                            <li>Verify production dates</li>
+                            <li>Check original market specification</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h5>2. Documentation Review</h5>
+                        <ul>
+                            <li>Service history verification</li>
+                            <li>Ownership chain documentation</li>
+                            <li>Import documentation (for JDM units)</li>
+                            <li>Modification records</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h5>3. Physical Inspection</h5>
+                        <ul>
+                            <li>Paint depth measurements</li>
+                            <li>Chassis alignment checks</li>
+                            <li>Engine compression testing</li>
+                            <li>Electronics system diagnostics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Performance Benchmarks (2025 Standards)</h3>
+            <div class="performance-data">
+                <table class="specs-table">
+                    <tr>
+                        <th>Configuration</th>
+                        <th>0-100 km/h</th>
+                        <th>Quarter Mile</th>
+                        <th>Top Speed</th>
+                    </tr>
+                    <tr>
+                        <td>Stock (1993-2002)</td>
+                        <td>4.6s</td>
+                        <td>13.1s</td>
+                        <td>250 km/h</td>
+                    </tr>
+                    <tr>
+                        <td>Stage 1 (Modern)</td>
+                        <td>3.8s</td>
+                        <td>11.9s</td>
+                        <td>280 km/h</td>
+                    </tr>
+                    <tr>
+                        <td>Stage 2 (Modern)</td>
+                        <td>3.2s</td>
+                        <td>10.8s</td>
+                        <td>300+ km/h</td>
+                    </tr>
+                    <tr>
+                        <td>Stage 3 (Modern)</td>
+                        <td>2.8s</td>
+                        <td>9.5s</td>
+                        <td>320+ km/h</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Community and Events (2025)</h3>
+            <div class="community-section">
+                <h4>Major Supra Events in India</h4>
+                <ul class="event-list">
+                    <li>National Supra Day (Mumbai) - March 2025</li>
+                    <li>JDM Heritage Meet (Delhi) - July 2025</li>
+                    <li>Supra Owners Club Rally (Bangalore) - September 2025</li>
+                    <li>Track Day Special (Buddh Circuit) - November 2025</li>
+                </ul>
+                
+                <h4>Online Communities</h4>
+                <ul class="community-resources">
+                    <li>Indian Supra Owners Club - 15,000+ members</li>
+                    <li>MK4 Supra Technical Forum - 25,000+ threads</li>
+                    <li>2JZ Enthusiasts India - 8,000+ members</li>
+                    <li>Supra Restoration Network - 5,000+ projects</li>
+                </ul>
+            </div>
+
+            <h3>Future-Proofing Your MK4 (2025-2030)</h3>
+            <div class="future-proofing">
+                <p style="color: #000000;">As automotive technology evolves, keeping your MK4 Supra relevant and reliable requires strategic planning:</p>
+                <div class="modernization-tips">
+                    <ul>
+                        <li>Consider hybrid ECU systems for improved efficiency</li>
+                        <li>Upgrade to modern charging and electrical systems</li>
+                        <li>Install advanced security and tracking systems</li>
+                        <li>Implement preventive preservation measures</li>
+                        <li>Document all modifications and maintenance</li>
+                    </ul>
+                </div>
+                
+                <div class="preservation-notes">
+                    <h4>Long-term Storage Recommendations</h4>
+                    <ul>
+                        <li>Climate-controlled environment (18-22°C)</li>
+                        <li>Humidity control systems</li>
+                        <li>Regular fluid circulation</li>
+                        <li>Battery maintenance systems</li>
+                        <li>UV protection measures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <style>
+                .verification-steps {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 2rem;
+                    margin: 2rem 0;
+                }
+
+                .step {
+                    background: rgba(255,255,255,0.05);
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    border: 1px solid rgba(255,255,255,0.1);
+                }
+
+                .specs-table {
+                    width: 100%;
+                    margin: 2rem 0;
+                    border-collapse: collapse;
+                }
+
+                .specs-table th, .specs-table td {
+                    padding: 1rem;
+                    text-align: left;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+
+                .specs-table th {
+                    background: rgba(255,255,255,0.05);
+                }
+
+                .community-section {
+                    background: rgba(0,0,0,0.3);
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 2rem 0;
+                }
+
+                .event-list, .community-resources {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .event-list li, .community-resources li {
+                    padding: 0.5rem 0;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+
+                .future-proofing {
+                    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(50,50,50,0.3) 100%);
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 2rem 0;
+                }
+            </style>
+
+            <h3>Technical Specifications and Performance</h3>
+            <p style="color: #000000;">The Toyota Supra MK4, produced from 1993 to 2002, features the legendary 2JZ-GTE twin-turbo engine. This 3.0-liter inline-six powerplant delivers 320 horsepower and 315 lb-ft of torque in stock form, enabling 0-100 km/h acceleration in 4.6 seconds and an electronically limited top speed of 250 km/h (155 mph).</p>
+
+            <h3>Market Value and Investment Potential</h3>
+            <p style="color: #000000;">As of 2025, Toyota Supra MK4 prices range from ₹65 lakhs to ₹2.5 crore, depending on condition, modifications, and specification. Clean, original Turbo models with manual transmission command premium prices, while modified examples offer excellent value for enthusiasts seeking performance potential.</p>
+
+            <h3>Maintenance and Reliability</h3>
+            <p style="color: #000000;">The MK4 Supra is renowned for its robust build quality and reliable 2JZ engine. Regular maintenance includes oil changes every 5,000 kilometers, timing belt replacement at 100,000 kilometers, and turbo system inspections. Most components are readily available, though some interior trim pieces may require sourcing from specialists.</p>
+
+            <h3>Popular Modifications and Tuning</h3>
+            <p style="color: #000000;">Common modifications include ECU tuning, upgraded turbochargers, strengthened transmission components, and enhanced cooling systems. The 2JZ-GTE engine is famous for safely handling power outputs exceeding 800 horsepower with appropriate supporting modifications.</p>
+
+            <h3>Buying Guide Essentials</h3>
+            <ul class="seo-list" >
+                <li style="color: #000000;">Verify chassis number authenticity and production date</li>
+                <li style="color: #000000;">Check for rust in wheel wells and underbody</li>
+                <li style="color: #000000;">Inspect turbo system for smooth operation</li>
+                <li style="color: #000000;">Verify transmission condition, especially in manual models</li>
+                <li style="color: #000000;">Review modification history and supporting documentation</li>
+                <li style="color: #000000;">Assess interior electronics and air conditioning functionality</li>
+            </ul>
+
+            <h3>Common Issues and Solutions</h3>
+            <p style="color: #000000;">Key areas to monitor include turbocharger seals, transmission synchros in manual models, and potential oil consumption in high-mileage engines. Most issues are well-documented with established solutions available through specialist workshops and online communities.</p>
+
+            <h3>Cultural Impact and Legacy</h3>
+            <p style="color: #000000;">The MK4 Supra's starring role in "The Fast and the Furious" franchise, combined with its impressive tuning potential, has elevated it to legendary status in car culture. Its influence extends beyond automotive circles into popular media, gaming, and motorsport.</p>
+
+            <div  class="seo-table">
+                <h4>Quick Reference Guide</h4>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Specification</th>
+                    </tr>
+                    <tr>
+                        <td>Engine Type</td>
+                        <td>3.0L 2JZ-GTE Twin-Turbo</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission Options</td>
+                        <td>6-speed Manual / 4-speed Automatic</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>1,615 kg (3,563 lbs)</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Efficiency</td>
+                        <td>8-10 km/l (city) / 10-12 km/l (highway)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <style>
+            .seo-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+                color: var(--text-light);
+            }
+            
+            .seo-container h2 {
+                color: var(--highlight);
+                margin-bottom: 1.5rem;
+                font-size: 2.5rem;
+            }
+            
+            .seo-container h3 {
+                color: #e24a4a;
+                margin: 2rem 0 1rem;
+                font-size: 1.8rem;
+            }
+            
+            .seo-container p {
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                color: #ccc;
+            }
+            
+            .seo-list {
+                list-style: none;
+                padding: 0;
+                margin: 1.5rem 0;
+            }
+            
+            .seo-list li {
+                padding: 0.5rem 0;
+                position: relative;
+                padding-left: 1.5rem;
+                color: #ccc;
+            }
+            
+            .seo-list li:before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: var(--highlight);
+            }
+            
+            .seo-table {
+                margin: 2rem 0;
+                background: rgba(0,0,0,0.3);
+                border-radius: 10px;
+                padding: 1.5rem;
+            }
+            
+            .seo-table h4 {
+                color: var(--highlight);
+                margin-bottom: 1rem;
+            }
+            
+            .seo-table table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            .seo-table th, .seo-table td {
+                padding: 0.8rem;
+                text-align: left;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .seo-table th {
+                color: #e24a4a;
+            }
+            
+            .seo-table td {
+                color: #ccc;
+            }
+        </style>
     </section>
 
     <!-- Featured Stories Section -->
