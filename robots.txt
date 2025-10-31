@@ -2,6 +2,16 @@ User-agent: *
 Allow: /
 Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
 
+# Allow crawling of all content
+Allow: /pages/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Optimize crawl rate
+Crawl-delay: 1
+Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
+
 # Allow all bots to access these directories
 Allow: /css/
 Allow: /js/
