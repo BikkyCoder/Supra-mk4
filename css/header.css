@@ -1,55 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Header CSS Variables */
+:root {
+    --primary-white: #ffffff;
+    --primary-black: #000000;
+    --primary-purple: #6C63FF;
+    --text-dark: #1a1a1a;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition-standard: all 0.3s ease;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: var(--transition-standard);
+    border-bottom: 1px solid var(--border-light);
+}
 
-    <!-- SEO Meta Tags -->
-    <title>Toyota Supra MK4 | The JDM Legend | 2JZ-GTE Perfection 2025</title>
-    <meta name="description"
-        content="Experience the legendary Toyota Supra MK4, featuring the iconic 2JZ-GTE engine. Discover why this JDM masterpiece continues to dominate both street and track in 2025. From stock 320HP to 1200HP+ builds.">
-    <meta name="keywords"
-        content="toyota supra mk4, 2jz-gte engine, jdm legend, mk4 supra specs, supra mk4 exhaust sound, mk4 vs mk5 supra, supra tuning guide, jdm culture, twin turbo supra">
+.header-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- Favicon Setup -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ff4e50">
-    <meta name="theme-color" content="#000000">
+.header.scrolled {
+    padding: 0.75rem 0;
+    box-shadow: var(--shadow-sm);
+}
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Toyota Supra MK4 - The Ultimate JDM Legend | 2JZ-GTE Guide 2025">
-    <meta property="og:description"
-        content="Discover the power of JDM perfection. From legendary 2JZ-GTE engine to iconic design, explore why the MK4 Supra remains undefeated.">
-    <meta property="og:image" content="/images/supra-mk4-hero.jpg">
-    <meta property="og:url" content="https://supramk4.bikkycoder.com/">
-    <meta property="og:type" content="website">
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Toyota Supra MK4 - JDM Legend Lives">
-    <meta name="twitter:description"
-        content="Experience 2JZ-GTE perfection. The ultimate guide to Toyota's masterpiece.">
-    <meta name="twitter:image" content="/images/supra-mk4-hero.jpg">
+.logo-image {
+    height: 32px;
+    width: auto;
+    transition: var(--transition-standard);
+}
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/fonts/racing-sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: var(--transition-standard);
+}
 
-    <!-- Modern CSS Reset -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-    <!-- Header CSS -->
-    <link rel="stylesheet" href="/css/header.css">
+.nav-item {
+    position: relative;
+}
 
-    <style>
-        :root {
+.nav-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    transition: var(--transition-standard);
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: #6C63FF;
+}
+
+.nav-link.active {
+    color: #6C63FF;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--text-dark);
+    transition: var(--transition-standard);
+}
+
+.nav-link:hover {
+    color: var(--text-dark);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--text-dark);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.header-cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-contact {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-black);
+    color: var(--primary-white);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-standard);
+    border: 1px solid var(--primary-black);
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.mobile-menu-icon {
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    position: relative;
+    transition: var(--transition-standard);
+}
+
+.mobile-menu-icon::before,
+.mobile-menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: var(--transition-standard);
+}
+
+.mobile-menu-icon::before {
+    top: -6px;
+}
+
+.mobile-menu-icon::after {
+    bottom: -6px;
+}
+
+/* Mobile Menu Active States */
+.mobile-menu-toggle.active .mobile-menu-icon {
+    background: transparent;
+}
+
+.mobile-menu-toggle.active .mobile-menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active .mobile-menu-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .header-container {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .header-cta {
+        display: none;
+    }
+}
+
+
+ :root {
             --primary-white: #ffffff;
             --primary-black: #000000;
             --primary-purple: #6C63FF;
@@ -1712,855 +1888,3 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
-</head>
-
-<body>
-    <!-- Header Component (Imported from components/header-component.html) -->
-    <div id="header-placeholder"></div>
-    <script>
-        // Load header component
-        fetch('/components/header-component.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-    </script>
-
-    <section class="hero">
-        <div class="legendary-badge">LEGENDARY STATUS</div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Toyota Supra MK4: <br>A Timeless Legend</h1>
-                <p>Experience the raw power and iconic design that made the MK4 Supra a symbol of automotive excellence.
-                    From its twin-turbo engine to its timeless aesthetics, discover why this masterpiece continues to
-                    captivate enthusiasts worldwide.</p>
-                <div class="hero-buttons">
-                    <a href="pages/specifications.html" class="btn-primary">View Specifications</a>
-                    <a href="pages/tuning-guide.html" class="btn-secondary">Tuning Guide</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="/images/flux_krea_00021_.png" alt="Toyota Supra MK4 Side View" class="hero-img">
-            </div>
-        </div>
-        <div class="performance-stats">
-            <div class="stat-item">
-                <div class="stat-value">320</div>
-                <div class="stat-label">Stock HP</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">4.6s</div>
-                <div class="stat-label">0-60 mph</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">1200+</div>
-                <div class="stat-label">Max Tuned HP</div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Page Navigation Section -->
-    <section class="page-navigation">
-        <div class="container">
-            <h2 class="section-title">Explore The Supra MK4</h2>
-            <div class="page-grid">
-                <a href="pages/specifications.html" class="page-card">
-                    <div class="page-icon">📊</div>
-                    <h3>Specifications</h3>
-                    <p>Complete technical details and performance specs</p>
-                </a>
-
-                <a href="pages/modifications.html" class="page-card">
-                    <div class="page-icon">🔧</div>
-                    <h3>Modifications</h3>
-                    <p>Popular mods and upgrade guides</p>
-                </a>
-
-                <a href="pages/tuning-guide.html" class="page-card">
-                    <div class="page-icon">⚡</div>
-                    <h3>Tuning Guide</h3>
-                    <p>2JZ-GTE tuning and optimization tips</p>
-                </a>
-
-                <a href="pages/tuning-simulator.html" class="page-card">
-                    <div class="page-icon">🎮</div>
-                    <h3>Tuning Simulator</h3>
-                    <p>Interactive performance simulator</p>
-                </a>
-
-                <a href="pages/generations.html" class="page-card">
-                    <div class="page-icon">📘</div>
-                    <h3>Generations</h3>
-                    <p>History and evolution of the Supra</p>
-                </a>
-
-                <a href="pages/technical-guide.html" class="page-card">
-                    <div class="page-icon">🔬</div>
-                    <h3>Technical Guide</h3>
-                    <p>In-depth technical analysis</p>
-                </a>
-
-                <a href="pages/regional-pricing.html" class="page-card">
-                    <div class="page-icon">💰</div>
-                    <h3>Regional Pricing</h3>
-                    <p>Market values and price guides</p>
-                </a>
-
-                <a href="pages/components.html" class="page-card">
-                    <div class="page-icon">🔩</div>
-                    <h3>Components</h3>
-                    <p>OEM and aftermarket parts guide</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Hero Section -->
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <h2 class="section-title">The <span>Legend</span></h2>
-        <div class="container about-container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <div class="about-header">
-                        <span class="about-badge">Heritage</span>
-                        <h3 class="about-subtitle">A Journey Through Automotive Excellence</h3>
-                    </div>
-                    <div class="about-text">
-                        <p class="about-intro">Born in 1993, the fourth-generation Toyota Supra (A80) emerged as more
-                            than just a sports car—it became an icon that would define an era of Japanese automotive
-                            excellence.</p>
-
-                        <div class="about-features">
-                            <div class="feature-item">
-                                <h4>Engineering Marvel</h4>
-                                <p>At its heart beats the legendary 2JZ-GTE engine—a 3.0-liter inline-six masterpiece
-                                    equipped with sequential twin turbochargers. This powerplant wasn't just built for
-                                    performance; it was overengineered to handle immense power upgrades, making it one
-                                    of the most reliable high-performance engines ever created.</p>
-                            </div>
-
-                            <div class="feature-item">
-                                <h4>Design Philosophy</h4>
-                                <p>The MK4 Supra's design was revolutionary for its time. The flowing lines, distinctive
-                                    headlights, and that iconic rear wing created a silhouette that remains timeless.
-                                    Chief Engineer Isao Tsuzuki's vision was to create a car that could compete with
-                                    European exotics while maintaining Japanese reliability.</p>
-                            </div>
-
-                            <div class="feature-item">
-                                <h4>Racing Heritage</h4>
-                                <p>From dominating the Japanese Grand Touring Car Championship (JGTC) to setting records
-                                    at time attack events worldwide, the MK4 Supra proved its racing pedigree. Its
-                                    success in motorsports further cemented its status as a true driver's car.</p>
-                            </div>
-
-                            <div class="feature-item">
-                                <h4>Cultural Impact</h4>
-                                <p>The MK4 Supra transcended beyond automotive culture, becoming a star in movies, video
-                                    games, and popular media. Its appearance in "The Fast and the Furious" franchise
-                                    introduced it to a new generation of enthusiasts, creating an enduring legacy that
-                                    continues to inspire.</p>
-                            </div>
-                        </div>
-
-                        <div class="about-highlights">
-                            <h4>Key Innovations</h4>
-                            <ul class="highlights-list">
-                                <li>
-                                    <span class="highlight-badge">01</span>
-                                    <div class="highlight-content">
-                                        <strong>Sequential Twin-Turbo System</strong>
-                                        <p>Advanced for its time, providing smooth power delivery across the entire RPM
-                                            range</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="highlight-badge">02</span>
-                                    <div class="highlight-content">
-                                        <strong>Getrag V160/161 Transmission</strong>
-                                        <p>One of the strongest manual transmissions ever fitted to a production car</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="highlight-badge">03</span>
-                                    <div class="highlight-content">
-                                        <strong>Advanced Aerodynamics</strong>
-                                        <p>0.31 drag coefficient and functional design elements for high-speed stability
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-images">
-                    <div class="image-grid">
-                        <img src="/images/Toyota 2JZ-GTE Engine.png" alt="2JZ-GTE Engine Bay" class="about-img engine">
-                        <img src="/images/Supra MK4 Single Turbo Kit.png" alt="Supra MK4 Profile"
-                            class="about-img profile">
-                        <img src="/images/supra-rear.jpg" alt="Supra MK4 Rear View" class="about-img rear">
-                    </div>
-                    <div class="achievement-counter">
-                        <div class="counter-item">
-                            <span class="counter-value">30+</span>
-                            <span class="counter-label">Years of Legacy</span>
-                        </div>
-                        <div class="counter-item">
-                            <span class="counter-value">11,000+</span>
-                            <span class="counter-label">Units Produced</span>
-                        </div>
-                        <div class="counter-item">
-                            <span class="counter-value">1,000+</span>
-                            <span class="counter-label">HP Potential</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specifications Section -->
-    <section class="specs-section" id="specifications">
-        <div class="specs-header">
-            <h2 class="section-title">Technical <span>Specifications</span></h2>
-            <p class="specs-subtitle">Engineering excellence meets Japanese precision in every detail</p>
-        </div>
-
-        <div class="specs-container">
-            <div class="specs-grid">
-                <div class="specs-card powertrain">
-                    <div class="specs-card-header">
-                        <span class="specs-icon">⚡</span>
-                        <h3>Powertrain</h3>
-                    </div>
-                    <div class="specs-details">
-                        <div class="specs-row">
-                            <span class="specs-label">Engine Code</span>
-                            <span class="specs-value">2JZ-GTE</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Configuration</span>
-                            <span class="specs-value">Inline-6, Twin-Turbo</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Displacement</span>
-                            <span class="specs-value">2,997 cc</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Stock Power</span>
-                            <span class="specs-value">320 HP @ 5,600 RPM</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Stock Torque</span>
-                            <span class="specs-value">315 lb-ft @ 4,000 RPM</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="specs-card transmission">
-                    <div class="specs-card-header">
-                        <span class="specs-icon">⚙️</span>
-                        <h3>Transmission</h3>
-                    </div>
-                    <div class="specs-details">
-                        <div class="specs-row">
-                            <span class="specs-label">Manual</span>
-                            <span class="specs-value">Getrag V160 6-Speed</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Automatic</span>
-                            <span class="specs-value">A340E 4-Speed</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Drivetrain</span>
-                            <span class="specs-value">Rear-Wheel Drive</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Final Drive</span>
-                            <span class="specs-value">3.13:1 (Manual)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="specs-card performance">
-                    <div class="specs-card-header">
-                        <span class="specs-icon">🏁</span>
-                        <h3>Performance</h3>
-                    </div>
-                    <div class="specs-details">
-                        <div class="specs-row">
-                            <span class="specs-label">0-60 mph</span>
-                            <span class="specs-value">4.6s (Manual)</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">1/4 Mile</span>
-                            <span class="specs-value">13.1s @ 109 mph</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Top Speed</span>
-                            <span class="specs-value">155 mph (Limited)</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Skidpad</span>
-                            <span class="specs-value">0.95g</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="specs-card dimensions">
-                    <div class="specs-card-header">
-                        <span class="specs-icon">📏</span>
-                        <h3>Dimensions</h3>
-                    </div>
-                    <div class="specs-details">
-                        <div class="specs-row">
-                            <span class="specs-label">Weight</span>
-                            <span class="specs-value">1,565 kg (3,450 lbs)</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Length</span>
-                            <span class="specs-value">4,515 mm (177.8 in)</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Wheelbase</span>
-                            <span class="specs-value">2,550 mm (100.4 in)</span>
-                        </div>
-                        <div class="specs-row">
-                            <span class="specs-label">Track F/R</span>
-                            <span class="specs-value">1,520/1,510 mm</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="specs-highlight">
-                <div class="highlight-box">
-                    <h4>Engine Highlights</h4>
-                    <ul class="highlight-list">
-                        <li>Cast Iron Block with Aluminum Head</li>
-                        <li>Sequential Twin Turbochargers</li>
-                        <li>24-Valve DOHC</li>
-                        <li>Air-to-Air Intercooler</li>
-                        <li>Electronic Fuel Injection</li>
-                    </ul>
-                </div>
-                <div class="highlight-box">
-                    <h4>Notable Features</h4>
-                    <ul class="highlight-list">
-                        <li>Toyota's First OBD-II System</li>
-                        <li>Advanced Aerodynamics (Cd: 0.31)</li>
-                        <li>Sport-Tuned Suspension</li>
-                        <li>Limited Slip Differential</li>
-                        <li>4-Channel ABS</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <h2 class="section-title">Timeless <span>Beauty</span></h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="/images/supra-front.jpg" alt="Supra MK4 Front View" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="/images/supra-side.jpg" alt="Supra MK4 Side Profile" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="/images/supra-engine.jpg" alt="2JZ-GTE Engine Bay" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="/images/supra-rear.jpg" alt="Supra MK4 Rear View" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    
-
-    <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Lazy load images
-        document.addEventListener("DOMContentLoaded", function () {
-            var lazyImages = [].slice.call(document.querySelectorAll("img[loading='lazy']"));
-
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.removeAttribute("loading");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(function (lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            }
-        });
-    </script>
-
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Car",
-      "name": "Toyota Supra MK4",
-      "manufacturer": {
-        "@type": "Organization",
-        "name": "Toyota"
-      },
-      "model": "Supra A80",
-      "vehicleEngine": {
-        "@type": "EngineSpecification",
-        "engineType": "2JZ-GTE Twin Turbo",
-        "enginePower": {
-          "@type": "QuantitativeValue",
-          "value": "320",
-          "unitCode": "BHP"
-        }
-      },
-      "description": "The legendary Toyota Supra MK4, featuring the iconic 2JZ-GTE twin-turbo engine, capable of producing over 1000HP with modifications.",
-      "image": "/images/supra-mk4-hero.jpg",
-      "url": "https://supramk4.bikkycoder.com/"
-        }
-
-        // Header Scripts
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.header');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Scroll Header Effect
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Mobile Menu Toggle
-            mobileMenuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            });
-
-            // Close mobile menu when clicking links
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-            });
-        });
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://bikkycoder.github.io/Supra-mk4/"
-      },
-      "headline": "Toyota Supra MK4 Price in India 2025 - Complete Guide with Specifications and Modified Builds",
-      "description": "Comprehensive guide to Toyota Supra MK4 prices in India, including second-hand prices in Rajasthan, specifications, top speed records, and modified builds up to 1200HP+.",
-      "image": "https://bikkycoder.github.io/Supra-mk4/images/supra-mk4-hero.jpg",
-      "datePublished": "2025-10-16",
-      "dateModified": "2025-10-16",
-      "author": {
-        "@type": "Person",
-        "name": "Bikky Coder"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Supra-MK4",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://bikkycoder.github.io/Supra-mk4/images/logo.png"
-        }
-      }
-    }
-    </script>
-
-    <!-- Car Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Car",
-      "name": "Toyota Supra MK4",
-      "manufacturer": "Toyota",
-      "model": "Supra",
-      "vehicleModelDate": "1993-2002",
-      "bodyType": "Coupe",
-      "fuelType": "Gasoline",
-      "engineType": "2JZ-GTE Twin-Turbo Inline-6",
-      "engineDisplacement": "2997 cc",
-      "horsepower": "321 hp",
-      "torque": "315 lb-ft",
-      "acceleration": "4.6 sec 0-60 mph",
-      "topSpeed": "155 mph",
-      "transmission": "6-speed manual",
-      "weight": "3,417 lbs",
-      "description": "The legendary Toyota Supra MK4, featuring the iconic 2JZ-GTE engine, known for its incredible tuning potential and ability to achieve 1200+ horsepower with modifications."
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How much horsepower does a stock Supra MK4 have?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A stock Toyota Supra MK4 with the 2JZ-GTE engine produces 321 horsepower and 315 lb-ft of torque in stock form. However, it's famous for its ability to handle much more power with modifications."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What makes the Supra MK4 2JZ engine so special?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The 2JZ-GTE engine is renowned for its overbuilt construction, closed deck design, and strong internals that can handle up to 1200hp with stock components. Its inline-6 configuration and sequential twin-turbo setup make it one of the most reliable and tunable engines ever made."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is a Supra MK4 worth in 2025?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "As of 2025, Toyota Supra MK4 prices range from $80,000 to $200,000+ depending on condition, modifications, and mileage. Clean, low-mileage examples can command premium prices due to their collectible status."
-        }
-      }]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is the horsepower of a stock Toyota Supra MK4 2JZ-GTE engine?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The stock Toyota Supra MK4 with the 2JZ-GTE engine produces 320 horsepower and 315 lb-ft of torque. This twin-turbo setup is famous for its ability to handle much more power with modifications."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is the top speed of a Toyota Supra MK4?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The stock Toyota Supra MK4 has an electronically limited top speed of 155 mph (250 km/h). Without the limiter, it can achieve higher speeds depending on modifications and conditions."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What makes the 2JZ-GTE engine so special?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The 2JZ-GTE is renowned for its robust cast-iron block, overbuilt internals, and excellent cooling system. It can reliably handle up to 1000+ horsepower with proper modifications, making it one of the most tunable engines ever produced."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What transmission does the Supra MK4 use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Toyota Supra MK4 came with either a 6-speed Getrag V160 manual transmission (considered one of the strongest manual transmissions ever made) or a 4-speed automatic transmission."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is the 0-60 mph time of a stock Supra MK4?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A stock Toyota Supra MK4 Turbo with manual transmission can accelerate from 0-60 mph in approximately 4.6 seconds."
-        }
-      }]
-    }</script>
-
-    <!-- Navigation Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://supramk4.bikkycoder.com/"
-      }, {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Specifications",
-        "item": "https://supramk4.bikkycoder.com/pages/specifications.html"
-      }, {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Modifications",
-        "item": "https://supramk4.bikkycoder.com/pages/modifications.html"
-      }, {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "Generations",
-        "item": "https://supramk4.bikkycoder.com/pages/generations.html"
-      }]
-    }</script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://supramk4.bikkycoder.com/"
-      },
-      "headline": "Toyota Supra MK4: Ultimate 2JZ-GTE Performance & Tuning Guide 2025",
-      "description": "Expert guide to the Toyota Supra MK4, covering 2JZ-GTE engine specs, performance tuning, market values, and cultural impact including Fast & Furious legacy",
-      "image": "https://supramk4.bikkycoder.com/images/flux_krea_00021_.png",
-      "datePublished": "2025-10-23",
-      "dateModified": "2025-10-23",
-      "author": {
-        "@type": "Person",
-        "name": "Bikky Coder",
-        "url": "https://supramk4.bikkycoder.com/about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Bikky Cars",
-        "url": "https://supramk4.bikkycoder.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://supramk4.bikkycoder.com/images/logo.png"
-        }
-      },
-      "alternateName": [
-        "Toyota Supra MK4",
-        "Supra MK4 India",
-        "A80 Supra",
-        "トヨタスープラMK4",
-        "MK4 Supra India",
-        "2JZ-GTE Supra"
-      ],
-      "datePublished": "2025-10-22",
-      "dateModified": "2025-10-22"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Toyota Supra MK4 - The Ultimate JDM Legend Guide 2025",
-      "description": "Complete guide to the Toyota Supra MK4, featuring specs, modifications, and buying advice",
-      "image": "images/flux_krea_00021_.png",
-      "datePublished": "2025-09-30",
-      "dateModified": "2025-10-03",
-      "author": {
-        "@type": "Organization",
-        "name": "Bikky Coder"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Supra MK4 Fan Site",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "images/flux_krea_00021_.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://bikkycoder.github.io/Supra-mk4/"
-      },
-      "keywords": "Toyota Supra MK4, 2JZ-GTE, JDM, Sports Cars, Import Guide, Performance Tuning",
-      "articleSection": "Automotive",
-      "inLanguage": "en"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Vehicle",
-      "name": "Toyota Supra MK4",
-      "model": "Supra",
-      "manufacturer": {
-        "@type": "Organization",
-        "name": "Toyota"
-      },
-      "vehicleEngine": {
-        "@type": "EngineSpecification",
-        "name": "2JZ-GTE",
-        "enginePower": {
-          "@type": "QuantitativeValue",
-          "value": "321",
-          "unitCode": "BHP"
-        },
-        "engineDisplacement": {
-          "@type": "QuantitativeValue",
-          "value": "3.0",
-          "unitCode": "L"
-        }
-      },
-      "vehicleConfiguration": "Twin-turbo inline-6",
-      "bodyType": "Sports Car",
-      "fuelType": "Gasoline",
-      "productionDate": "1993/2002"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Toyota Supra MK4",
-      "description": "Legendary JDM sports car featuring the 2JZ-GTE engine",
-      "brand": {
-        "@type": "Brand",
-        "name": "Toyota"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "INR",
-        "priceRange": "₹50,00,000 - ₹1,50,00,000",
-        "availability": "https://schema.org/InStock"
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4.9",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Bikky Coder"
-        }
-      }
-    }
-    </script>
-
-
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="images/flux_krea_00021_.png" alt="Supra MK4 Logo" class="footer-logo-img">
-                        <h3 class="footer-brand-name">SUPRA MK4</h3>
-                    </div>
-                    <p class="footer-tagline">Unleashing the Legend: Pure JDM Performance</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Follow us on Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Join us on Discord">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Subscribe on YouTube">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Follow us on Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="pages/specifications.html">Specifications</a></li>
-                            <li><a href="pages/generations.html">Generations</a></li>
-                            <li><a href="pages/modifications.html">Modifications</a></li>
-                            <li><a href="pages/tuning-guide.html">Tuning Guide</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="pages/technical-guide.html">Technical Guide</a></li>
-                            <li><a href="pages/components.html">Components</a></li>
-                            <li><a href="pages/regional-pricing.html">Regional Pricing</a></li>
-                            <li><a href="pages/community.html">Community</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Community</h4>
-                        <ul>
-                            <li><a href="#forum">Forum</a></li>
-                            <li><a href="#events">Events</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <p>Subscribe to our newsletter for the latest Supra news, builds, and community updates.</p>
-                    <form class="newsletter-form" action="#" method="POST">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-info">
-                    <p class="copyright">&copy; 2025 Supra MK4 Community. All rights reserved.</p>
-                    <div class="footer-legal">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Use</a>
-                        <a href="#cookies">Cookie Policy</a>
-                    </div>
-                </div>
-                <p class="footer-credits">Crafted with ❤️ by BikkyCoder for the JDM Community</p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>

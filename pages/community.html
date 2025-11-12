@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Supra MK4 Community | Connect with Enthusiasts</title>
+    <meta name="description" content="Join the Supra MK4 community. Connect with enthusiasts, share builds, get advice, participate in events, and be part of a passionate global Supra family.">
+    <meta name="keywords" content="Supra MK4 community, enthusiasts, forums, events, meetups, builds, sharing, social">
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --primary-gray: #333333;
+            --secondary-gray: #666666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --text-dark: #1a1a1a;
+            --text-light: #888888;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition-standard: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-gray) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-red);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Community Section */
+        .community-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: var(--secondary-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition-standard);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+            line-height: 1.8;
+        }
+
+        /* Members Section */
+        .members-section {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+            text-align: center;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .member-avatar {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-red), #ff6b6b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--accent-red);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            font-size: 0.85rem;
+            color: var(--secondary-gray);
+            line-height: 1.6;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-standard);
+        }
+
+        .event-card:hover {
+            border-color: var(--accent-red);
+            box-shadow: var(--shadow-md);
+        }
+
+        .event-header {
+            background: linear-gradient(135deg, var(--primary-gray), var(--primary-black));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .event-date {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        .event-month {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .event-content {
+            padding: 2rem;
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .event-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-description {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-btn {
+            display: inline-block;
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-standard);
+            font-size: 0.9rem;
+        }
+
+        .event-btn:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-gray) 100%);
+            color: var(--white);
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition-standard);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn-primary {
+            background: var(--accent-red);
+            color: var(--white);
+        }
+
+        .cta-btn-primary:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-black);
+        }
+
+        /* Discussion Section */
+        .discussion-section {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .discussion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .discussion-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-red);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+        }
+
+        .discussion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .discussion-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+        }
+
+        .discussion-preview {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .discussion-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .replies-badge {
+            background: var(--light-gray);
+            color: var(--primary-black);
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--light-gray);
+            text-align: center;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+    <script>
+        // Load header component
+        fetch('../components/header-component.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Supra MK4 Community</h1>
+            <p>Join thousands of passionate enthusiasts worldwide. Share your builds, get expert advice, attend events, and be part of a thriving global family of Supra lovers.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Daily Discussions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Active Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="community-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Join Our Community?</h2>
+                <p>Connect with fellow Supra enthusiasts and unlock a world of knowledge, support, and friendship</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Active Forums</h3>
+                    <p class="feature-text">Discuss modifications, share experiences, ask questions, and get expert advice from experienced builders and mechanics.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Build Showcase</h3>
+                    <p class="feature-text">Share your modifications, before & after photos, and project progress with our supportive community of enthusiasts.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Knowledge Base</h3>
+                    <p class="feature-text">Access comprehensive guides, technical documentation, and tutorials created by and for the community.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Meetups & Events</h3>
+                    <p class="feature-text">Connect in person with regional meetups, car shows, track days, and exclusive community events worldwide.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">Expert Network</h3>
+                    <p class="feature-text">Connect with professional tuners, mechanics, and vendors who are active community members.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Exclusive Perks</h3>
+                    <p class="feature-text">Enjoy discounts with partner shops, early access to guides, and recognition for your contributions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Members -->
+    <section class="members-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Community Leaders</h2>
+                <p>Meet some of our most active and respected community members</p>
+            </div>
+
+            <div class="members-grid">
+                <!-- Member 1 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #FF6B6B, #FF8E72);">👨‍🔧</div>
+                    <div class="member-info">
+                        <div class="member-name">Marcus Chen</div>
+                        <div class="member-role">Tuning Expert</div>
+                        <div class="member-bio">650hp builds specialist with 8+ years experience. Active contributor to technical guides.</div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #4A90E2, #357ABD);">👩‍🏫</div>
+                    <div class="member-info">
+                        <div class="member-name">Sarah Johnson</div>
+                        <div class="member-role">Suspension Guru</div>
+                        <div class="member-bio">Suspension expert helping members optimize handling and stance for their builds.</div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #FF1493, #FF69B4);">👨‍💼</div>
+                    <div class="member-info">
+                        <div class="member-name">Alex Rivera</div>
+                        <div class="member-role">Community Manager</div>
+                        <div class="member-bio">Organizing events and keeping the community engaged and welcoming for all members.</div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #FFA500, #FFB84D);">👨‍🎨</div>
+                    <div class="member-info">
+                        <div class="member-name">James Wilson</div>
+                        <div class="member-role">Exterior Design</div>
+                        <div class="member-bio">Expert in wraps, paint, and visual modifications. Portfolio of stunning Supras.</div>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #00D084, #00E8A8);">👨‍🔬</div>
+                    <div class="member-info">
+                        <div class="member-name">David Kim</div>
+                        <div class="member-role">Engine Builder</div>
+                        <div class="member-bio">Professional engine builder sharing insights on reliability and performance optimization.</div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="member-card">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #9C27B0, #BA55D3);">👩‍💻</div>
+                    <div class="member-info">
+                        <div class="member-name">Emily Zhang</div>
+                        <div class="member-role">Tech Specialist</div>
+                        <div class="member-bio">ECU tuning and electronics expert providing technical support to the community.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join our community at exciting meetups, shows, and track days</p>
+            </div>
+
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">15</div>
+                        <div class="event-month">November 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Tokyo Supra Meet</h3>
+                        <div class="event-meta">📍 Tokyo, Japan</div>
+                        <p class="event-description">Monthly meetup for Supra enthusiasts in Tokyo. Share builds, network, and enjoy Japanese automotive culture.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">22</div>
+                        <div class="event-month">November 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">LA Car Show</h3>
+                        <div class="event-meta">📍 Los Angeles, USA</div>
+                        <p class="event-description">Annual Supra showcase with custom builds, vendors, and industry experts. Meet community members from across North America.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">30</div>
+                        <div class="event-month">November 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Europe Meetup</h3>
+                        <div class="event-meta">📍 Berlin, Germany</div>
+                        <p class="event-description">European Supra gathering bringing together enthusiasts from UK, Germany, France, and beyond for celebration and learning.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">05</div>
+                        <div class="event-month">December 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Track Day Experience</h3>
+                        <div class="event-meta">📍 Motorsports Park</div>
+                        <p class="event-description">Exclusive track day for community members. Push your Supra to the limit in a safe, organized environment with instructors.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">12</div>
+                        <div class="event-month">December 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Dyno Shootout</h3>
+                        <div class="event-meta">📍 Performance Shop</div>
+                        <p class="event-description">Bring your Supra to compete in our friendly dyno competition. See real numbers and network with fellow builders.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">20</div>
+                        <div class="event-month">December 2025</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Holiday Gathering</h3>
+                        <div class="event-meta">📍 Virtual Event</div>
+                        <p class="event-description">Virtual meetup celebrating the year with prize giveaways, build showcases, and community recognition awards.</p>
+                        <a href="#" class="event-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Discussions -->
+    <section class="discussion-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hot Discussions</h2>
+                <p>Join ongoing conversations in our community forums</p>
+            </div>
+
+            <div class="discussion-grid">
+                <!-- Discussion 1 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">Best Budget Turbo Options 2025</h3>
+                    <p class="discussion-preview">Community members sharing experiences with affordable turbo upgrades. Which models offer best value and reliability?</p>
+                    <div class="discussion-meta">
+                        <span>Started 2 hours ago</span>
+                        <span class="replies-badge">24 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 2 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">300K Mile MK4 Still Running Strong</h3>
+                    <p class="discussion-preview">Amazing journey of a 300,000 mile stock MK4 Supra. Owner shares maintenance secrets and reliability insights.</p>
+                    <div class="discussion-meta">
+                        <span>Started 5 hours ago</span>
+                        <span class="replies-badge">67 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 3 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">Single vs Twin Turbo: The Final Answer</h3>
+                    <p class="discussion-preview">Comprehensive comparison thread. Experts and experienced builders debate the merits of each approach with real data.</p>
+                    <div class="discussion-meta">
+                        <span>Started 1 day ago</span>
+                        <span class="replies-badge">156 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 4 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">My First 500hp Build - Need Advice</h3>
+                    <p class="discussion-preview">First-time builder sharing their journey to 500hp. Asking for experienced advice on next steps and potential issues.</p>
+                    <div class="discussion-meta">
+                        <span>Started 3 days ago</span>
+                        <span class="replies-badge">45 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 5 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">JDM Import Experience: What We Learned</h3>
+                    <p class="discussion-preview">Members sharing their experiences importing MK4 Supras from Japan. Customs, logistics, and legal considerations.</p>
+                    <div class="discussion-meta">
+                        <span>Started 1 week ago</span>
+                        <span class="replies-badge">89 Replies</span>
+                    </div>
+                </div>
+
+                <!-- Discussion 6 -->
+                <div class="discussion-card">
+                    <h3 class="discussion-title">Suspension Geometry: DIY vs Professional Alignment</h3>
+                    <p class="discussion-preview">Technical discussion on proper suspension setup. When to DIY and when to get professional help for perfect alignment.</p>
+                    <div class="discussion-meta">
+                        <span>Started 2 weeks ago</span>
+                        <span class="replies-badge">73 Replies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Ready to Join Our Community?</h2>
+        <p>Connect with thousands of Supra enthusiasts, share your passion, and be part of a global family dedicated to keeping the legend alive</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-btn cta-btn-primary">Join Now</a>
+            <a href="#" class="cta-btn cta-btn-secondary">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Supra MK4 Community. Where legends are celebrated and friendships are forged. Together, we keep the spirit of the Supra alive.</p>
+        </div>
+    </footer>
+</body>
+</html>
