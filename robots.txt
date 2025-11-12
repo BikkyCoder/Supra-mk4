@@ -2,21 +2,46 @@ User-agent: *
 Allow: /
 Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
 
-# Allow crawling of all content
+# Allow crawling of all content - Supra MK4 pages
 Allow: /pages/
 Allow: /images/
 Allow: /css/
 Allow: /js/
+Allow: /index.html
+Allow: /pages/specifications.html
+Allow: /pages/components.html
+Allow: /pages/modifications.html
+Allow: /pages/gallery.html
+Allow: /pages/legacy.html
+Allow: /pages/blog.html
+Allow: /pages/community.html
+Allow: /pages/contact.html
 
-# Optimize crawl rate
+# Disallow private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Optimize crawl rate for major search engines
 Crawl-delay: 1
-Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
+Request-rate: 1/1s
 
-# Allow all bots to access these directories
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /pages/
+# Google specific (faster crawl allowed)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
 
-# Optimize crawling
-Crawl-delay: 10
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block problematic bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
