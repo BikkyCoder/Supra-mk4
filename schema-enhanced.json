@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -39,46 +38,4 @@
     }
   },
   "specialty": "Japanese Performance Cars"
-=======
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://supramk4guide.com/"
-  },
-  "headline": "Toyota Supra MK4 Complete Guide 2025: Price in India, Specs & Performance",
-  "description": "Comprehensive guide covering Toyota Supra MK4 price in India, specifications, 0-100 km/h performance, twin turbo engine details, and modification options.",
-  "image": "images/supra-mk4-hero.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "BikkyCoder"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Supra MK4 Guide",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "images/logo.png"
-    }
-  },
-  "datePublished": "2025-10-28",
-  "dateModified": "2025-10-28",
-  "about": {
-    "@type": "Car",
-    "name": "Toyota Supra MK4",
-    "manufacturer": "Toyota",
-    "model": "Supra",
-    "vehicleEngine": {
-      "@type": "EngineSpecification",
-      "engineType": "2JZ-GTE Twin Turbo",
-      "enginePower": {
-        "@type": "QuantitativeValue",
-        "value": "320",
-        "unitText": "hp"
-      }
-    }
-  },
-  "specialty": "Japanese Performance Cars"
->>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }

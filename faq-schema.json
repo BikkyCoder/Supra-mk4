@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -38,45 +37,4 @@
             "text": "Popular Supra MK4 body kits include the TRD 3000GT kit, Ridox kit, Top Secret kit, and various Fast & Furious style kits. Prices range from ₹2,00,000 for replica kits to ₹10,00,000+ for genuine TRD parts."
         }
     }]
-=======
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-        "@type": "Question",
-        "name": "What is the engine CC of Toyota Supra MK4?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Toyota Supra MK4 comes with a 2997cc (3.0L) 2JZ-GTE twin-turbo engine. This legendary inline-6 engine produces 321 HP in stock form and can be modified to achieve over 1000 HP with proper upgrades."
-        }
-    }, {
-        "@type": "Question",
-        "name": "What is the price of Supra MK4 in Rajasthan?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "As of 2025, a Toyota Supra MK4 in Rajasthan, India can cost between ₹50,00,000 to ₹1,50,00,000 depending on condition and modifications. Prices for the Supra 3.0 variant start from ₹75,00,000 for well-maintained examples."
-        }
-    }, {
-        "@type": "Question",
-        "name": "Where can I find Supra Hot Wheels cars under 1000 rupees?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hot Wheels Supra models, including Fast & Furious editions and Car Culture series, are available under ₹1000 at major toy retailers and online stores in India. Prices range from ₹299 for basic models to ₹999 for premium collectors' editions."
-        }
-    }, {
-        "@type": "Question",
-        "name": "What are the differences between MK4 and MK5 Supra engines?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The MK4 Supra uses Toyota's 2JZ-GTE 3.0L twin-turbo engine producing 321 HP, while the MK5 Supra uses BMW's B58 3.0L single-turbo engine producing 382 HP. Both are inline-6 engines, but the 2JZ-GTE is renowned for its modification potential."
-        }
-    }, {
-        "@type": "Question",
-        "name": "What body kit options are available for Supra MK4?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Popular Supra MK4 body kits include the TRD 3000GT kit, Ridox kit, Top Secret kit, and various Fast & Furious style kits. Prices range from ₹2,00,000 for replica kits to ₹10,00,000+ for genuine TRD parts."
-        }
-    }]
->>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }
