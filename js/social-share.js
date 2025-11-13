@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Social sharing functionality
 function initSocialSharing() {
     const shareButtons = document.querySelectorAll('.share-button');
@@ -35,42 +34,4 @@ function initSocialSharing() {
 }
 
 // Initialize when DOM is loaded
-=======
-// Social sharing functionality
-function initSocialSharing() {
-    const shareButtons = document.querySelectorAll('.share-button');
-    
-    shareButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const network = this.dataset.network;
-            const title = encodeURIComponent(document.title);
-            const url = encodeURIComponent(window.location.href);
-            const description = encodeURIComponent(document.querySelector('meta[name="description"]').content);
-            
-            let shareUrl;
-            
-            switch(network) {
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-                    break;
-                case 'whatsapp':
-                    shareUrl = `https://api.whatsapp.com/send?text=${title}%20${url}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                    break;
-            }
-            
-            window.open(shareUrl, '_blank', 'width=600,height=400');
-        });
-    });
-}
-
-// Initialize when DOM is loaded
->>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 document.addEventListener('DOMContentLoaded', initSocialSharing);
