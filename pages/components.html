@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Supra MK4 Components & Parts | OEM & Aftermarket Guide</title>
+    <meta name="description"
+        content="Complete guide to Toyota Supra MK4 components. Explore OEM parts, aftermarket upgrades, engine components, suspension parts, and performance modifications.">
+    <meta name="keywords"
+        content="Supra MK4 components, parts guide, OEM parts, aftermarket components, engine parts, suspension, performance parts">
+
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --primary-black: #000000;
+            --primary-purple: #6C63FF;
+            --primary-blue: #4A90E2;
+            --accent-blue: #E3F2FD;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #888888;
+            --border-light: rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition-standard: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            text-align: center;
+            margin-top: -1rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-standard);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            background: #3a7bc8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Components Category Section */
+        .components-section {
+            padding: 6rem 0;
+            background: var(--accent-blue);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Grid */
+        .category-list {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .category-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-white);
+            color: var(--text-gray);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            font-weight: 500;
+            transition: var(--transition-standard);
+            font-size: 0.95rem;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-blue);
+            color: var(--primary-white);
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .component-card {
+            background: var(--primary-white);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            transition: var(--transition-standard);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-blue);
+        }
+
+        .component-badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .component-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .component-category {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .component-category span {
+            background: rgba(74, 144, 226, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        .component-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .component-features li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .component-features li::before {
+            content: "✓";
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .learn-more {
+            display: inline-block;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition-standard);
+        }
+
+        .learn-more:hover {
+            color: #3a7bc8;
+            transform: translateX(5px);
+        }
+
+        /* Featured Components Section */
+        .featured-section {
+            padding: 6rem 0;
+            background: var(--primary-white);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .featured-item {
+            background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: var(--transition-standard);
+        }
+
+        .featured-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .featured-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .featured-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .featured-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 6rem 0;
+            background: #f9f9f9;
+        }
+
+        .comparison-table {
+            background: var(--primary-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-top: 3rem;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-dark);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .close-icon {
+            color: #f44336;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #5a9bdd 100%);
+            color: var(--primary-white);
+            text-align: center;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .cta-button {
+            background: var(--primary-white);
+            color: var(--primary-blue);
+        }
+
+        .cta-section .cta-button:hover {
+            background: #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .category-list {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .category-sidebar {
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 1rem;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        // Load header component
+        fetch('../components/header-component.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Supra MK4 Components & Parts</h1>
+            <p class="hero-subtitle">Discover the complete guide to OEM and aftermarket components that make the
+                legendary 2JZ-GTE engine the most tunable powerplant ever built.</p>
+            <button class="cta-button">Explore Components</button>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section class="components-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Categories</h2>
+                <p class="section-subtitle">Browse through various component categories and learn about their
+                    specifications and features.</p>
+            </div>
+
+            <div class="category-list">
+                <div class="category-sidebar">
+                    <button class="category-btn active">All Components</button>
+                    <button class="category-btn">Engine Parts</button>
+                    <button class="category-btn">Turbo System</button>
+                    <button class="category-btn">Fuel System</button>
+                    <button class="category-btn">Cooling System</button>
+                    <button class="category-btn">Transmission</button>
+                </div>
+
+                <div class="components-grid">
+                    <!-- Engine Components -->
+                    <div class="component-card">
+                        <span class="component-badge">Engine</span>
+                        <h3 class="component-name">2JZ-GTE Engine</h3>
+                        <div class="component-category">
+                            <span>Inline-6</span>
+                            <span>Twin-Turbo</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>3.0L Displacement</li>
+                            <li>320 HP Stock</li>
+                            <li>Cast Iron Block</li>
+                            <li>24-Valve DOHC</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+
+                    <!-- Turbo System -->
+                    <div class="component-card">
+                        <span class="component-badge">Turbo</span>
+                        <h3 class="component-name">Sequential Twin Turbos</h3>
+                        <div class="component-category">
+                            <span>Turbocharger</span>
+                            <span>Performance</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>Garrett Turbo Units</li>
+                            <li>Sequential Boost</li>
+                            <li>0.6 Bar Pressure</li>
+                            <li>Air-to-Air Intercooler</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+
+                    <!-- Transmission -->
+                    <div class="component-card">
+                        <span class="component-badge">Transmission</span>
+                        <h3 class="component-name">Getrag V160 Manual</h3>
+                        <div class="component-category">
+                            <span>Manual</span>
+                            <span>6-Speed</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>Strongest Manual Trans</li>
+                            <li>6-Speed Gearbox</li>
+                            <li>Handles 1000+ HP</li>
+                            <li>Limited Slip Diff</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+
+                    <!-- Fuel System -->
+                    <div class="component-card">
+                        <span class="component-badge">Fuel</span>
+                        <h3 class="component-name">Fuel Injection System</h3>
+                        <div class="component-category">
+                            <span>OEM</span>
+                            <span>EFI</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>Electronic Fuel Injection</li>
+                            <li>Direct OBD-II System</li>
+                            <li>Tunable ECU</li>
+                            <li>High-Flow Injectors</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+
+                    <!-- Cooling System -->
+                    <div class="component-card">
+                        <span class="component-badge">Cooling</span>
+                        <h3 class="component-name">Cooling System</h3>
+                        <div class="component-category">
+                            <span>Radiator</span>
+                            <span>Intercooler</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>Aluminum Radiator</li>
+                            <li>Twin-Core Intercooler</li>
+                            <li>OEM Thermostat</li>
+                            <li>Electric Water Pump</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+
+                    <!-- Suspension -->
+                    <div class="component-card">
+                        <span class="component-badge">Suspension</span>
+                        <h3 class="component-name">Sport Suspension</h3>
+                        <div class="component-category">
+                            <span>OEM</span>
+                            <span>Tuned</span>
+                        </div>
+                        <ul class="component-features">
+                            <li>Double-Wish Bone</li>
+                            <li>Coil Spring Setup</li>
+                            <li>4-Channel ABS</li>
+                            <li>Sport-Tuned Dampers</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Components -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Original Components?</h2>
+                <p class="section-subtitle">Understanding the quality and reliability of Supra MK4 components.</p>
+            </div>
+
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <div class="featured-icon">⚙️</div>
+                    <h3 class="featured-title">OEM Quality</h3>
+                    <p class="featured-desc">Factory-engineered components designed and tested by Toyota engineers for
+                        maximum reliability.</p>
+                </div>
+
+                <div class="featured-item">
+                    <div class="featured-icon">🚀</div>
+                    <h3 class="featured-title">Performance Ready</h3>
+                    <p class="featured-desc">Built to handle extreme performance modifications and high horsepower
+                        builds.</p>
+                </div>
+
+                <div class="featured-item">
+                    <div class="featured-icon">🔧</div>
+                    <h3 class="featured-title">Easy Maintenance</h3>
+                    <p class="featured-desc">Well-documented components with plenty of aftermarket support and upgrades
+                        available.</p>
+                </div>
+
+                <div class="featured-item">
+                    <div class="featured-icon">💰</div>
+                    <h3 class="featured-title">Value For Money</h3>
+                    <p class="featured-desc">Excellent durability combined with reasonable pricing in the used
+                        components market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Comparison</h2>
+                <p class="section-subtitle">Compare OEM vs Aftermarket components for your Supra MK4.</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>OEM Spec</th>
+                            <th>Aftermarket Available</th>
+                            <th>Tuning Potential</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2JZ-GTE Engine</td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td>1000+ HP</td>
+                        </tr>
+                        <tr>
+                            <td>Turbocharger System</td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td>Single/Twin Upgrade</td>
+                        </tr>
+                        <tr>
+                            <td>Getrag V160 Trans</td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="close-icon">✗</span></td>
+                            <td>Gear Ratios</td>
+                        </tr>
+                        <tr>
+                            <td>Fuel Injection</td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td>ECU Tune</td>
+                        </tr>
+                        <tr>
+                            <td>Suspension</td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td>Coilovers/Bars</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta-section">
+            <h2>Ready to Learn More?</h2>
+            <p>Explore our detailed specifications and modification guides for each component.</p>
+            <button class="cta-button">View Full Specifications</button>
+        </div>
+    </section>
+
+    <!-- Footer Spacing -->
+    <footer style="padding: 2rem 0; text-align: center; color: var(--text-gray);">
+        <div class="container">
+            <p>&copy; 2025 Toyota Supra MK4 Community. All component information is accurate as of 2025.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

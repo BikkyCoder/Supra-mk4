@@ -1,0 +1,16 @@
+{
+  "name": "Toyota Supra MK4 Guide",
+  "short_name": "Supra MK4",
+  "description": "Ultimate guide to the Toyota Supra MK4",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4500",
+  "icons": [
+    {
+      "src": "images/flux_krea_00021_.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

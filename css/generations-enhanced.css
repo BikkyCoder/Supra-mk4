@@ -1,0 +1,187 @@
+/* Enhanced Generations Page Styles */
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../images/supra-hero-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.hero-banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 0.8s ease;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #e50914;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+.generation-quick-nav {
+    background: rgba(0,0,0,0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.generation-quick-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.generation-quick-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.generation-quick-nav a:hover {
+    background: #e50914;
+}
+
+.generation {
+    scroll-margin-top: 100px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.generation:hover {
+    transform: translateY(-5px);
+}
+
+.generation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.generation-media {
+    position: relative;
+}
+
+.generation-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.quick-specs {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.quick-specs dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.quick-specs dt {
+    font-weight: bold;
+    color: #e50914;
+}
+
+.detailed-info h3 {
+    color: #e50914;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.detailed-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detailed-info li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detailed-info li:last-child {
+    border-bottom: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .generation-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .generation-quick-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .quick-specs dl {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}

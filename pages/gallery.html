@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Supra MK4 Gallery | Modified Builds, JDM Supras, Body Kits & Restoration Photos</title>
+    <meta name="description" content="Stunning Supra MK4 gallery featuring community builds, JDM modifications, USDM specs, body kits, headlights upgrades, spoiler options, exterior photos, interior design, restoration projects, and custom builds. Explore real Supra MK4 modifications with before & after images.">
+    <meta name="keywords" content="Supra MK4 gallery, Supra MK4 exterior photos, Supra MK4 modifications, JDM Supra MK4, Supra MK4 body kit, Supra MK4 headlights upgrade, Supra MK4 spoiler, Supra MK4 USDM specs, Supra MK4 interior design, Supra MK4 restoration, modified Supra MK4, Supra MK4 custom builds, Supra MK4 photos">
+    
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --primary-gray: #333333;
+            --secondary-gray: #666666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --text-dark: #1a1a1a;
+            --text-light: #888888;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition-standard: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--secondary-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition-standard);
+        }
+
+        .hero-cta:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Gallery Filters */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-standard);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-red);
+            color: var(--white);
+            border-color: var(--accent-red);
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            padding: 0 2rem 6rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: var(--transition-standard);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: var(--transition-standard);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-category {
+            color: var(--accent-red);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 4rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--light-gray);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--secondary-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-standard);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--light-gray);
+            text-align: center;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+    <script>
+        // Load header component
+        fetch('../components/header-component.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Gallery Filter Functionality
+        function filterGallery(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter gallery items
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore stunning Supra MK4 modifications and community builds from around the world</p>
+            <a href="../pages/modifications.html" class="hero-cta">Explore Modifications</a>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <div class="container">
+        <div class="gallery-filters">
+            <button class="filter-btn active" onclick="filterGallery('all')">All Builds</button>
+            <button class="filter-btn" onclick="filterGallery('engine')">Engine</button>
+            <button class="filter-btn" onclick="filterGallery('suspension')">Suspension</button>
+            <button class="filter-btn" onclick="filterGallery('exterior')">Exterior</button>
+            <button class="filter-btn" onclick="filterGallery('interior')">Interior</button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-container">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="engine">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #d32f2f, #b71c1c); display: flex; align-items: center; justify-content: center; font-size: 5rem;">⚡</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">650hp Beast Build</h3>
+                        <p class="gallery-category">Engine Tuning</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="engine">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FFD700, #FFA500); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🌪️</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Single Turbo Monster</h3>
+                        <p class="gallery-category">Turbo Upgrade</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="suspension">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #333, #1a1a1a); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🎯</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Lowered Stance Kit</h3>
+                        <p class="gallery-category">Suspension</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="exterior">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #1a1a1a, #333); display: flex; align-items: center; justify-content: center; font-size: 5rem;">✨</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Matte Black Wrap</h3>
+                        <p class="gallery-category">Exterior</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="interior">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #d32f2f, #b71c1c); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🏁</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Racing Interior</h3>
+                        <p class="gallery-category">Interior</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="engine">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #4A90E2, #357ABD); display: flex; align-items: center; justify-content: center; font-size: 5rem;">💨</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Performance Exhaust</h3>
+                        <p class="gallery-category">Engine Mods</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="suspension">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #666, #444); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🏎️</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Coilover Setup</h3>
+                        <p class="gallery-category">Suspension</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="exterior">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #FF69B4, #FF1493); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🎨</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Custom Bodykit</h3>
+                        <p class="gallery-category">Exterior</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item" data-category="interior">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); display: flex; align-items: center; justify-content: center; font-size: 5rem;">🪑</div>
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Carbon Accents</h3>
+                        <p class="gallery-category">Interior</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Community Builds</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Gallery Views</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Photos Shared</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Community Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Build Your Supra?</h2>
+                <p>Get inspired by our community and start your modification journey today</p>
+                <a href="../pages/modifications.html" class="cta-button">Explore Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Toyota Supra MK4 Gallery. Showcasing the best community builds and modifications.</p>
+        </div>
+    </footer>
+</body>
+</html>
