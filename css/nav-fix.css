@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Enhanced Navigation Layout Fixes */
 .nav-container {
     max-width: 1600px; /* Increased to accommodate all menu items */
@@ -53,4 +54,61 @@
     .nav-menu {
         gap: 0.25rem !important;
     }
+=======
+/* Enhanced Navigation Layout Fixes */
+.nav-container {
+    max-width: 1600px; /* Increased to accommodate all menu items */
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    flex-wrap: nowrap !important; /* Prevent wrapping */
+    gap: 0.5rem !important; /* Reduced gap between items */
+    margin-left: auto; /* Push menu to the right */
+    justify-content: flex-end;
+}
+
+.nav-menu a {
+    font-size: 0.8rem !important; /* Slightly smaller font */
+    padding: 0.5rem 0.5rem !important; /* Reduced padding */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Special styling for Technical Guide */
+.nav-menu a.technical {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    border-radius: 4px;
+    color: white !important;
+    padding: 0.5rem 0.75rem !important;
+    margin: 0 0.25rem;
+}
+
+.nav-menu a.technical:hover {
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    transform: translateY(-1px);
+}
+
+/* Optimize logo size */
+.logo {
+    font-size: 1.25rem !important;
+    flex-shrink: 0;
+}
+
+/* Media query adjustments */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .nav-menu a {
+        font-size: 0.75rem !important;
+        padding: 0.4rem 0.4rem !important;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .nav-menu {
+        gap: 0.25rem !important;
+    }
+>>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }

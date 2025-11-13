@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -30,4 +31,38 @@
       "text": "Popular Supra MK4 mods include: single turbo conversion, ECU tune, upgraded fuel injectors, forged internals, improved intercooler, and exhaust system upgrades. The 2JZ engine can handle 800-1200hp with proper supporting mods."
     }
   }]
+=======
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the Toyota Supra MK4 price in India?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Toyota Supra MK4 price in India ranges from ₹85-95 lakhs for well-maintained imported examples. Prices vary based on condition, modifications, and import duties."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the Supra MK4 0-100 km/h time?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The stock Toyota Supra MK4 with twin-turbo engine achieves 0-100 km/h in 4.6 seconds. Modified versions can achieve times under 4 seconds depending on power output."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are the Supra MK4 engine specs?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Supra MK4 features the legendary 2JZ-GTE engine: 3.0L inline-6 twin-turbo, producing 320hp and 315 lb-ft stock, capable of reliably handling 800+ hp with modifications."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are popular Supra MK4 modifications?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Popular Supra MK4 mods include: single turbo conversion, ECU tune, upgraded fuel injectors, forged internals, improved intercooler, and exhaust system upgrades. The 2JZ engine can handle 800-1200hp with proper supporting mods."
+    }
+  }]
+>>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }

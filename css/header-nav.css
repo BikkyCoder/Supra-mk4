@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Header Navigation Styles - Matches Image Exactly */
 .main-nav {
     position: fixed;
@@ -70,4 +71,78 @@
 .kolam-toggle,
 .kolam-nav {
     display: none;
+=======
+/* Header Navigation Styles - Matches Image Exactly */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-text {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.logo-highlight {
+    color: #ff4500;
+    margin-left: 0.25rem;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ff4500;
+}
+
+/* Hide Mobile Elements on Desktop */
+.kolam-toggle,
+.kolam-nav {
+    display: none;
+>>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Enhanced Mobile Toggle Button Styles */
 .kolam-toggle {
     display: none;
@@ -74,4 +75,82 @@
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+=======
+/* Enhanced Mobile Toggle Button Styles */
+.kolam-toggle {
+    display: none;
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+    padding: 8px;
+}
+
+.kolam-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+}
+
+.kolam-toggle::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(255, 255, 255, 0.2) 120deg,
+        transparent 180deg
+    );
+    animation: rotate 2s linear infinite;
+}
+
+/* Mobile icon bars */
+.kolam-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active state for toggle button */
+.kolam-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.kolam-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.kolam-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Show toggle button on mobile */
+@media (max-width: 768px) {
+    .kolam-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Animation keyframes */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+>>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }

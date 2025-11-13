@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -24,4 +25,32 @@
     },
     "articleSection": "Automotive Specifications",
     "keywords": "toyota supra mk4 0-100 km/h time, mk4 supra 0-100, mk4 supra release date, toyota supra mk4"
+=======
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Toyota Supra MK4 0-100 Time, Release Date & Specifications Guide 2025",
+    "description": "Comprehensive Toyota Supra MK4 guide covering 0-100 km/h times, release date history, and complete specifications. From stock 321 HP to 1500+ HP builds.",
+    "image": "https://bikkycoder.github.io/Supra-mk4/images/supra-mk4-specs.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Bikky Coder"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BikkyCoder",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://bikkycoder.github.io/Supra-mk4/images/logo.png"
+        }
+    },
+    "datePublished": "2025-10-19",
+    "dateModified": "2025-10-19",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bikkycoder.github.io/Supra-mk4/pages/specifications.html"
+    },
+    "articleSection": "Automotive Specifications",
+    "keywords": "toyota supra mk4 0-100 km/h time, mk4 supra 0-100, mk4 supra release date, toyota supra mk4"
+>>>>>>> 628d08b5950b3724dc6063df2fbfe28da6c5c9a6
 }
