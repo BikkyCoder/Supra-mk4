@@ -1,0 +1,108 @@
+# Supra MK4 Community - SEO Optimized robots.txt
+# Generated: November 14, 2025
+# Last Updated: November 14, 2025
+
+# Allow all major search engines
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Block bad bots and scrapers
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /
+
+# Crawl-delay for all bots (be respectful)
+Crawl-delay: 1
+
+# Request-rate (requests per second)
+Request-rate: 1/2
+
+# Sitemap locations
+Sitemap: https://supramk4.bikkycoder.com/sitemap.xml
+
+# Core Priority Pages - High visibility
+# Home page - main entry point for all Supra MK4 related searches
+# Keywords: Toyota Supra MK4, JDM legend, 2JZ-GTE engine, specifications
+
+# Specifications Page - Performance and technical specs
+# Keywords: Supra MK4 specs, 2JZ-GTE, horsepower, 0-60 time, top speed, torque
+
+# Modifications Page - Tuning and upgrade guidance
+# Keywords: Supra MK4 modifications, turbo upgrade, engine tuning, ECU remap
+
+# Pricing Page - Market value and regional pricing
+# Keywords: Supra MK4 price in India, Dubai, USA, second-hand resale value
+
+# Blog Page - Content hub and cultural relevance
+# Keywords: Paul Walker Supra, Fast and Furious, drift builds, YouTube reviews
+
+# Legacy Page - Historical significance and generations
+# Keywords: Supra MK4 history, generations, vs GTR, production numbers
+
+# Gallery Page - Visual content for image search optimization
+# Keywords: Supra MK4 wallpaper, photos, drawings, modified images
+
+# Community Page - Social engagement and backlink opportunity
+# Keywords: Supra MK4 community, JDM enthusiasts, car meets
+
+# Contact Page - Lead generation and support
+# Keywords: Contact Supra MK4, expert advice, partnerships
+
+# Allow Google, Bing, and other legitimate search engines for all content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Prioritize crawling of high-value pages
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Cache-friendly headers recommendation (can be set in server config)
+# Cache-Control: public, max-age=3600
+# ETag: Required for better cache validation
+
+# URL Parameters to avoid duplicate content (recommended server-side handling)
+# Avoid indexing sort/filter parameters that create duplicate content
+# Example: ?sort=price, ?filter=color, etc.
+
+# SEO Best Practices
+# 1. All important pages are allowed and accessible
+# 2. Mobile-friendly design encourages mobile-first indexing
+# 3. HTTPS protocol ensures secure crawling
+# 4. Structured data (JSON-LD schemas) helps search engines understand content
+# 5. Regular sitemap updates keep crawlers informed of new content
+# 6. Fast server response times improve crawlability
+# 7. Internal linking strategy guides crawlers to priority content
+
+# Keywords Coverage Summary
+# Performance: Supra MK4 specs, horsepower, 0-60, top speed, torque
+# Tuning: 2JZ engine tuning, turbo upgrades, ECU remap, single turbo
+# Market: Supra MK4 price India, Dubai, USA, second-hand, resale value
+# Culture: Paul Walker, Fast & Furious, drift, YouTube, TikTok, memes
+# History: Supra generations (MK1-MK7), production numbers, vs GTR
+# Visuals: Wallpaper 4K, photos, drawings, modified images
+# Parts: Components, turbo kits, body kits, suspension, exhaust
+# Regional: Pricing in Rajasthan, Sri Ganganagar, major metros
+
+# End of robots.txt

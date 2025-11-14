@@ -38,6 +38,20 @@
     <!-- Google Fonts - Poppins (Main Font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://supramk4.bikkycoder.com/">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="Supra MK4 Community">
+    <meta name="copyright" content="© 2025 Supra MK4 Community. All rights reserved.">
+    <meta name="rating" content="General">
+    <link rel="alternate" hreflang="en-us" href="https://supramk4.bikkycoder.com/">
+    
     <!-- Header CSS -->
 
 
@@ -1710,6 +1724,143 @@
 
 <body>
 
+    <!-- JSON-LD Schema Markup for Enhanced SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Supra MK4 Community",
+      "url": "https://supramk4.bikkycoder.com",
+      "logo": "https://supramk4.bikkycoder.com/images/flux_krea_00021_.png",
+      "description": "The ultimate guide to Toyota Supra MK4 specifications, tuning, modifications, and community for JDM enthusiasts.",
+      "sameAs": [
+        "https://facebook.com/supramk4community",
+        "https://instagram.com/supramk4community",
+        "https://twitter.com/supramk4community"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "hello@supramk4.com"
+      }
+    }
+    </script>
+
+    <!-- Product/Car Schema for Supra MK4 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Toyota Supra MK4",
+      "description": "The legendary fourth-generation Toyota Supra (A80) featuring the iconic 2JZ-GTE twin-turbocharged engine.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Toyota"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "25000",
+        "highPrice": "150000",
+        "offerCount": "1000+"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "5000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "image": "https://supramk4.bikkycoder.com/images/supra-mk4-hero.jpg",
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Toyota"
+      },
+      "color": "Black, Red, White, Silver, Blue",
+      "itemCondition": "https://schema.org/RefurbishedCondition",
+      "award": "JDM Legend"
+    }
+    </script>
+
+    <!-- FAQ Schema for Featured Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Supra MK4 engine specs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Toyota Supra MK4 features a 2JZ-GTE twin-turbocharged engine with 320 HP stock and up to 1200+ HP when tuned. Displacement is 2,997cc with 323 lb-ft of torque stock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 0-60 time for Supra MK4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The stock Toyota Supra MK4 can do 0-60 mph in 4.6 seconds, with the top speed limited to 155 mph. Modified versions can achieve sub-3 second 0-60 times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a Supra MK4 cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Used Supra MK4 prices range from $25,000 to $150,000+ depending on condition, mileage, and modifications. Pristine examples and highly modified builds command premium prices."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://supramk4.bikkycoder.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Specifications",
+          "item": "https://supramk4.bikkycoder.com/pages/specifications.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Modifications",
+          "item": "https://supramk4.bikkycoder.com/pages/modifications.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- WebSite Schema with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://supramk4.bikkycoder.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://supramk4.bikkycoder.com/pages/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
 
     <header class="header">
     <div class="header-container">
@@ -1805,17 +1956,15 @@
         <div class="legendary-badge">LEGENDARY STATUS</div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Toyota Supra MK4: <br>A Timeless Legend</h1>
-                <p>Experience the raw power and iconic design that made the MK4 Supra a symbol of automotive excellence.
-                    From its twin-turbo engine to its timeless aesthetics, discover why this masterpiece continues to
-                    captivate enthusiasts worldwide.</p>
+                <h1 class="hero-title">Toyota Supra MK4: <br>The Ultimate JDM Legend</h1>
+                <p>Experience the raw power and iconic design that made the MK4 Supra a symbol of automotive excellence. Featuring the legendary 2JZ-GTE twin-turbo engine delivering 320 HP stock and up to 1200+ HP when tuned. Discover the ultimate guide to Supra MK4 specifications, performance, modifications, pricing in India, tuning guides, and why this masterpiece continues to captivate JDM enthusiasts worldwide. From Paul Walker's iconic Fast and Furious Supra to highly modified street machines, the MK4 remains undefeated.</p>
                 <div class="hero-buttons">
                     <a href="pages/specifications.html" class="btn-primary">View Specifications</a>
-                    <a href="pages/tuning-guide.html" class="btn-secondary">Tuning Guide</a>
+                    <a href="pages/modifications.html" class="btn-secondary">Explore Modifications</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="/images/flux_krea_00021_.png" alt="Toyota Supra MK4 Side View" class="hero-img">
+                <img src="/images/flux_krea_00021_.png" alt="Toyota Supra MK4 2JZ-GTE Twin Turbo Black Modified" class="hero-img">
             </div>
         </div>
         <div class="performance-stats">
@@ -1825,7 +1974,11 @@
             </div>
             <div class="stat-item">
                 <div class="stat-value">4.6s</div>
-                <div class="stat-label">0-60 mph</div>
+                <div class="stat-label">0-60 Time (mph)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">155</div>
+                <div class="stat-label">Top Speed (mph)</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value">1200+</div>
@@ -1838,54 +1991,54 @@
     <!-- Page Navigation Section -->
     <section class="page-navigation">
         <div class="container">
-            <h2 class="section-title">Explore The Supra MK4</h2>
+            <h2 class="section-title">Explore The Supra MK4 Universe</h2>
             <div class="page-grid">
                 <a href="pages/specifications.html" class="page-card">
                     <div class="page-icon">📊</div>
                     <h3>Specifications</h3>
-                    <p>Complete technical details and performance specs</p>
+                    <p>Complete Supra MK4 specs: 2JZ-GTE engine details, horsepower, 0-60 times, top speed, torque, transmission options</p>
                 </a>
 
                 <a href="pages/modifications.html" class="page-card">
                     <div class="page-icon">🔧</div>
-                    <h3>Modifications</h3>
-                    <p>Popular mods and upgrade guides</p>
-                </a>
-
-                <a href="pages/tuning-guide.html" class="page-card">
-                    <div class="page-icon">⚡</div>
-                    <h3>Tuning Guide</h3>
-                    <p>2JZ-GTE tuning and optimization tips</p>
-                </a>
-
-                <a href="pages/tuning-simulator.html" class="page-card">
-                    <div class="page-icon">🎮</div>
-                    <h3>Tuning Simulator</h3>
-                    <p>Interactive performance simulator</p>
-                </a>
-
-                <a href="pages/generations.html" class="page-card">
-                    <div class="page-icon">📘</div>
-                    <h3>Generations</h3>
-                    <p>History and evolution of the Supra</p>
-                </a>
-
-                <a href="pages/technical-guide.html" class="page-card">
-                    <div class="page-icon">🔬</div>
-                    <h3>Technical Guide</h3>
-                    <p>In-depth technical analysis</p>
-                </a>
-
-                <a href="pages/regional-pricing.html" class="page-card">
-                    <div class="page-icon">💰</div>
-                    <h3>Regional Pricing</h3>
-                    <p>Market values and price guides</p>
+                    <h3>Modifications & Tuning</h3>
+                    <p>Supra MK4 turbo kits, ECU remap, performance parts, single turbo conversion, dyno results, tuning guides</p>
                 </a>
 
                 <a href="pages/components.html" class="page-card">
                     <div class="page-icon">🔩</div>
-                    <h3>Components</h3>
-                    <p>OEM and aftermarket parts guide</p>
+                    <h3>Components & Parts</h3>
+                    <p>OEM parts, aftermarket components, body kits, headlights, spoilers, suspension upgrades for MK4 Supra</p>
+                </a>
+
+                <a href="pages/gallery.html" class="page-card">
+                    <div class="page-icon">🖼️</div>
+                    <h3>Gallery & Visuals</h3>
+                    <p>Supra MK4 photos, wallpapers 4K, HD images, drawings, wallpaper downloads, modified Supra MK4 pictures</p>
+                </a>
+
+                <a href="pages/legacy.html" class="page-card">
+                    <div class="page-icon">📘</div>
+                    <h3>History & Legacy</h3>
+                    <p>Supra MK4 history, production numbers, generations comparison MK1-MK7, Supra vs GTR, Fast and Furious heritage</p>
+                </a>
+
+                <a href="pages/blog.html" class="page-card">
+                    <div class="page-icon">📝</div>
+                    <h3>Blog & Community</h3>
+                    <p>Supra MK4 news, reviews, cultural trends, Paul Walker Supra, drift builds, memes, TikTok edits, YouTube reviews</p>
+                </a>
+
+                <a href="pages/contact.html" class="page-card">
+                    <div class="page-icon">💰</div>
+                    <h3>Pricing & Market</h3>
+                    <p>Supra MK4 price in India, Dubai, USA, used market value, resale prices, second-hand listings, buying guides</p>
+                </a>
+
+                <a href="pages/contact.html" class="page-card">
+                    <div class="page-icon">📞</div>
+                    <h3>Connect With Us</h3>
+                    <p>Contact Supra MK4 community, join JDM enthusiasts, get expert advice, partnership opportunities</p>
                 </a>
             </div>
         </div>
