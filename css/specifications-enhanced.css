@@ -35,7 +35,7 @@ body {
 
 /* Technical Specs Hero Section */
 .technical-specs-hero {
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
     padding: 4rem 2rem;
     text-align: center;
     color: white;
@@ -432,10 +432,10 @@ body {
 }
 
 .stat-box {
-    background: linear-gradient(135deg, var(--primary-white) 0%, var(--gray-100) 100%);
+    background: linear-gradient(135deg, var(--primary-white) 0%, #f5f5f5 100%);
     padding: 2rem;
     border-radius: 12px;
-    border: 2px solid var(--border-light);
+    border: 2px solid #d9d9d9;
     text-align: center;
     transition: var(--transition-standard);
 }
@@ -505,7 +505,7 @@ body {
 }
 
 .acceleration-table tr:hover {
-    background: var(--gray-100);
+    background: #f5f5f5;
 }
 
 .spec-value {
@@ -546,8 +546,8 @@ body {
 }
 
 .spec-card {
-    background: linear-gradient(135deg, var(--primary-white) 0%, var(--gray-100) 100%);
-    border: 2px solid var(--border-light);
+    background: linear-gradient(135deg, var(--primary-white) 0%, #f5f5f5 100%);
+    border: 2px solid #d9d9d9;
     border-radius: 12px;
     padding: 2rem;
     transition: var(--transition-standard);
@@ -577,14 +577,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background: var(--gray-100);
+    background: #f9f9f9;
     border-radius: 8px;
-    border-left: 4px solid var(--primary-black);
+    border-left: 4px solid #333333;
     transition: var(--transition-standard);
 }
 
 .spec-item:hover {
-    background: var(--accent-light);
+    background: #e8e8e8;
 }
 
 .spec-label {
@@ -601,11 +601,11 @@ body {
 
 /* Chart Container */
 .chart-container {
-    background: var(--gray-100);
+    background: #f5f5f5;
     padding: 2rem;
     border-radius: 12px;
     margin-top: 2rem;
-    border: 1px solid var(--border-light);
+    border: 1px solid #d9d9d9;
 }
 
 .chart-container h3 {
@@ -615,8 +615,8 @@ body {
 
 /* Modification Stages */
 .mod-stage {
-    background: linear-gradient(135deg, var(--primary-white) 0%, var(--gray-100) 100%);
-    border: 2px solid var(--border-light);
+    background: linear-gradient(135deg, var(--primary-white) 0%, #f5f5f5 100%);
+    border: 2px solid #d9d9d9;
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -644,10 +644,10 @@ body {
 
 .mod-components,
 .performance-gains {
-    background: var(--gray-100);
+    background: #f9f9f9;
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--primary-black);
+    border-left: 4px solid #333333;
 }
 
 .mod-components h4,
@@ -981,7 +981,7 @@ body {
 }
 
 .card-header {
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--gray-800) 100%);
+    background: linear-gradient(135deg, var(--primary-black) 0%, #333333 100%);
     color: white;
     padding: 1.5rem;
     display: flex;
@@ -1015,6 +1015,9 @@ body {
     padding: 0.8rem 0;
     border-bottom: 1px solid var(--border-light);
     gap: 1rem;
+    background: #f9f9f9;
+    padding: 0.8rem 0.5rem;
+    margin: 0.3rem 0;
 }
 
 .spec-item:last-child {
@@ -1036,7 +1039,7 @@ body {
 
 /* Features Section */
 .features-section {
-    background: var(--gray-100);
+    background: var(--primary-white);
     padding: 4rem 2rem;
 }
 
@@ -1065,7 +1068,7 @@ body {
 .feature-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--gray-800) 100%);
+    background: linear-gradient(135deg, #333333 0%, var(--primary-black) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1141,7 +1144,7 @@ body {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-black) 0%, var(--gray-800) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #7c7c7c 100%);
     color: white;
     padding: 4rem 2rem;
     text-align: center;
@@ -1418,4 +1421,57 @@ body {
     .faq-answer {
         font-size: 0.9rem;
     }
+}
+
+/* Comparison Grid Section */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.comparison-box {
+    background: var(--primary-white);
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: var(--transition-standard);
+}
+
+.comparison-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-black);
+}
+
+.comparison-box h3 {
+    color: var(--primary-black);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+.comparison-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comparison-list li {
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-left: 3px solid #333333;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.comparison-list li strong {
+    color: var(--primary-black);
+    font-weight: 700;
 }
