@@ -1,6 +1,6 @@
-# Supra MK4 Community - SEO Optimized robots.txt
-# Generated: November 14, 2025
-# Last Updated: November 14, 2025
+# Supra MK4 Community - robots.txt for GitHub Pages
+# Generated: December 3, 2025
+# Hosted on: https://bikkycoder.github.io/Supra-mk4/
 
 # Allow all major search engines
 User-agent: *
@@ -8,16 +8,15 @@ Allow: /
 
 # Disallow private/admin areas (if any)
 Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /*.json$
-Disallow: /*.xml$
+Disallow: /.git/
+Disallow: /.github/
 
 # Block bad bots and scrapers
 User-agent: MJ12bot
 User-agent: AhrefsBot
 User-agent: SemrushBot
 User-agent: DotBot
+User-agent: MojeekBot
 Disallow: /
 
 # Crawl-delay for all bots (be respectful)
@@ -26,8 +25,8 @@ Crawl-delay: 1
 # Request-rate (requests per second)
 Request-rate: 1/2
 
-# Sitemap locations
-Sitemap: https://supramk4.bikkycoder.com/sitemap.xml
+# Sitemap locations - CRITICAL FOR INDEXING
+Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
 
 # Core Priority Pages - High visibility
 # Home page - main entry point for all Supra MK4 related searches
