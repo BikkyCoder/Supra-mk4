@@ -2,120 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
-    <!-- Homepage - Highest Priority for all keywords -->
+    <!-- Homepage -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://bikkycoder.github.io/Supra-mk4/images/flux_krea_00021_.png</image:loc>
+            <image:title>Toyota Supra MK4 2JZ-GTE Twin Turbo</image:title>
+            <image:caption>Black Toyota Supra MK4 with 2JZ-GTE Engine - 321 HP JDM Sports Car</image:caption>
+        </image:image>
     </url>
-
-    <!-- Core Content Pages - High Priority -->
+    
+    <!-- Specifications Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/specifications.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/specifications.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
+    <!-- Modifications Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/modifications.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/modifications.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
+    <!-- Components Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/tuning-simulator.html</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <url>
-        <loc>https://supramk4.bikkycoder.com/pages/buying-guide.html</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <url>
-        <loc>https://supramk4.bikkycoder.com/pages/components.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/components.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    
+    <!-- Gallery Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/legacy.html</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Secondary Pages -->
-    <url>
-        <loc>https://supramk4.bikkycoder.com/pages/pricing.html</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-
-    <url>
-        <loc>https://supramk4.bikkycoder.com/pages/blog.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/gallery.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://bikkycoder.github.io/Supra-mk4/images/supra-front.jpg</image:loc>
+            <image:title>Supra MK4 Front View</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://bikkycoder.github.io/Supra-mk4/images/supra-engine.jpg</image:loc>
+            <image:title>2JZ-GTE Engine Bay</image:title>
+        </image:image>
     </url>
-
+    
+    <!-- Legacy/History Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/gallery.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/legacy.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Page -->
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/blog.html</loc>
+        <lastmod>2025-12-08</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
+    <!-- Community Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/community.html</loc>
-        <lastmod>2025-11-24</lastmod>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/community.html</loc>
+        <lastmod>2025-12-08</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.65</priority>
+        <priority>0.7</priority>
     </url>
-
+    
+    <!-- Pricing Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/pages/contact.html</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>rarely</changefreq>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/pricing.html</loc>
+        <lastmod>2025-12-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/contact.html</loc>
+        <lastmod>2025-12-08</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-
-    <!-- Image Sitemap for Rich Results -->
+    
+    <!-- Tuning Simulator Page -->
     <url>
-        <loc>https://supramk4.bikkycoder.com/index.html</loc>
-        <image:image>
-            <image:loc>https://supramk4.bikkycoder.com/images/flux_krea_00021_.png</image:loc>
-            <image:title>Toyota Supra MK4 Logo</image:title>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://supramk4.bikkycoder.com/pages/gallery.html</loc>
-        <image:image>
-            <image:loc>https://supramk4.bikkycoder.com/images/supra-front.jpg</image:loc>
-            <image:title>Supra MK4 Front View - Black Modified Coupe</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://supramk4.bikkycoder.com/images/supra-side.jpg</image:loc>
-            <image:title>Supra MK4 Side Profile - Twin Turbo Performance Car</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://supramk4.bikkycoder.com/images/supra-engine.jpg</image:loc>
-            <image:title>2JZ-GTE Engine Bay - 320HP Twin Turbo Engine</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://supramk4.bikkycoder.com/images/supra-rear.jpg</image:loc>
-            <image:title>Supra MK4 Rear View - Iconic Spoiler Design</image:title>
-        </image:image>
+        <loc>https://bikkycoder.github.io/Supra-mk4/pages/tuning-simulator.html</loc>
+        <lastmod>2025-12-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
 </urlset>

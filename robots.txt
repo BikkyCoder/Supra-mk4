@@ -10,6 +10,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /.github/
+Disallow: /images/
 
 # Block bad bots and scrapers
 User-agent: MJ12bot
@@ -105,3 +106,36 @@ Crawl-delay: 0
 # Regional: Pricing in Rajasthan, Sri Ganganagar, major metros
 
 # End of robots.txt
+
+
+# Robots.txt for Supra MK4 Website
+# https://bikkycoder.github.io/Supra-mk4/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Allow Google
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay for politeness
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://bikkycoder.github.io/Supra-mk4/sitemap.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow important resources
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /pages/
