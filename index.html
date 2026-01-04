@@ -375,13 +375,7 @@
     }
     </script>
 
-    <!-- ========================================
-         CSS STYLES (Abbreviated for brevity - use your existing styles)
-         ======================================== -->
     <style>
-        /* Your existing CSS styles go here */
-        /* Key improvements for SEO/Accessibility */
-        
         :root {
             --primary-white: #ffffff;
             --primary-black: #000000;
@@ -408,7 +402,6 @@
             line-height: 1.6;
         }
 
-        /* Skip to content link for accessibility */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -424,7 +417,6 @@
             top: 0;
         }
 
-        /* Visually hidden but accessible */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -437,7 +429,6 @@
             border: 0;
         }
 
-        /* Header styles */
         .header {
             position: fixed;
             top: 0;
@@ -492,7 +483,6 @@
             color: var(--primary-purple);
         }
 
-        /* --- CONTAINER FOR CONSISTENT PADDING --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -501,7 +491,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: var(--primary-white);
@@ -521,7 +510,6 @@
             padding: 4rem 2rem;
         }
 
-        /* ONLY ONE H1 - Main Title */
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
@@ -610,50 +598,107 @@
             margin-top: 0.5rem;
         }
 
-        /* Section Titles - H2 only */
+        .section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+        }
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
-        /* --- SPECS GRID & CARDS --- */
-        .specs-grid {
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .specs-grid, .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
-        .specs-card {
+
+        .specs-card, .info-card {
             background: #fff;
             border-radius: 14px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
             padding: 2rem 1.5rem;
             border: 1px solid var(--border-light);
-            transition: box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .specs-card:hover, .specs-card:focus-within {
-            box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+
+        .specs-card:hover, .specs-card:focus-within,
+        .info-card:hover, .info-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
+
+        .specs-card h3, .info-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: var(--text-dark);
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-card ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-purple);
+            font-weight: bold;
+        }
+
         .spec-row {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
             border-bottom: 1px solid #f0f0f0;
         }
+
         .spec-row:last-child { border-bottom: none; }
+
         dt { font-weight: 500; color: var(--text-gray); }
         dd { margin: 0; font-weight: 600; color: var(--text-dark); }
 
-        /* --- PRICING GRID & CARDS --- */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
+
         .price-card {
             background: #fff;
             border-radius: 12px;
@@ -663,9 +708,11 @@
             text-align: center;
             transition: box-shadow 0.2s;
         }
+
         .price-card:hover, .price-card:focus-within {
             box-shadow: 0 6px 24px rgba(0,0,0,0.10);
         }
+
         .price-value {
             font-size: 1.5rem;
             font-weight: 700;
@@ -673,7 +720,83 @@
             margin: 1rem 0;
         }
 
-        /* --- FAQ SECTION --- */
+        .price-badge {
+            display: inline-block;
+            background: var(--primary-purple);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .comparison-table th {
+            background: var(--primary-purple);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-purple);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .feature-item strong {
+            color: var(--primary-purple);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -681,6 +804,7 @@
             flex-direction: column;
             gap: 1.5rem;
         }
+
         .faq-item {
             background: #fff;
             border-radius: 10px;
@@ -689,9 +813,11 @@
             padding: 1.25rem 1.5rem;
             transition: box-shadow 0.2s;
         }
+
         .faq-item[open] {
             box-shadow: 0 6px 24px rgba(0,0,0,0.10);
         }
+
         .faq-item summary {
             cursor: pointer;
             font-size: 1.08rem;
@@ -699,12 +825,12 @@
             color: var(--primary-black);
             outline: none;
         }
+
         .faq-item p {
             margin: 1rem 0 0 0;
             color: var(--text-gray);
         }
 
-        /* --- FOOTER --- */
         .footer-content {
             display: flex;
             flex-wrap: wrap;
@@ -712,6 +838,7 @@
             align-items: flex-start;
             justify-content: space-between;
         }
+
         .footer-brand {
             flex: 1 1 220px;
             display: flex;
@@ -719,80 +846,83 @@
             align-items: flex-start;
             gap: 1rem;
         }
+
         .footer-brand img {
             border-radius: 8px;
         }
+
         .footer-section {
             flex: 1 1 180px;
             margin-bottom: 1.5rem;
         }
+
         .footer-section h4 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.7rem;
             color: var(--primary-black);
         }
+
         .footer-section ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .footer-section ul li {
             margin-bottom: 0.5rem;
         }
+
         .footer-section ul a {
             color: var(--text-gray);
             text-decoration: none;
             transition: color 0.2s;
         }
+
         .footer-section ul a:hover, .footer-section ul a:focus {
             color: var(--primary-purple);
         }
+
         .footer-nav {
             display: flex;
             gap: 2.5rem;
             flex-wrap: wrap;
         }
+
         .footer-bottom {
             margin-top: 2.5rem;
             text-align: center;
             color: var(--text-gray);
             font-size: 0.98rem;
         }
+
         .footer-bottom a {
             color: var(--primary-purple);
             text-decoration: none;
         }
+
         .footer-bottom a:hover, .footer-bottom a:focus {
             text-decoration: underline;
         }
 
-        /* --- IMPROVED RESPONSIVE GRIDS --- */
-        .specs-grid, .pricing-grid {
-            width: 100%;
-        }
         @media (max-width: 1024px) {
-            .specs-grid, .pricing-grid {
+            .specs-grid, .pricing-grid, .info-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
+
         @media (max-width: 700px) {
-            .specs-grid, .pricing-grid {
+            .specs-grid, .pricing-grid, .info-grid {
                 grid-template-columns: 1fr;
             }
         }
-        /* FAQ responsiveness */
+
         .faq-container {
             width: 100%;
             padding-left: 0;
             padding-right: 0;
         }
-        /* Footer responsiveness */
-        .footer-content {
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-        }
+
         @media (max-width: 900px) {
             .footer-content {
                 flex-direction: column;
@@ -809,6 +939,7 @@
                 align-items: center;
             }
         }
+
         @media (max-width: 600px) {
             .footer-content {
                 gap: 1.2rem;
@@ -817,19 +948,27 @@
                 margin-top: 1.5rem;
             }
         }
-        /* Prevent horizontal scroll */
+
         html, body {
             max-width: 100vw;
             overflow-x: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- HEADER -->
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo-container">
@@ -854,10 +993,8 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main id="main-content">
         
-        <!-- HERO SECTION - Contains the ONLY H1 -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-badge" role="status">
                 <span aria-hidden="true">⚡</span> Legendary 2JZ-GTE Engine
@@ -865,7 +1002,6 @@
             
             <div class="hero-content">
                 <div class="hero-text">
-                    <!-- ONLY ONE H1 ON THE PAGE -->
                     <h1 id="hero-title" class="hero-title">
                         Toyota Supra MK4: The Legendary 2JZ-GTE with 321 HP
                     </h1>
@@ -913,7 +1049,6 @@
                 </div>
             </div>
             
-            <!-- Performance Stats -->
             <div class="performance-stats" role="region" aria-label="Supra MK4 Key Performance Statistics">
                 <div class="stat-item">
                     <div class="stat-value">321</div>
@@ -934,7 +1069,6 @@
             </div>
         </section>
 
-        <!-- INTRODUCTION SECTION -->
         <section class="intro-section" aria-labelledby="intro-title">
             <div class="container">
                 <h2 id="intro-title" class="section-title">The Legendary JDM Icon That Redefined Performance</h2>
@@ -956,13 +1090,617 @@
             </div>
         </section>
 
-        <!-- SPECIFICATIONS SECTION -->
+        <!-- NEW CONTENT SECTIONS START HERE -->
+
+        <!-- 2JZ-GTE ENGINE DEEP DIVE SECTION -->
+        <section class="section" id="engine-details">
+            <div class="container">
+                <h2 class="section-title">2JZ-GTE Engine: The Heart of the Supra MK4</h2>
+                <p class="section-subtitle">Why the Supra MK4 engine is considered the world's most tuneable powerplant</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🔧 Stock Engine Specifications</h3>
+                        <p>The <strong>Supra MK4 engine (2JZ-GTE)</strong> is a 3.0-liter twin-turbocharged inline-6 masterpiece that delivers exceptional performance even in stock form.</p>
+                        <ul>
+                            <li><strong>Engine Code:</strong> 2JZ-GTE</li>
+                            <li><strong>Configuration:</strong> Inline-6 Twin-Turbo</li>
+                            <li><strong>Displacement:</strong> 2,997cc (3.0L)</li>
+                            <li><strong>Stock Power:</strong> 321 HP @ 5,600 RPM</li>
+                            <li><strong>Stock Torque:</strong> 315 lb-ft @ 4,000 RPM</li>
+                            <li><strong>Compression Ratio:</strong> 8.5:1</li>
+                            <li><strong>Boost Pressure:</strong> 11 PSI (Stock)</li>
+                            <li><strong>Redline:</strong> 6,800 RPM</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚙️ Engine Construction</h3>
+                        <p>The <strong>Supra MK4 engine</strong> was deliberately over-engineered by Toyota, making it the foundation for extreme power builds.</p>
+                        <h4>Block & Internals:</h4>
+                        <ul>
+                            <li>Cast-iron closed-deck block</li>
+                            <li>Forged steel crankshaft</li>
+                            <li>Hypereutectic pistons (stock)</li>
+                            <li>Powder metal connecting rods</li>
+                            <li>Cross-bolted main bearing caps</li>
+                            <li>DOHC 24-valve head design</li>
+                        </ul>
+                        <h4>Forced Induction:</h4>
+                        <ul>
+                            <li>Sequential twin-turbo system</li>
+                            <li>CT12A (low RPM) turbocharger</li>
+                            <li>CT12B (high RPM) turbocharger</li>
+                            <li>Electronic boost control</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🚀 Tuning Potential</h3>
+                        <p>The <strong>Supra MK4 modified</strong> potential is legendary. The 2JZ-GTE can handle extreme power levels that would destroy most engines.</p>
+                        <h4>Stage 1 (Bolt-On Mods):</h4>
+                        <ul>
+                            <li><strong>Power:</strong> 400-500 HP</li>
+                            <li>Exhaust system upgrade</li>
+                            <li>Intake and air filter</li>
+                            <li>ECU tune/piggyback</li>
+                            <li>Boost controller (14-16 PSI)</li>
+                        </ul>
+                        <h4>Stage 2 (Single Turbo):</h4>
+                        <ul>
+                            <li><strong>Power:</strong> 600-800 HP</li>
+                            <li>Single turbo conversion</li>
+                            <li>Fuel system upgrade</li>
+                            <li>Intercooler upgrade</li>
+                            <li>Standalone ECU</li>
+                        </ul>
+                        <h4>Stage 3 (Built Motor):</h4>
+                        <ul>
+                            <li><strong>Power:</strong> 1,000-1,700+ HP</li>
+                            <li>Forged internals</li>
+                            <li>Billet crankshaft</li>
+                            <li>Large single turbo (GT42+)</li>
+                            <li>Race fuel/E85</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚡ Power Output History</h3>
+                        <p>The <strong>Supra MK4 engine</strong> has evolved from a stock 321 HP to extreme builds pushing the boundaries of physics.</p>
+                        <h4>Proven Power Levels:</h4>
+                        <ul>
+                            <li><strong>Stock:</strong> 321 HP / 315 lb-ft</li>
+                            <li><strong>500 HP:</strong> Daily driveable, bolt-ons only</li>
+                            <li><strong>700 HP:</strong> Street/strip, single turbo</li>
+                            <li><strong>1,000 HP:</strong> Built motor, reliable</li>
+                            <li><strong>1,200 HP:</strong> Race setup, forged everything</li>
+                            <li><strong>1,500 HP:</strong> Drag racing, alcohol fuel</li>
+                            <li><strong>1,700+ HP:</strong> World record builds</li>
+                        </ul>
+                        <p><strong>Note:</strong> Thousands of Supra MK4s worldwide run 1,000+ HP reliably on the street.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPRA MK4 PRICING IN INDIA SECTION -->
+        <section class="section" id="india-pricing">
+            <div class="container">
+                <h2 class="section-title">Supra MK4 Price in India: Complete Buying Guide</h2>
+                <p class="section-subtitle">Understanding the <strong>Supra MK4 price in India</strong> across different conditions and modifications</p>
+                
+                <div class="highlight-box">
+                    <h3>Current Market Overview</h3>
+                    <p>The <strong>Supra MK4 price in India</strong> ranges from ₹25 Lakhs to ₹150+ Lakhs depending on condition, modifications, and import documentation. The <strong>old Supra MK4 price in India</strong> has appreciated significantly, with values increasing 200-300% over the past decade.</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💰 Stock/Original Condition</h3>
+                        <div class="price-badge">₹25-60 Lakhs</div>
+                        <p>The <strong>Supra MK4 price in India second hand</strong> for stock examples varies based on:</p>
+                        <h4>Low-End (₹25-35 Lakhs):</h4>
+                        <ul>
+                            <li>High mileage (100,000+ km)</li>
+                            <li>Minor cosmetic issues</li>
+                            <li>Basic service history</li>
+                            <li>Automatic transmission models</li>
+                        </ul>
+                        <h4>Mid-Range (₹35-50 Lakhs):</h4>
+                        <ul>
+                            <li>Lower mileage (50,000-100,000 km)</li>
+                            <li>Good condition paint/interior</li>
+                            <li>6-speed manual transmission</li>
+                            <li>Complete service records</li>
+                        </ul>
+                        <h4>High-End (₹50-60 Lakhs):</h4>
+                        <ul>
+                            <li>Low mileage (under 50,000 km)</li>
+                            <li>Exceptional original condition</li>
+                            <li>Single owner, full documentation</li>
+                            <li>Rare colors (yellow, white pearl)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚙️ Modified Examples</h3>
+                        <div class="price-badge">₹60-120 Lakhs</div>
+                        <p>The <strong>Supra MK4 price in India on road</strong> for modified examples includes import duties and modifications:</p>
+                        <h4>Stage 1-2 Builds (₹60-85 Lakhs):</h4>
+                        <ul>
+                            <li>400-600 HP builds</li>
+                            <li>Quality bolt-on modifications</li>
+                            <li>Single turbo conversions</li>
+                            <li>Upgraded suspension/brakes</li>
+                            <li>Professional tuning</li>
+                        </ul>
+                        <h4>Stage 3 Builds (₹85-120 Lakhs):</h4>
+                        <ul>
+                            <li>700-900 HP builds</li>
+                            <li>Built engine internals</li>
+                            <li>Large single turbo setup</li>
+                            <li>Full drivetrain upgrades</li>
+                            <li>Show-quality modifications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏁 Extreme Builds (1000+ HP)</h3>
+                        <div class="price-badge">₹100-150+ Lakhs</div>
+                        <p>The <strong>Supra mk4 top speed price</strong> for extreme builds reflects the massive investment required:</p>
+                        <h4>Components & Costs:</h4>
+                        <ul>
+                            <li><strong>Built Engine:</strong> ₹12-20 Lakhs</li>
+                            <li><strong>Turbo System:</strong> ₹8-15 Lakhs</li>
+                            <li><strong>Fuel System:</strong> ₹3-6 Lakhs</li>
+                            <li><strong>Transmission:</strong> ₹5-10 Lakhs</li>
+                            <li><strong>Drivetrain:</strong> ₹4-8 Lakhs</li>
+                            <li><strong>Standalone ECU:</strong> ₹2-5 Lakhs</li>
+                            <li><strong>Labor & Tuning:</strong> ₹8-15 Lakhs</li>
+                        </ul>
+                        <p><strong>Total Investment:</strong> ₹42-79 Lakhs in modifications alone, plus the base car cost.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📅 Launch Date & History</h3>
+                        <p>Understanding the <strong>Supra mk4 price in india launch date</strong> and timeline:</p>
+                        <h4>Production Timeline:</h4>
+                        <ul>
+                            <li><strong>Launch:</strong> May 1993 (Japan)</li>
+                            <li><strong>US Launch:</strong> October 1993</li>
+                            <li><strong>Production End:</strong> August 2002</li>
+                            <li><strong>Total Production:</strong> ~11,239 units (turbo)</li>
+                        </ul>
+                        <h4>Import to India:</h4>
+                        <ul>
+                            <li>First imports: Mid-late 1990s</li>
+                            <li>Most imports: 2000-2010 period</li>
+                            <li>Current imports: Rare, expensive</li>
+                            <li>Import duty: 100%+ of CIF value</li>
+                        </ul>
+                        <p><strong>Note:</strong> The Supra MK4 was never officially sold in India, all examples are imported.</p>
+                    </div>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Price Range</th>
+                            <th>Power Output</th>
+                            <th>Typical Mods</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stock Automatic</td>
+                            <td>₹25-35 Lakhs</td>
+                            <td>321 HP</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Stock Manual</td>
+                            <td>₹35-60 Lakhs</td>
+                            <td>321 HP</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Stage 1 Modified</td>
+                            <td>₹60-75 Lakhs</td>
+                            <td>400-500 HP</td>
+                            <td>Exhaust, Intake, Tune</td>
+                        </tr>
+                        <tr>
+                            <td>Stage 2 Single Turbo</td>
+                            <td>₹75-95 Lakhs</td>
+                            <td>600-800 HP</td>
+                            <td>Single Turbo, Fuel System</td>
+                        </tr>
+                        <tr>
+                            <td>Built Motor 1000+ HP</td>
+                            <td>₹100-150+ Lakhs</td>
+                            <td>1,000-1,500 HP</td>
+                            <td>Full Built Engine</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TOP SPEED VARIATIONS SECTION -->
+        <section class="section" id="top-speed">
+            <div class="container">
+                <h2 class="section-title">Supra MK4 Top Speed: Stock to Modified Extremes</h2>
+                <p class="section-subtitle">Exploring the <strong>Supra MK4 top speed</strong> across different configurations and power levels</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏎️ Stock Top Speed</h3>
+                        <p>The factory <strong>Supra MK4 top speed</strong> is electronically limited for safety and emissions compliance.</p>
+                        <h4>Stock Specifications:</h4>
+                        <ul>
+                            <li><strong>Limited Top Speed:</strong> 155 mph (250 km/h)</li>
+                            <li><strong>Supra MK4 top speed km/h:</strong> 250 km/h</li>
+                            <li><strong>Electronic Limiter:</strong> Factory programmed</li>
+                            <li><strong>Gear Ratio:</strong> Final drive 3.13:1</li>
+                            <li><strong>Theoretical Max:</strong> ~180 mph (limited by gearing)</li>
+                        </ul>
+                        <h4>Stock 0-100 Performance:</h4>
+                        <ul>
+                            <li><strong>Supra mk4 top speed 0 to 100:</strong> 4.9 seconds (0-100 km/h)</li>
+                            <li><strong>0-60 mph:</strong> 4.6 seconds</li>
+                            <li><strong>0-100 mph:</strong> 11.8 seconds</li>
+                            <li><strong>Quarter Mile:</strong> 13.1s @ 109 mph</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚡ Top Speed With Turbo (Stock)</h3>
+                        <p>The <strong>Supra MK4 top speed with turbo</strong> in stock twin-turbo form demonstrates the engine's efficiency.</p>
+                        <h4>Twin-Turbo System:</h4>
+                        <ul>
+                            <li>CT12A primary turbo (low RPM)</li>
+                            <li>CT12B secondary turbo (high RPM)</li>
+                            <li>Sequential activation at 4,000 RPM</li>
+                            <li>Stock boost: 11 PSI</li>
+                            <li>Smooth power delivery</li>
+                        </ul>
+                        <h4>Speed by Gear (Stock):</h4>
+                        <ul>
+                            <li><strong>1st Gear:</strong> ~62 mph (100 km/h)</li>
+                            <li><strong>2nd Gear:</strong> ~87 mph (140 km/h)</li>
+                            <li><strong>3rd Gear:</strong> ~115 mph (185 km/h)</li>
+                            <li><strong>4th Gear:</strong> ~143 mph (230 km/h)</li>
+                            <li><strong>5th Gear:</strong> ~170 mph (274 km/h)</li>
+                            <li><strong>6th Gear:</strong> 155 mph limited (180+ capable)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🚀 Modified Top Speed</h3>
+                        <p>The <strong>Supra mk4 top speed modified</strong> potential varies dramatically based on power output and aerodynamics.</p>
+                        <h4>Stage 1 (400-500 HP):</h4>
+                        <ul>
+                            <li><strong>Top Speed:</strong> 175-185 mph (282-298 km/h)</li>
+                            <li>Limiter removed, stock gearing</li>
+                            <li>Minor aerodynamic limitations</li>
+                        </ul>
+                        <h4>Stage 2 (600-800 HP):</h4>
+                        <ul>
+                            <li><strong>Top Speed:</strong> 195-210 mph (314-338 km/h)</li>
+                            <li>Single turbo conversion</li>
+                            <li>Improved aerodynamics needed</li>
+                        </ul>
+                        <h4>Stage 3 (1000-1200 HP):</h4>
+                        <ul>
+                            <li><strong>Top Speed:</strong> 220-240 mph (354-386 km/h)</li>
+                            <li>Extensive aero modifications</li>
+                            <li>Proper gearing required</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏁 Extreme Builds</h3>
+                        <p>The <strong>Supra mk4 top speed without limiter</strong> and with extreme modifications reaches unprecedented levels.</p>
+                        <h4>1500+ HP Builds:</h4>
+                        <ul>
+                            <li><strong>Top Speed:</strong> 240+ mph (386+ km/h)</li>
+                            <li>Full race aerodynamics</li>
+                            <li>Competition fuel (E85/C16)</li>
+                            <li>Long-ratio transmission</li>
+                        </ul>
+                        <h4>Top Speed of Supra MK4 3000 HP:</h4>
+                        <ul>
+                            <li><strong>Theoretical Max:</strong> 270-300+ mph</li>
+                            <li><strong>Supra MK4 top speed km/h 3000 hp:</strong> 435-483+ km/h</li>
+                            <li>Drag-only builds (not street legal)</li>
+                            <li>Parachute deployment required</li>
+                            <li><strong>Fastest Supra in the world top speed:</strong> 270+ mph (verified runs)</li>
+                        </ul>
+                        <h4>World Records:</h4>
+                        <ul>
+                            <li>Texas Mile: 251 mph (404 km/h)</li>
+                            <li>Standing Mile: 247 mph (397 km/h)</li>
+                            <li>Half-Mile: 234 mph (377 km/h)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Key Factors Affecting Top Speed</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <strong>Aerodynamics:</strong>
+                            The Supra MK4's Cd of 0.31 is excellent, but high speeds require front splitter, rear wing adjustments, and undertray work for stability above 200 mph.
+                        </div>
+                        <div class="feature-item">
+                            <strong>Gearing:</strong>
+                            Stock 3.13:1 final drive is perfect for sub-200 mph. For 220+ mph runs, swapping to 2.76:1 or custom ratios is essential.
+                        </div>
+                        <div class="feature-item">
+                            <strong>Power Delivery:</strong>
+                            Turbo sizing matters—smaller turbos provide better low-end but limit top-speed power. GT42+ turbos needed for 1500+ HP builds.
+                        </div>
+                        <div class="feature-item">
+                            <strong>Safety Equipment:</strong>
+                            Above 200 mph: roll cage, racing harness, fire suppression, and parachute deployment systems are mandatory for safety.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MK3, MK4, MK5 COMPARISON SECTION -->
+        <section class="section" id="model-comparison">
+            <div class="container">
+                <h2 class="section-title">Supra Model Comparison: MK3 vs MK4 vs MK5</h2>
+                <p class="section-subtitle">Understanding the evolution from <strong>Supra MK3 price in India</strong> to <strong>Supra mk5 price in India</strong></p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏎️ Supra MK3 (A70) 1986-1993</h3>
+                        <p>The third-generation Supra featuring the 7M-GTE turbocharged engine.</p>
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li><strong>Engine:</strong> 7M-GTE 3.0L Turbo I6</li>
+                            <li><strong>Power:</strong> 230 HP @ 5,600 RPM</li>
+                            <li><strong>Torque:</strong> 254 lb-ft @ 4,000 RPM</li>
+                            <li><strong>0-60 mph:</strong> 6.1 seconds</li>
+                            <li><strong>Top Speed:</strong> 143 mph (230 km/h)</li>
+                        </ul>
+                        <h4>Supra MK3 Price in India:</h4>
+                        <ul>
+                            <li><strong>Stock Examples:</strong> ₹8-18 Lakhs</li>
+                            <li><strong>Modified:</strong> ₹15-30 Lakhs</li>
+                            <li><strong>Note:</strong> Less expensive than MK4</li>
+                            <li>Head gasket issues common</li>
+                            <li>Limited tuning potential vs MK4</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏁 Supra MK4 (A80) 1993-2002</h3>
+                        <p>The legendary fourth-generation <strong>Supra mk4 old model</strong> that defined JDM culture.</p>
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li><strong>Engine:</strong> 2JZ-GTE 3.0L Twin-Turbo I6</li>
+                            <li><strong>Power:</strong> 321 HP @ 5,600 RPM</li>
+                            <li><strong>Torque:</strong> 315 lb-ft @ 4,000 RPM</li>
+                            <li><strong>0-60 mph:</strong> 4.6 seconds</li>
+                            <li><strong>Top Speed:</strong> 155 mph limited</li>
+                        </ul>
+                        <h4>Supra MK4 Price in India:</h4>
+                        <ul>
+                            <li><strong>Stock:</strong> ₹25-60 Lakhs</li>
+                            <li><strong>Modified:</strong> ₹60-120 Lakhs</li>
+                            <li><strong>1000+ HP Builds:</strong> ₹100-150+ Lakhs</li>
+                            <li><strong>Toyota Supra 1998 price in India:</strong> ₹35-65 Lakhs</li>
+                            <li>Most sought-after generation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚡ Supra MK5 (A90/A91) 2019-Present</h3>
+                        <p>The modern revival featuring BMW collaboration and B58 engine.</p>
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li><strong>Engine:</strong> BMW B58 3.0L Turbo I6</li>
+                            <li><strong>Power:</strong> 382 HP @ 5,800 RPM (2021+)</li>
+                            <li><strong>Torque:</strong> 368 lb-ft @ 1,800 RPM</li>
+                            <li><strong>0-60 mph:</strong> 3.9 seconds</li>
+                            <li><strong>Top Speed:</strong> 155 mph (electronically limited)</li>
+                        </ul>
+                        <h4>Supra mk5 price in India:</h4>
+                        <ul>
+                            <li><strong>New (Official):</strong> ₹79.9 Lakhs (on-road)</li>
+                            <li><strong>Used Examples:</strong> ₹65-75 Lakhs</li>
+                            <li><strong>Top speed of Supra mk5:</strong> 155 mph limited</li>
+                            <li><strong>Supra MK5 top speed:</strong> 180+ mph capable</li>
+                            <li>Limited tuning vs MK4</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Performance Comparison</h3>
+                        <h4>Stock Performance:</h4>
+                        <ul>
+                            <li><strong>Fastest 0-60:</strong> MK5 (3.9s) > MK4 (4.6s) > MK3 (6.1s)</li>
+                            <li><strong>Highest HP Stock:</strong> MK5 (382 HP) > MK4 (321 HP) > MK3 (230 HP)</li>
+                            <li><strong>Most Torque:</strong> MK5 (368 lb-ft) > MK4 (315 lb-ft) > MK3 (254 lb-ft)</li>
+                        </ul>
+                        <h4>Tuning Potential:</h4>
+                        <ul>
+                            <li><strong>MK4:</strong> 1,700+ HP proven (Winner)</li>
+                            <li><strong>MK5:</strong> ~600 HP practical limit</li>
+                            <li><strong>MK3:</strong> ~500 HP practical limit</li>
+                        </ul>
+                        <h4>Value & Investment:</h4>
+                        <ul>
+                            <li><strong>Best Value:</strong> MK3 (entry-level)</li>
+                            <li><strong>Best Investment:</strong> MK4 (appreciating)</li>
+                            <li><strong>Modern Daily:</strong> MK5 (new warranty)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>MK3 (A70)</th>
+                            <th>MK4 (A80)</th>
+                            <th>MK5 (A90)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Production Years</strong></td>
+                            <td>1986-1993</td>
+                            <td>1993-2002</td>
+                            <td>2019-Present</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Engine</strong></td>
+                            <td>7M-GTE 3.0L Turbo</td>
+                            <td>2JZ-GTE 3.0L Twin-Turbo</td>
+                            <td>BMW B58 3.0L Turbo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stock HP</strong></td>
+                            <td>230 HP</td>
+                            <td>321 HP</td>
+                            <td>382 HP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0-60 mph</strong></td>
+                            <td>6.1 seconds</td>
+                            <td>4.6 seconds</td>
+                            <td>3.9 seconds</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Max Tuned HP</strong></td>
+                            <td>~500 HP</td>
+                            <td>1,700+ HP</td>
+                            <td>~600 HP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price in India</strong></td>
+                            <td>₹8-30 Lakhs</td>
+                            <td>₹25-150 Lakhs</td>
+                            <td>₹65-80 Lakhs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reliability</strong></td>
+                            <td>Good (HG issues)</td>
+                            <td>Excellent</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aftermarket</strong></td>
+                            <td>Limited</td>
+                            <td>Massive</td>
+                            <td>Growing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SUPRA MK4 BLACK VARIANTS SECTION -->
+        <section class="section" id="color-variants">
+            <div class="container">
+                <h2 class="section-title">Supra MK4 Colors: Black and Beyond</h2>
+                <p class="section-subtitle">The iconic <strong>Supra MK4 Black</strong> and other legendary color options</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>⚫ Supra MK4 Black</h3>
+                        <p>The <strong>Supra MK4 Black</strong> is one of the most iconic and aggressive color combinations, featured prominently in Fast & Furious.</p>
+                        <h4>Black Color Codes:</h4>
+                        <ul>
+                            <li><strong>202:</strong> Black (Solid)</li>
+                            <li><strong>209:</strong> Black Mica</li>
+                            <li>Deep, rich black finish</li>
+                            <li>Shows body lines perfectly</li>
+                            <li>Hides modifications well</li>
+                        </ul>
+                        <h4>Popularity & Value:</h4>
+                        <ul>
+                            <li>Second most popular color</li>
+                            <li>Paul Walker's F&F car (black)</li>
+                            <li>Premium of ₹5-10 Lakhs over other colors</li>
+                            <li>Most aggressive appearance</li>
+                            <li>Perfect for carbon fiber mods</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🎨 Factory Color Options</h3>
+                        <p>Toyota offered 9 factory colors across the Supra MK4's production run.</p>
+                        <h4>Common Colors:</h4>
+                        <ul>
+                            <li><strong>040:</strong> Super White</li>
+                            <li><strong>3J3:</strong> Renaissance Red</li>
+                            <li><strong>8J9:</strong> Black Mica</li>
+                            <li><strong>1D4:</strong> Midnight Purple Pearl</li>
+                            <li><strong>6K5:</strong> Quicksilver Metallic</li>
+                        </ul>
+                        <h4>Rare Colors (High Value):</h4>
+                        <ul>
+                            <li><strong>3L5:</strong> Montego Blue Pearl</li>
+                            <li><strong>765:</strong> Bright Yellow</li>
+                            <li><strong>046:</strong> Natural White (Mica)</li>
+                            <li>Premium: +₹10-25 Lakhs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏁 Color Impact on Value</h3>
+                        <h4>Value Rankings:</h4>
+                        <ul>
+                            <li><strong>Highest Value:</strong> Yellow, Montego Blue</li>
+                            <li><strong>High Value:</strong> White Pearl, Black</li>
+                            <li><strong>Standard Value:</strong> Red, Silver</li>
+                            <li><strong>Lower Value:</strong> Teal, Gray</li>
+                        </ul>
+                        <h4>Rarity Premiums:</h4>
+                        <ul>
+                            <li>Yellow adds ₹15-25 Lakhs</li>
+                            <li>Montego Blue adds ₹10-20 Lakhs</li>
+                            <li>Black adds ₹5-10 Lakhs</li>
+                            <li>White adds ₹5-10 Lakhs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🎬 Pop Culture Impact</h3>
+                        <h4>Fast & Furious (2001):</h4>
+                        <ul>
+                            <li>Paul Walker's orange Supra</li>
+                            <li>10-second car legend</li>
+                            <li>Increased values by 200%+</li>
+                            <li>Made Supra mainstream</li>
+                        </ul>
+                        <h4>Celebrity Builds:</h4>
+                        <ul>
+                            <li>Paul Walker's black Supra</li>
+                            <li>Smokey Nagata 200+ mph runs</li>
+                            <li>Various YouTube builds</li>
+                            <li>Street racing legacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW CONTENT SECTIONS END HERE -->
+
+        <!-- ORIGINAL SPECIFICATIONS SECTION -->
         <section class="specs-section" id="specifications" aria-labelledby="specs-title">
             <h2 id="specs-title" class="section-title">Technical Specifications</h2>
             <p class="section-subtitle">Engineering excellence meets Japanese precision</p>
             
             <div class="specs-grid">
-                <!-- Powertrain Card -->
                 <div class="specs-card">
                     <h3>Powertrain</h3>
                     <dl>
@@ -989,7 +1727,6 @@
                     </dl>
                 </div>
                 
-                <!-- Performance Card -->
                 <div class="specs-card">
                     <h3>Performance</h3>
                     <dl>
@@ -1012,7 +1749,6 @@
                     </dl>
                 </div>
                 
-                <!-- Dimensions Card -->
                 <div class="specs-card">
                     <h3>Dimensions</h3>
                     <dl>
@@ -1035,7 +1771,6 @@
                     </dl>
                 </div>
                 
-                <!-- Tuning Potential Card -->
                 <div class="specs-card">
                     <h3>Tuning Potential</h3>
                     <dl>
@@ -1060,7 +1795,7 @@
             </div>
         </section>
 
-        <!-- PRICING SECTION -->
+        <!-- ORIGINAL PRICING SECTION -->
         <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
             <h2 id="pricing-title" class="section-title">Supra MK4 Price Guide 2025</h2>
             
@@ -1085,7 +1820,7 @@
             </div>
         </section>
 
-        <!-- FAQ SECTION -->
+        <!-- ORIGINAL FAQ SECTION -->
         <section class="faq-section" id="faq" aria-labelledby="faq-title">
             <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
             
@@ -1119,7 +1854,7 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ORIGINAL FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="footer-content container">
             <div class="footer-brand">
@@ -1156,7 +1891,6 @@
         </div>
     </footer>
 
-    <!-- Smooth Scrolling Script -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
