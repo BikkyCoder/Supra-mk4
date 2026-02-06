@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Supra MK4 Tuning Builder - Customize your 2JZ-GTE engine and watch stats update in real-time">
+    <link rel="canonical" href="https://bikkycoder.github.io/Supra-mk4/pages/full-specs.html">
+    <title>Supra MK4 Interactive Tuning Builder - Real-Time Power Calculator</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Interactive Supra MK4 Tuning Builder">
+    <meta property="og:description" content="Build your dream Supra MK4 - Select modifications and watch power increase in real-time">
+    <meta property="og:image" content="https://bikkycoder.github.io/Supra-mk4/images/flux_krea_00021_.png">
+    <meta property="og:url" content="https://bikkycoder.github.io/Supra-mk4/pages/full-specs.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #000000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #000000, #333333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #333333;
+        }
+        
+        /* Supra Image Section */
+        .supra-section {
+            text-align: center;
+            margin: 3rem 0;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .supra-image-container {
+            background: rgba(0, 0, 0, 0.02);
+            border: 2px solid #000000;
+            border-radius: 15px;
+            padding: 2rem;
+            display: inline-block;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .supra-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        .supra-image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .supra-image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Stats Display */
+        .stats-section {
+            margin: 3rem 0;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px solid #000000;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.05);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover::before {
+            transform: translateY(0);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .stat-unit {
+            font-size: 0.8rem;
+            color: #999999;
+            margin-top: 0.3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Modifications Section */
+        .mods-section {
+            margin: 4rem 0;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+        
+        .mods-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #000000;
+        }
+        
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mod-card {
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mod-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .mod-card:hover::before {
+            left: 100%;
+        }
+        
+        .mod-card:hover {
+            border-color: #000000;
+            background: rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+        
+        .mod-card.selected {
+            background: rgba(0, 0, 0, 0.12);
+            border-color: #000000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mod-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .mod-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            color: #000000;
+        }
+        
+        .mod-description {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mod-boost {
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mod-checkbox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .mod-card.selected .mod-checkbox {
+            background: #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        .mod-checkbox::after {
+            content: '✓';
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .mod-card.selected .mod-checkbox::after {
+            opacity: 1;
+        }
+        
+        /* Total Build */
+        .total-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid #000000;
+            border-radius: 15px;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+        
+        .total-label {
+            font-size: 1.2rem;
+            color: #666666;
+            margin-bottom: 1rem;
+        }
+        
+        .total-value {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #000000, #333333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .total-info {
+            font-size: 1rem;
+            color: #666666;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #000000, #333333);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            width: 20%;
+        }
+        
+        /* Reset Button */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease-out 0.5s both;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-reset {
+            background: transparent;
+            border: 2px solid #000000;
+            color: #000000;
+        }
+        
+        .btn-reset:hover {
+            background: #ff6b6b;
+            color: #1a1a1a;
+        }
+        
+        .btn-home {
+            background: linear-gradient(135deg, #000000, #333333);
+            color: #ffffff;
+        }
+        
+        .btn-home:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .mods-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .total-value {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏎️ Supra MK4 Tuning Builder - 2500 HP Potential</h1>
+            <p class="subtitle">Select upgrades and watch your power increase in real-time • Stock: 321 HP → Maximum: 2500 HP</p>
+        </header>
+        
+        <!-- Supra Image -->
+        <div class="supra-section">
+            <div class="supra-image-container">
+                <img src="../images/flux_krea_00021_.png" alt="Toyota Supra MK4 2JZ-GTE" loading="eager">
+            </div>
+        </div>
+        
+        <!-- Real-Time Stats Display -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Horsepower</div>
+                    <div class="stat-value" id="hp-display">321</div>
+                    <div class="stat-unit">HP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Torque</div>
+                    <div class="stat-value" id="torque-display">315</div>
+                    <div class="stat-unit">lb-ft</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">0-60 Time</div>
+                    <div class="stat-value" id="time-display">4.6</div>
+                    <div class="stat-unit">seconds</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Top Speed</div>
+                    <div class="stat-value" id="speed-display">155</div>
+                    <div class="stat-unit">MPH</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modifications Grid -->
+        <div class="mods-section">
+            <h2 class="mods-title">Select Your Upgrades</h2>
+            <div class="mods-grid" id="mods-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Total Build Power -->
+        <div class="total-section">
+            <div class="total-label">Maximum Build Power (2500 HP Potential)</div>
+            <div class="total-value" id="total-power">321 HP</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="total-info" id="build-info">Stock Configuration - Select upgrades to increase power</div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="button-group">
+            <button class="btn btn-reset" onclick="resetBuild()">⟲ Reset Build</button>
+            <a href="../index.html" class="btn btn-home">← Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        // Comprehensive Modification data with detailed parts
+        const modifications = [
+            // TURBO SYSTEM
+            {
+                id: 'turbo-precision',
+                name: 'Precision 68/70 Turbo',
+                icon: '🌪️',
+                category: 'Turbo System',
+                description: 'Precision 68/70 turbocharger for extreme power',
+                hpBoost: 280,
+                torqueBoost: 250,
+                speedBoost: 20,
+                cost: '₹3,50,000'
+            },
+            {
+                id: 'turbo-garrett',
+                name: 'Garrett Twin-Entry Turbo',
+                icon: '🌪️',
+                category: 'Turbo System',
+                description: 'Garrett twin-entry turbochargers with improved flow',
+                hpBoost: 260,
+                torqueBoost: 230,
+                speedBoost: 18,
+                cost: '₹3,00,000'
+            },
+            {
+                id: 'manifold',
+                name: 'Twin-Entry Manifold',
+                icon: '🔧',
+                category: 'Turbo System',
+                description: 'Stainless steel twin-entry manifold with superior flow',
+                hpBoost: 120,
+                torqueBoost: 100,
+                speedBoost: 8,
+                cost: '₹1,50,000'
+            },
+            {
+                id: 'wastegate',
+                name: 'Tial/Turbosmart Wastegate',
+                icon: '⚙️',
+                category: 'Turbo System',
+                description: '60mm precision wastegate for boost control',
+                hpBoost: 40,
+                torqueBoost: 35,
+                speedBoost: 3,
+                cost: '₹80,000'
+            },
+            
+            // ENGINE INTERNALS
+            {
+                id: 'pistons',
+                name: 'CP Pistons (9:1)',
+                icon: '🔩',
+                category: 'Engine Internals',
+                description: 'CP forged pistons 9:1 compression ratio',
+                hpBoost: 100,
+                torqueBoost: 90,
+                speedBoost: 5,
+                cost: '₹1,80,000'
+            },
+            {
+                id: 'rods',
+                name: 'Eagle H-Beam Rods',
+                icon: '🔗',
+                category: 'Engine Internals',
+                description: 'Eagle or Manley forged H-beam connecting rods',
+                hpBoost: 80,
+                torqueBoost: 75,
+                speedBoost: 4,
+                cost: '₹1,50,000'
+            },
+            {
+                id: 'bearings',
+                name: 'ACL Performance Bearings',
+                icon: '⭕',
+                category: 'Engine Internals',
+                description: 'ACL premium engine bearings for durability',
+                hpBoost: 50,
+                torqueBoost: 45,
+                speedBoost: 2,
+                cost: '₹80,000'
+            },
+            
+            // VALVETRAIN & HEAD
+            {
+                id: 'valves',
+                name: 'Ferrea Valves & Seals',
+                icon: '🫧',
+                category: 'Head/Valvetrain',
+                description: 'Ferrea titanium valves with upgraded seals',
+                hpBoost: 70,
+                torqueBoost: 60,
+                speedBoost: 3,
+                cost: '₹1,20,000'
+            },
+            {
+                id: 'camshaft',
+                name: 'GSC S1 Camshafts',
+                icon: '🎛️',
+                category: 'Head/Valvetrain',
+                description: 'High-lift GSC S1 performance camshafts',
+                hpBoost: 90,
+                torqueBoost: 85,
+                speedBoost: 5,
+                cost: '₹1,40,000'
+            },
+            {
+                id: 'studs',
+                name: 'ARP 625+ Head Studs',
+                icon: '📍',
+                category: 'Head/Valvetrain',
+                description: 'ARP 625+ head studs + main studs for reliability',
+                hpBoost: 30,
+                torqueBoost: 25,
+                speedBoost: 1,
+                cost: '₹60,000'
+            },
+            {
+                id: 'damper',
+                name: 'Fluidampr Crankshaft Pulley',
+                icon: '⚡',
+                category: 'Head/Valvetrain',
+                description: 'Titan Motorsports or Fluidampr pulley for smooth powerband',
+                hpBoost: 35,
+                torqueBoost: 30,
+                speedBoost: 2,
+                cost: '₹70,000'
+            },
+            
+            // FUEL & INTAKE
+            {
+                id: 'injectors',
+                name: 'Siemens 2400cc Injectors',
+                icon: '💉',
+                category: 'Fuel & Intake',
+                description: 'Siemens 2400cc or Bosch 1000cc+ injectors',
+                hpBoost: 100,
+                torqueBoost: 95,
+                speedBoost: 6,
+                cost: '₹1,20,000'
+            },
+            {
+                id: 'fuel-rail',
+                name: 'Powerhouse Fuel Rail',
+                icon: '🛢️',
+                category: 'Fuel & Intake',
+                description: 'Titan Motorsports or Powerhouse Racing fuel rail',
+                hpBoost: 60,
+                torqueBoost: 55,
+                speedBoost: 3,
+                cost: '₹90,000'
+            },
+            {
+                id: 'fuel-pump',
+                name: 'Dual Aeromotive Pumps',
+                icon: '🚿',
+                category: 'Fuel & Intake',
+                description: 'Dual Aeromotive Stealth 340 fuel pumps',
+                hpBoost: 80,
+                torqueBoost: 75,
+                speedBoost: 4,
+                cost: '₹1,00,000'
+            },
+            {
+                id: 'intercooler',
+                name: 'Front Mount Intercooler',
+                icon: '❄️',
+                category: 'Fuel & Intake',
+                description: 'High-performance FMIC with upgraded piping',
+                hpBoost: 150,
+                torqueBoost: 130,
+                speedBoost: 10,
+                cost: '₹1,80,000'
+            },
+            {
+                id: 'intake',
+                name: 'Ported Intake Manifold',
+                icon: '💨',
+                category: 'Fuel & Intake',
+                description: 'Upgraded intake manifold with ported throttle body',
+                hpBoost: 75,
+                torqueBoost: 70,
+                speedBoost: 5,
+                cost: '₹1,00,000'
+            },
+            
+            // ELECTRONICS & ECU
+            {
+                id: 'ecu-maxx',
+                name: 'MaxxECU Standalone',
+                icon: '🖥️',
+                category: 'Electronics',
+                description: 'MaxxECU, ProEFI, or AEM Infinity standalone ECU',
+                hpBoost: 200,
+                torqueBoost: 180,
+                speedBoost: 15,
+                cost: '₹2,50,000'
+            },
+            {
+                id: 'ignition',
+                name: 'Upgraded Ignition Coils',
+                icon: '⚡',
+                category: 'Electronics',
+                description: 'High-output ignition coils for better spark',
+                hpBoost: 40,
+                torqueBoost: 35,
+                speedBoost: 2,
+                cost: '₹60,000'
+            },
+            {
+                id: 'gauges',
+                name: 'Defi/Greddy Gauges',
+                icon: '📊',
+                category: 'Electronics',
+                description: 'Boost, EGT, Oil Pressure, Water Temp monitoring',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹1,50,000'
+            },
+            
+            // COOLING SYSTEM
+            {
+                id: 'radiator',
+                name: 'Fluidyne Aluminum Radiator',
+                icon: '🌊',
+                category: 'Cooling',
+                description: 'High-performance aluminum radiator',
+                hpBoost: 60,
+                torqueBoost: 50,
+                speedBoost: 4,
+                cost: '₹80,000'
+            },
+            {
+                id: 'oil-cooler',
+                name: '19-Line Oil Cooler',
+                icon: '🧊',
+                category: 'Cooling',
+                description: 'Large capacity oil cooler kit for extreme builds',
+                hpBoost: 80,
+                torqueBoost: 70,
+                speedBoost: 5,
+                cost: '₹1,10,000'
+            },
+            {
+                id: 'e-fan',
+                name: 'Electric Fan Kit',
+                icon: '🌬️',
+                category: 'Cooling',
+                description: 'Flex-a-Lite electric fan for consistent cooling',
+                hpBoost: 40,
+                torqueBoost: 35,
+                speedBoost: 2,
+                cost: '₹70,000'
+            },
+            
+            // DRIVETRAIN & TRANSMISSION
+            {
+                id: 'clutch',
+                name: 'RPS Twin Carbon Clutch',
+                icon: '🔄',
+                category: 'Drivetrain',
+                description: 'RPS twin or triple carbon clutch for power handling',
+                hpBoost: 20,
+                torqueBoost: 15,
+                speedBoost: 0,
+                cost: '₹1,40,000'
+            },
+            {
+                id: 'gearbox',
+                name: 'V160/V161 6-Speed Rebuild',
+                icon: '⚙️',
+                category: 'Drivetrain',
+                description: 'V160 overhaul or Getrag 6-speed conversion',
+                hpBoost: 15,
+                torqueBoost: 20,
+                speedBoost: 1,
+                cost: '₹1,80,000'
+            },
+            {
+                id: 'lsd',
+                name: 'TRD Limited Slip Diff',
+                icon: '🔧',
+                category: 'Drivetrain',
+                description: 'TRD LSD for improved traction and acceleration',
+                hpBoost: 30,
+                torqueBoost: 35,
+                speedBoost: 2,
+                cost: '₹95,000'
+            },
+            {
+                id: 'driveshaft',
+                name: 'PHR 3.5" Driveshaft',
+                icon: '🛣️',
+                category: 'Drivetrain',
+                description: 'PHR 3.5-inch performance driveshaft',
+                hpBoost: 10,
+                torqueBoost: 10,
+                speedBoost: 1,
+                cost: '₹60,000'
+            },
+            
+            // SUSPENSION & BRAKES
+            {
+                id: 'suspension',
+                name: 'KW V3 Coilovers',
+                icon: '🎯',
+                category: 'Suspension',
+                description: 'D2 Racing, KW V3, or HKS premium coilovers',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹2,00,000'
+            },
+            {
+                id: 'brakes',
+                name: 'Brembo Big Brake Kit',
+                icon: '🛑',
+                category: 'Suspension',
+                description: 'D2 Racing 8-piston (356mm) or Brembo kit',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹1,80,000'
+            },
+            {
+                id: 'struts',
+                name: 'TRD Strut Braces',
+                icon: '🏗️',
+                category: 'Suspension',
+                description: 'TRD or Greddy front & rear strut braces',
+                hpBoost: 20,
+                torqueBoost: 18,
+                speedBoost: 1,
+                cost: '₹70,000'
+            },
+            
+            // EXTERIOR & INTERIOR
+            {
+                id: 'body',
+                name: 'Carbon Fiber Aero Kit',
+                icon: '🎨',
+                category: 'Exterior',
+                description: 'Carbon front spoiler, diffuser, TRD rear spoiler',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹2,50,000'
+            },
+            {
+                id: 'interior',
+                name: 'Racing Seats & Harness',
+                icon: '🪑',
+                category: 'Exterior',
+                description: 'Bimarco/Recaro seats, 6-point harness, roll cage',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹1,50,000'
+            },
+            {
+                id: 'lighting',
+                name: 'LED Headlight Upgrade',
+                icon: '💡',
+                category: 'Exterior',
+                description: 'Modernized OEM headlights with LED bulbs',
+                hpBoost: 0,
+                torqueBoost: 0,
+                speedBoost: 0,
+                cost: '₹80,000'
+            }
+        ];
+        
+        let selectedMods = new Set();
+        
+        const stockStats = {
+            hp: 321,
+            torque: 315,
+            time: 4.6,
+            speed: 155
+        };
+        
+        // Initialize modifications grid
+        function initializeMods() {
+            const grid = document.getElementById('mods-grid');
+            const categories = {};
+            
+            // Group by category
+            modifications.forEach(mod => {
+                if (!categories[mod.category]) {
+                    categories[mod.category] = [];
+                }
+                categories[mod.category].push(mod);
+            });
+            
+            // Create category sections
+            Object.entries(categories).forEach(([category, mods]) => {
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.style.gridColumn = '1 / -1';
+                categoryTitle.style.marginTop = '2rem';
+                categoryTitle.style.color = '#000000';
+                categoryTitle.style.fontSize = '1.3rem';
+                categoryTitle.style.borderBottom = '2px solid #000000';
+                categoryTitle.style.paddingBottom = '0.5rem';
+                categoryTitle.textContent = '📌 ' + category;
+                grid.appendChild(categoryTitle);
+                
+                // Create cards for this category
+                mods.forEach(mod => {
+                    const card = document.createElement('div');
+                    card.className = 'mod-card';
+                    card.innerHTML = `
+                        <div class="mod-checkbox"></div>
+                        <div class="mod-icon">${mod.icon}</div>
+                        <div class="mod-name">${mod.name}</div>
+                        <div class="mod-description">${mod.description}</div>
+                        <div class="mod-boost">+${mod.hpBoost} HP / +${mod.torqueBoost} lb-ft</div>
+                        <div style="font-size: 0.8rem; color: #666666; margin-top: 0.5rem; font-weight: 600;">${mod.cost}</div>
+                    `;
+                    card.addEventListener('click', () => toggleMod(mod.id, card));
+                    grid.appendChild(card);
+                });
+            });
+        }
+        
+        // Toggle modification selection
+        function toggleMod(modId, cardElement) {
+            if (selectedMods.has(modId)) {
+                selectedMods.delete(modId);
+                cardElement.classList.remove('selected');
+            } else {
+                selectedMods.add(modId);
+                cardElement.classList.add('selected');
+            }
+            updateStats();
+        }
+        
+        // Update stats based on selected mods
+        function updateStats() {
+            let totalHp = stockStats.hp;
+            let totalTorque = stockStats.torque;
+            let totalSpeed = stockStats.speed;
+            let totalTime = stockStats.time;
+            
+            selectedMods.forEach(modId => {
+                const mod = modifications.find(m => m.id === modId);
+                totalHp += mod.hpBoost;
+                totalTorque += mod.torqueBoost;
+                totalSpeed += mod.speedBoost;
+                totalTime -= (mod.speedBoost * 0.12);
+            });
+            
+            // Ensure minimum values
+            totalTime = Math.max(totalTime, 1.8);
+            
+            // Animate stat updates
+            animateStatUpdate('hp-display', totalHp);
+            animateStatUpdate('torque-display', totalTorque);
+            animateStatUpdate('time-display', totalTime.toFixed(2));
+            animateStatUpdate('speed-display', totalSpeed);
+            
+            updateTotalPower(totalHp);
+            updateProgressBar(totalHp);
+            updateBuildInfo(selectedMods.size, totalHp);
+        }
+        
+        // Animate stat changes
+        function animateStatUpdate(elementId, newValue) {
+            const element = document.getElementById(elementId);
+            element.style.animation = 'none';
+            setTimeout(() => {
+                element.textContent = newValue;
+                element.style.animation = 'pulse 0.6s ease';
+            }, 10);
+        }
+        
+        // Update total power display
+        function updateTotalPower(hp) {
+            const totalPowerEl = document.getElementById('total-power');
+            totalPowerEl.textContent = hp + ' HP';
+        }
+        
+        // Update progress bar - now 2500 HP max
+        function updateProgressBar(hp) {
+            const maxHp = 2500;
+            const percentage = (hp / maxHp) * 100;
+            document.getElementById('progress-fill').style.width = Math.min(percentage, 100) + '%';
+        }
+        
+        // Update build info with tier system
+        function updateBuildInfo(modsCount, hp) {
+            const infoEl = document.getElementById('build-info');
+            let tier = '';
+            
+            if (hp <= 400) tier = 'Stock/Light Tune';
+            else if (hp <= 600) tier = 'Stage 1 Build';
+            else if (hp <= 900) tier = 'Stage 2 Build';
+            else if (hp <= 1300) tier = 'Stage 2+ Build';
+            else if (hp <= 1800) tier = 'Stage 3 Build';
+            else if (hp <= 2200) tier = 'Extreme Build (1800+ HP)';
+            else tier = 'Maximum Power (2500 HP+)';
+            
+            infoEl.textContent = `${tier} - ${modsCount} part${modsCount !== 1 ? 's' : ''} selected - ₹${calculateTotalCost().toLocaleString('en-IN')}`;
+        }
+        
+        // Calculate total cost
+        function calculateTotalCost() {
+            let total = 0;
+            selectedMods.forEach(modId => {
+                const mod = modifications.find(m => m.id === modId);
+                const costValue = parseInt(mod.cost.replace(/[₹,]/g, ''));
+                total += costValue;
+            });
+            return total;
+        }
+        
+        // Reset to stock
+        function resetBuild() {
+            selectedMods.clear();
+            document.querySelectorAll('.mod-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            updateStats();
+        }
+        
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeMods();
+            updateStats();
+        });
+    </script>
+</body>
+</html>

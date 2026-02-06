@@ -1,5 +1,5 @@
 # Supra MK4 Community - robots.txt for GitHub Pages
-# Generated: December 3, 2025
+# Generated: February 6, 2026
 # Hosted on: https://bikkycoder.github.io/Supra-mk4/
 
 # Allow all major search engines
@@ -10,7 +10,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /.github/
-Disallow: /images/
 
 # Block bad bots and scrapers
 User-agent: MJ12bot
