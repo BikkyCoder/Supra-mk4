@@ -949,6 +949,165 @@
             }
         }
 
+        /* SUPRA MODELS SECTION STYLING */
+        .supra-models-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e8e8e8;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: #333;
+        }
+
+        .model-card.mk4-featured {
+            border: 2px solid #000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .model-card.mk4-featured:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .model-header {
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .model-header.mk1 {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+        }
+
+        .model-header.mk2 {
+            background: linear-gradient(135deg, #1E90FF, #4169E1);
+        }
+
+        .model-header.mk3 {
+            background: linear-gradient(135deg, #FF8C00, #FF6347);
+        }
+
+        .model-header.mk4 {
+            background: linear-gradient(135deg, #000000, #333333);
+        }
+
+        .model-header.mk5 {
+            background: linear-gradient(135deg, #23B369, #00D084);
+        }
+
+        .model-header h3 {
+            font-size: 1.4rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .year-badge.featured {
+            background: rgba(255, 255, 255, 0.5);
+            font-weight: 700;
+        }
+
+        .model-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-content p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .model-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .model-content li {
+            font-size: 0.9rem;
+            color: #666;
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .model-content li:before {
+            content: "✓";
+            color: #000;
+            font-weight: bold;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .model-btn {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .model-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .model-btn.featured {
+            background: linear-gradient(135deg, #000, #333);
+            cursor: default;
+        }
+
+        .model-btn.featured:hover {
+            transform: none;
+            background: linear-gradient(135deg, #000, #333);
+        }
+
         html, body {
             max-width: 100vw;
             overflow-x: hidden;
@@ -1065,6 +1224,106 @@
                 <div class="stat-item">
                     <div class="stat-value">1200+</div>
                     <div class="stat-label">Max Tuned HP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPRA MODELS SECTION -->
+        <section class="supra-models-section" aria-labelledby="models-title">
+            <div class="container">
+                <h2 id="models-title" class="section-title">Evolution of the Supra: All Generations</h2>
+                <p class="section-subtitle">From the original A40 to the modern A90/A91, explore every Supra generation</p>
+                
+                <div class="models-grid">
+                    <!-- MK1 Supra (A40) -->
+                    <div class="model-card">
+                        <div class="model-header mk1">
+                            <h3>Supra MK1 (A40)</h3>
+                            <span class="year-badge">1978-1981</span>
+                        </div>
+                        <div class="model-content">
+                            <p><strong>The Original Legend</strong></p>
+                            <ul>
+                                <li>7M-GE/GEU Engines (2.8L)</li>
+                                <li>161-200 HP</li>
+                                <li>0-60: 8.5 seconds</li>
+                                <li>Iconic round headlights</li>
+                            </ul>
+                            <a href="models/mk1-supra/" class="model-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- MK2 Supra (A60) -->
+                    <div class="model-card">
+                        <div class="model-header mk2">
+                            <h3>Supra MK2 (A60)</h3>
+                            <span class="year-badge">1981-1986</span>
+                        </div>
+                        <div class="model-content">
+                            <p><strong>The Refined Classic</strong></p>
+                            <ul>
+                                <li>7M-GE/GEU & 5M-GE Engines</li>
+                                <li>200-228 HP</li>
+                                <li>0-60: 7.8 seconds</li>
+                                <li>Turbocharged variants available</li>
+                            </ul>
+                            <a href="models/mk2-supra/" class="model-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- MK3 Supra (A70) -->
+                    <div class="model-card">
+                        <div class="model-header mk3">
+                            <h3>Supra MK3 (A70)</h3>
+                            <span class="year-badge">1986-1993</span>
+                        </div>
+                        <div class="model-content">
+                            <p><strong>The Performance Jump</strong></p>
+                            <ul>
+                                <li>7M-GE/GTE Engines (3.0L)</li>
+                                <li>200-280 HP</li>
+                                <li>0-60: 6.3 seconds (Turbo)</li>
+                                <li>Advanced aerodynamics & tech</li>
+                            </ul>
+                            <a href="models/mk3-supra/" class="model-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- MK4 Supra (A80) -->
+                    <div class="model-card mk4-featured">
+                        <div class="model-header mk4">
+                            <h3>Supra MK4 (A80) ⭐</h3>
+                            <span class="year-badge featured">1993-2002</span>
+                        </div>
+                        <div class="model-content">
+                            <p><strong>The Peak of JDM Culture</strong></p>
+                            <ul>
+                                <li>2JZ-GTE Twin-Turbo Engine</li>
+                                <li>321 HP Stock → 1200+ Tuned</li>
+                                <li>0-60: 4.6 seconds Stock</li>
+                                <li>Icon of Fast & Furious</li>
+                            </ul>
+                            <a href="index.html" class="model-btn featured">Featured Here</a>
+                        </div>
+                    </div>
+
+                    <!-- MK5 Supra (A90/A91) -->
+                    <div class="model-card">
+                        <div class="model-header mk5">
+                            <h3>Supra MK5 (A90/A91)</h3>
+                            <span class="year-badge">2019-Present</span>
+                        </div>
+                        <div class="model-content">
+                            <p><strong>The Modern Return</strong></p>
+                            <ul>
+                                <li>B58B30 Turbocharged Inline-6</li>
+                                <li>382 HP Stock</li>
+                                <li>0-60: 3.8 seconds</li>
+                                <li>BMW collaboration, Modern tech</li>
+                            </ul>
+                            <a href="models/mk5-supra/" class="model-btn">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

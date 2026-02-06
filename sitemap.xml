@@ -78,4 +78,28 @@
         <changefreq>monthly</changefreq>
         <priority>0.95</priority>
     </url>
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/models/mk1-supra/</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/models/mk2-supra/</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/models/mk3-supra/</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bikkycoder.github.io/Supra-mk4/models/mk5-supra/</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
 </urlset>
