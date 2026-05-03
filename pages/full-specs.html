@@ -3,1054 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive Supra MK4 Tuning Builder - Customize your 2JZ-GTE engine and watch stats update in real-time">
+    <meta name="description" content="Interactive Supra MK4 Tuning Builder - Real engineering consequences modeled">
     <link rel="canonical" href="https://bikkycoder.github.io/Supra-mk4/pages/full-specs.html">
-    <link rel="sitemap" type="application/xml" href="https://bikkycoder.github.io/Supra-mk4/sitemap.xml">
-    <title>Supra MK4 Interactive Tuning Builder - Real-Time Power Calculator</title>
-    
-    <!-- Google tag (gtag.js) -->
+    <title>Supra MK4 — Real-World Tuning Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4R8CNN6G0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-E4R8CNN6G0');
-    </script>
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Interactive Supra MK4 Tuning Builder">
-    <meta property="og:description" content="Build your dream Supra MK4 - Select modifications and watch power increase in real-time">
-    <meta property="og:image" content="https://bikkycoder.github.io/Supra-mk4/images/flux_krea_00021_.png">
-    <meta property="og:url" content="https://bikkycoder.github.io/Supra-mk4/pages/full-specs.html">
-    
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E4R8CNN6G0');</script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --w:#ffffff;--ow:#f7f7f5;--light:#eeeeec;--mid:#d4d4d2;--muted:#9a9a98;
+            --dmuted:#666664;--blk:#111110;--nblk:#1a1a18;
+            --red:#c82020;--redl:#fdf2f2;--redm:#f0b0b0;
+            --org:#b85500;--orgl:#fdf5ef;
+            --grn:#1a7030;--grnl:#f0faf3;
+            --fd:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
         }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            color: #000000;
-            min-height: 100vh;
-            padding: 2rem;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{font-family:var(--fb);background:var(--ow);color:var(--blk);min-height:100vh;}
+
+        /* TOP BAR */
+        .topbar{height:4px;background:var(--blk);}
+
+        /* HEADER */
+        .hdr{background:var(--w);border-bottom:1px solid var(--mid);padding:3rem 2rem 2.5rem;}
+        .hdr-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
+        .hdr-eye{font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;color:var(--muted);margin-bottom:.8rem;}
+        h1{font-family:var(--fd);font-size:clamp(3.2rem,6.5vw,5.8rem);line-height:.9;letter-spacing:.02em;}
+        h1 em{font-style:normal;-webkit-text-stroke:2px var(--blk);color:transparent;}
+        .hdr-right{text-align:right;}
+        .hdr-rlabel{font-family:var(--fm);font-size:.62rem;color:var(--muted);letter-spacing:.15em;margin-bottom:.3rem;}
+        .hdr-rval{font-family:var(--fd);font-size:2.2rem;line-height:1;letter-spacing:.05em;}
+
+        /* BODY LAYOUT */
+        .wrap{max-width:1320px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 360px;gap:0;align-items:start;}
+        .main{border-right:1px solid var(--mid);padding-right:3rem;padding-top:2.5rem;}
+        .side{padding-left:2.5rem;padding-top:2.5rem;position:sticky;top:1.5rem;}
+
+        /* SUPRA IMAGE */
+        .img-wrap{position:relative;overflow:hidden;border:1px solid var(--mid);margin-bottom:2.5rem;}
+        .img-wrap img{width:100%;height:auto;display:block;filter:grayscale(15%);transition:transform .5s ease;}
+        .img-wrap:hover img{transform:scale(1.015);}
+        .img-cap{position:absolute;bottom:0;left:0;right:0;background:var(--blk);color:var(--w);padding:.55rem 1rem;display:flex;justify-content:space-between;}
+        .img-cap span{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;}
+
+        /* LIVE STATS */
+        .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--mid);margin-bottom:2.5rem;background:var(--w);}
+        .sc{padding:1.3rem .9rem;border-right:1px solid var(--mid);position:relative;}
+        .sc:last-child{border-right:none;}
+        .sc-lbl{font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;color:var(--muted);margin-bottom:.4rem;}
+        .sc-val{font-family:var(--fd);font-size:2.6rem;line-height:1;letter-spacing:.02em;transition:color .3s;}
+        .sc-val.red{color:var(--red);}
+        .sc-unit{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-top:.25rem;letter-spacing:.1em;}
+        .sc-dt{font-family:var(--fm);font-size:.6rem;font-weight:500;position:absolute;top:.8rem;right:.7rem;opacity:0;transition:opacity .2s;}
+        .sc-dt.show{opacity:1;}
+
+        /* SECTION HEAD */
+        .sh{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.5rem;padding-bottom:.7rem;border-bottom:2px solid var(--blk);}
+        .sh h2{font-family:var(--fd);font-size:1.9rem;letter-spacing:.05em;}
+        .sh .badge{font-family:var(--fm);font-size:.6rem;background:var(--blk);color:var(--w);padding:.2rem .5rem;letter-spacing:.1em;}
+
+        /* CAT LABEL */
+        .cat{font-family:var(--fm);font-size:.58rem;letter-spacing:.25em;color:var(--muted);padding:.6rem 0;border-bottom:1px solid var(--light);margin-bottom:1px;margin-top:2rem;}
+        .cat:first-of-type{margin-top:0;}
+
+        /* ── MOD ROW (the card) ── */
+        /* Layout: [idx 44px] [content flex-1] [right col auto] */
+        .mrow{
+            display:grid;grid-template-columns:44px 1fr auto;
+            background:var(--w);color:var(--blk);
+            border-bottom:1px solid var(--light);
+            cursor:pointer;position:relative;overflow:hidden;
+            transition:background .15s ease, color .15s ease;
+            user-select:none;
         }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .mrow::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent;transition:background .15s;}
+        .mrow:hover:not(.sel){background:var(--ow);}
+        .mrow.sel{background:var(--blk);color:var(--w);}
+        .mrow.sel::before{background:rgba(255,255,255,.15);}
+        .mrow.risk-d::before{background:var(--org);}
+        .mrow.risk-f::before{background:var(--red);animation:lpulse .7s steps(2) infinite;}
+        .mrow.sel.risk-d::before{background:#ffaa44;}
+        .mrow.sel.risk-f::before{background:#ff4444;animation:lpulse .7s steps(2) infinite;}
+
+        /* index col */
+        .midx{display:flex;align-items:center;justify-content:center;padding:1.1rem 0 1.1rem .9rem;font-family:var(--fm);font-size:.6rem;color:var(--muted);flex-shrink:0;}
+        .mrow.sel .midx{color:rgba(255,255,255,.25);}
+
+        /* content col */
+        .mcontent{padding:1rem 1rem 1rem .7rem;min-width:0;}
+        .mname{font-size:.92rem;font-weight:500;letter-spacing:.01em;line-height:1.3;margin-bottom:.2rem;}
+        .mdesc{
+            font-size:.76rem;font-weight:300;line-height:1.55;color:var(--dmuted);
+            max-height:0;overflow:hidden;
+            transition:max-height .28s ease, color .15s ease;
         }
-        
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
+        .mrow:hover .mdesc,.mrow.sel .mdesc{max-height:150px;}
+        .mrow.sel .mdesc{color:rgba(255,255,255,.48);}
+        .mwarn{font-family:var(--fm);font-size:.62rem;font-weight:500;letter-spacing:.04em;margin-top:.35rem;display:none;}
+        .mwarn.on{display:block;}
+        .mwarn.wd{color:var(--org);}
+        .mwarn.wf{color:var(--red);animation:tblink 1s steps(2) infinite;}
+        .mrow.sel .mwarn.wd{color:#ffaa55;}
+        .mrow.sel .mwarn.wf{color:#ff5555;}
+
+        /* right col */
+        .mright{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:1rem 1rem 1rem .6rem;gap:.3rem;flex-shrink:0;}
+        .mhp{font-family:var(--fd);font-size:1.6rem;line-height:1;letter-spacing:.03em;}
+        .mhp.z{font-family:var(--fm);font-size:.72rem;color:var(--muted);}
+        .mrow.sel .mhp{color:var(--w);}
+        .mrow.sel .mhp.z{color:rgba(255,255,255,.25);}
+        .mhplbl{font-family:var(--fm);font-size:.52rem;color:var(--muted);letter-spacing:.08em;text-align:right;}
+        .mrow.sel .mhplbl{color:rgba(255,255,255,.25);}
+        .mcost{font-family:var(--fm);font-size:.62rem;color:var(--muted);letter-spacing:.04em;}
+        .mrow.sel .mcost{color:rgba(255,255,255,.3);}
+
+        /* tick circle */
+        .mtick{width:20px;height:20px;border:1.5px solid var(--mid);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+        .mtick svg{width:10px;height:10px;opacity:0;transform:scale(.4);transition:all .15s ease;}
+        .mrow.sel .mtick{background:var(--w);border-color:var(--w);}
+        .mrow.sel .mtick svg{opacity:1;transform:scale(1);}
+
+        /* chip badge */
+        .mchip{font-family:var(--fm);font-size:.52rem;letter-spacing:.06em;padding:.18rem .38rem;display:none;flex-shrink:0;}
+        .mchip.on{display:inline-block;}
+        .mchip.cd{background:var(--orgl);color:var(--org);border:1px solid #dda070;}
+        .mchip.cf{background:var(--redl);color:var(--red);border:1px solid var(--redm);animation:cblink 1s steps(2) infinite;}
+
+        /* ── SIDEBAR BLOCKS ── */
+        .sb{border:1px solid var(--mid);background:var(--w);margin-bottom:1.3rem;}
+        .sbh{padding:.65rem 1rem;background:var(--blk);color:var(--w);font-family:var(--fm);font-size:.58rem;letter-spacing:.2em;display:flex;justify-content:space-between;align-items:center;}
+        .sbb{padding:1.2rem;}
+
+        /* total HP */
+        .thp{font-family:var(--fd);font-size:4rem;line-height:1;letter-spacing:.02em;margin-bottom:.2rem;transition:color .4s;}
+        .thp.red{color:var(--red);}
+        .thpsub{font-family:var(--fm);font-size:.58rem;color:var(--muted);letter-spacing:.15em;margin-bottom:1.1rem;}
+
+        /* HP bar */
+        .hptrack{margin:.8rem 0;}
+        .hptop{display:flex;justify-content:space-between;font-family:var(--fm);font-size:.52rem;color:var(--muted);margin-bottom:.35rem;letter-spacing:.04em;}
+        .hpouter{height:4px;background:var(--light);position:relative;}
+        .hpouter::before{content:'';position:absolute;left:26%;top:-3px;bottom:-3px;width:1px;background:var(--mid);}
+        .hpouter::after{content:'';position:absolute;left:56%;top:-3px;bottom:-3px;width:1px;background:var(--mid);}
+        .hpfill{height:100%;background:var(--blk);transition:width .5s cubic-bezier(.4,0,.2,1),background .4s;}
+        .hpfill.w{background:var(--org);}
+        .hpfill.d{background:var(--red);}
+        .hpzone{font-family:var(--fm);font-size:.56rem;text-align:right;margin-top:.35rem;letter-spacing:.07em;transition:color .3s;}
+
+        /* tier */
+        .tier{display:inline-block;font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;padding:.28rem .55rem;border:1px solid var(--mid);color:var(--dmuted);margin-top:.9rem;transition:all .3s;}
+        .tier.w{border-color:#dda070;color:var(--org);background:var(--orgl);}
+        .tier.d{border-color:var(--redm);color:var(--red);background:var(--redl);}
+
+        /* danger bar */
+        .dbaro{height:5px;background:var(--light);}
+        .dbari{height:100%;background:var(--blk);transition:width .5s ease,background .4s;}
+        .dbari.w{background:var(--org);}
+        .dbari.c{background:var(--red);}
+        .dbari.f{background:var(--red);animation:ffill .45s steps(2) infinite;}
+        .dpill{font-family:var(--fm);font-size:.58rem;font-weight:500;letter-spacing:.1em;padding:.18rem .45rem;transition:all .3s;}
+        .dpill.safe{background:var(--grnl);color:var(--grn);border:1px solid #90c0a0;}
+        .dpill.caution{background:#fffcef;color:#907010;border:1px solid #d0b840;}
+        .dpill.warning{background:var(--orgl);color:var(--org);border:1px solid #dda070;}
+        .dpill.critical{background:var(--redl);color:var(--red);border:1px solid var(--redm);}
+        .dpill.fatal{background:var(--red);color:var(--w);border:1px solid var(--red);animation:cblink .5s steps(2) infinite;}
+        .dlrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;}
+        .dlbl{font-family:var(--fm);font-size:.58rem;color:var(--muted);letter-spacing:.12em;}
+
+        /* warnings list */
+        .wlist{display:flex;flex-direction:column;gap:.45rem;}
+        .witem{padding:.7rem .9rem;border-left:3px solid;animation:sil .2s ease;}
+        .witem.info{border-color:#999;background:var(--ow);}
+        .witem.caution{border-color:#c0a020;background:#fffcef;}
+        .witem.danger{border-color:var(--org);background:var(--orgl);}
+        .witem.critical,.witem.fatal{border-color:var(--red);background:var(--redl);}
+        .wtitle{font-size:.72rem;font-weight:500;letter-spacing:.01em;margin-bottom:.2rem;}
+        .witem.fatal .wtitle,.witem.critical .wtitle{color:var(--red);}
+        .witem.danger .wtitle{color:var(--org);}
+        .wtext{font-size:.7rem;font-weight:300;line-height:1.55;color:var(--dmuted);}
+        .witem.fatal .wtext,.witem.critical .wtext{color:#7a2828;}
+        .witem.danger .wtext{color:#7a4010;}
+        .nowarn{padding:1rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;color:var(--muted);text-align:center;border:1px dashed var(--mid);}
+
+        /* sb summary rows */
+        .sbrow{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--light);}
+        .sbrow:last-child{border-bottom:none;}
+        .sblbl{font-family:var(--fm);font-size:.58rem;color:var(--muted);letter-spacing:.1em;}
+        .sbval{font-family:var(--fb);font-size:.88rem;font-weight:500;}
+        .sbval.a{color:var(--red);}
+
+        /* BUTTONS */
+        .btnrow{display:flex;gap:.7rem;flex-wrap:wrap;}
+        .btn{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;padding:.7rem 1.3rem;border:1.5px solid var(--mid);background:transparent;color:var(--dmuted);cursor:pointer;transition:all .15s;text-decoration:none;display:inline-block;}
+        .btn:hover{border-color:var(--blk);color:var(--blk);}
+        .btn.primary{background:var(--blk);color:var(--w);border-color:var(--blk);}
+        .btn.primary:hover{background:var(--nblk);}
+        .btn.danger{border-color:var(--redm);color:var(--red);}
+        .btn.danger:hover{background:var(--redl);}
+
+        /* FOOTER */
+        .ft{border-top:1px solid var(--mid);padding:1.3rem 2rem;max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+        .ftnote{font-family:var(--fm);font-size:.58rem;color:var(--muted);letter-spacing:.1em;}
+
+        /* ANIMATIONS */
+        @keyframes lpulse{0%,100%{opacity:1}50%{opacity:.25}}
+        @keyframes tblink{0%,100%{opacity:1}50%{opacity:.35}}
+        @keyframes cblink{0%,100%{opacity:1}50%{opacity:.45}}
+        @keyframes ffill{0%{opacity:1}50%{opacity:.35}}
+        @keyframes sil{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+        @keyframes nflip{0%{transform:translateY(-4px);opacity:0}100%{transform:none;opacity:1}}
+        .nup{animation:nflip .22s ease forwards;}
+
+        /* RESPONSIVE */
+        @media(max-width:900px){
+            .wrap{grid-template-columns:1fr;}
+            .main{border-right:none;padding-right:0;border-bottom:1px solid var(--mid);padding-bottom:3rem;}
+            .side{padding-left:0;position:static;}
+            .hdr-inner{grid-template-columns:1fr;}
+            .hdr-right{text-align:left;}
         }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #000000, #333333);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            color: #333333;
-        }
-        
-        /* Supra Image Section */
-        .supra-section {
-            text-align: center;
-            margin: 3rem 0;
-            animation: slideDown 0.8s ease-out;
-        }
-        
-        .supra-image-container {
-            background: rgba(0, 0, 0, 0.02);
-            border: 2px solid #000000;
-            border-radius: 15px;
-            padding: 2rem;
-            display: inline-block;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .supra-image-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        .supra-image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease;
-        }
-        
-        .supra-image-container:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Stats Display */
-        .stats-section {
-            margin: 3rem 0;
-            animation: slideUp 0.8s ease-out;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-card {
-            background: rgba(0, 0, 0, 0.03);
-            border: 2px solid #000000;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.05);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-card:hover::before {
-            transform: translateY(0);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666666;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #000000;
-            position: relative;
-            z-index: 1;
-            transition: all 0.5s ease;
-        }
-        
-        .stat-unit {
-            font-size: 0.8rem;
-            color: #999999;
-            margin-top: 0.3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Modifications Section */
-        .mods-section {
-            margin: 4rem 0;
-            animation: slideUp 0.8s ease-out 0.2s both;
-        }
-        
-        .mods-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #000000;
-        }
-        
-        .mods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .mod-card {
-            background: rgba(0, 0, 0, 0.03);
-            border: 2px solid rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .mod-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .mod-card:hover::before {
-            left: 100%;
-        }
-        
-        .mod-card:hover {
-            border-color: #000000;
-            background: rgba(0, 0, 0, 0.08);
-            transform: translateY(-5px);
-        }
-        
-        .mod-card.selected {
-            background: rgba(0, 0, 0, 0.12);
-            border-color: #000000;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .mod-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        
-        .mod-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-            color: #000000;
-        }
-        
-        .mod-description {
-            font-size: 0.9rem;
-            color: #666666;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .mod-boost {
-            font-size: 0.95rem;
-            color: #333333;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .mod-checkbox {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #000000;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            transition: all 0.3s ease;
-            z-index: 2;
-        }
-        
-        .mod-card.selected .mod-checkbox {
-            background: #000000;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        }
-        
-        .mod-checkbox::after {
-            content: '✓';
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 700;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .mod-card.selected .mod-checkbox::after {
-            opacity: 1;
-        }
-        
-        /* Total Build */
-        .total-section {
-            text-align: center;
-            margin: 3rem 0;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.05);
-            border: 2px solid #000000;
-            border-radius: 15px;
-            animation: slideUp 0.8s ease-out 0.4s both;
-        }
-        
-        .total-label {
-            font-size: 1.2rem;
-            color: #666666;
-            margin-bottom: 1rem;
-        }
-        
-        .total-value {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #000000, #333333);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-        
-        .total-info {
-            font-size: 1rem;
-            color: #666666;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            margin-top: 1rem;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #000000, #333333);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-            width: 20%;
-        }
-        
-        /* Reset Button */
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-            animation: slideUp 0.8s ease-out 0.5s both;
-        }
-        
-        .btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-reset {
-            background: transparent;
-            border: 2px solid #000000;
-            color: #000000;
-        }
-        
-        .btn-reset:hover {
-            background: #ff6b6b;
-            color: #1a1a1a;
-        }
-        
-        .btn-home {
-            background: linear-gradient(135deg, #000000, #333333);
-            color: #ffffff;
-        }
-        
-        .btn-home:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Animations */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes shimmer {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .mods-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .total-value {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
+        @media(max-width:580px){
+            .stats{grid-template-columns:repeat(2,1fr);}
+            .sc:nth-child(2){border-right:none;}
+            .sc:nth-child(3){border-top:1px solid var(--mid);}
+            .sc:nth-child(4){border-top:1px solid var(--mid);border-right:none;}
+            .mrow{grid-template-columns:34px 1fr auto;}
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🏎️ Supra MK4 Tuning Builder - 2500 HP Potential</h1>
-            <p class="subtitle">Select upgrades and watch your power increase in real-time • Stock: 321 HP → Maximum: 2500 HP</p>
-        </header>
-        
-        <!-- Supra Image -->
-        <div class="supra-section">
-            <div class="supra-image-container">
-                <img src="../images/flux_krea_00021_.png" alt="Toyota Supra MK4 2JZ-GTE" loading="eager">
-            </div>
+
+<div class="topbar"></div>
+
+<div class="hdr">
+    <div class="hdr-inner">
+        <div>
+            <p class="hdr-eye">2JZ-GTE · Toyota Supra MK4 · Real-World Engineering Consequences</p>
+            <h1>TUNING<br><em>BUILDER</em></h1>
         </div>
-        
-        <!-- Real-Time Stats Display -->
-        <div class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Horsepower</div>
-                    <div class="stat-value" id="hp-display">321</div>
-                    <div class="stat-unit">HP</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Torque</div>
-                    <div class="stat-value" id="torque-display">315</div>
-                    <div class="stat-unit">lb-ft</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">0-60 Time</div>
-                    <div class="stat-value" id="time-display">4.6</div>
-                    <div class="stat-unit">seconds</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Top Speed</div>
-                    <div class="stat-value" id="speed-display">155</div>
-                    <div class="stat-unit">MPH</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Modifications Grid -->
-        <div class="mods-section">
-            <h2 class="mods-title">Select Your Upgrades</h2>
-            <div class="mods-grid" id="mods-grid">
-                <!-- Populated by JavaScript -->
-            </div>
-        </div>
-        
-        <!-- Total Build Power -->
-        <div class="total-section">
-            <div class="total-label">Maximum Build Power (2500 HP Potential)</div>
-            <div class="total-value" id="total-power">321 HP</div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
-            </div>
-            <div class="total-info" id="build-info">Stock Configuration - Select upgrades to increase power</div>
-        </div>
-        
-        <!-- Buttons -->
-        <div class="button-group">
-            <button class="btn btn-reset" onclick="resetBuild()">⟲ Reset Build</button>
-            <a href="../index.html" class="btn btn-home">← Back to Home</a>
+        <div class="hdr-right">
+            <p class="hdr-rlabel">Stock Output</p>
+            <p class="hdr-rval">321 HP</p>
+            <p class="hdr-rlabel" style="margin-top:.8rem">Theoretical Max</p>
+            <p class="hdr-rval">2,500 HP</p>
         </div>
     </div>
-    
-    <script>
-        // Comprehensive Modification data with detailed parts
-        const modifications = [
-            // TURBO SYSTEM
-            {
-                id: 'turbo-precision',
-                name: 'Precision 68/70 Turbo',
-                icon: '🌪️',
-                category: 'Turbo System',
-                description: 'Precision 68/70 turbocharger for extreme power',
-                hpBoost: 280,
-                torqueBoost: 250,
-                speedBoost: 20,
-                cost: '₹3,50,000'
-            },
-            {
-                id: 'turbo-garrett',
-                name: 'Garrett Twin-Entry Turbo',
-                icon: '🌪️',
-                category: 'Turbo System',
-                description: 'Garrett twin-entry turbochargers with improved flow',
-                hpBoost: 260,
-                torqueBoost: 230,
-                speedBoost: 18,
-                cost: '₹3,00,000'
-            },
-            {
-                id: 'manifold',
-                name: 'Twin-Entry Manifold',
-                icon: '🔧',
-                category: 'Turbo System',
-                description: 'Stainless steel twin-entry manifold with superior flow',
-                hpBoost: 120,
-                torqueBoost: 100,
-                speedBoost: 8,
-                cost: '₹1,50,000'
-            },
-            {
-                id: 'wastegate',
-                name: 'Tial/Turbosmart Wastegate',
-                icon: '⚙️',
-                category: 'Turbo System',
-                description: '60mm precision wastegate for boost control',
-                hpBoost: 40,
-                torqueBoost: 35,
-                speedBoost: 3,
-                cost: '₹80,000'
-            },
-            
-            // ENGINE INTERNALS
-            {
-                id: 'pistons',
-                name: 'CP Pistons (9:1)',
-                icon: '🔩',
-                category: 'Engine Internals',
-                description: 'CP forged pistons 9:1 compression ratio',
-                hpBoost: 100,
-                torqueBoost: 90,
-                speedBoost: 5,
-                cost: '₹1,80,000'
-            },
-            {
-                id: 'rods',
-                name: 'Eagle H-Beam Rods',
-                icon: '🔗',
-                category: 'Engine Internals',
-                description: 'Eagle or Manley forged H-beam connecting rods',
-                hpBoost: 80,
-                torqueBoost: 75,
-                speedBoost: 4,
-                cost: '₹1,50,000'
-            },
-            {
-                id: 'bearings',
-                name: 'ACL Performance Bearings',
-                icon: '⭕',
-                category: 'Engine Internals',
-                description: 'ACL premium engine bearings for durability',
-                hpBoost: 50,
-                torqueBoost: 45,
-                speedBoost: 2,
-                cost: '₹80,000'
-            },
-            
-            // VALVETRAIN & HEAD
-            {
-                id: 'valves',
-                name: 'Ferrea Valves & Seals',
-                icon: '🫧',
-                category: 'Head/Valvetrain',
-                description: 'Ferrea titanium valves with upgraded seals',
-                hpBoost: 70,
-                torqueBoost: 60,
-                speedBoost: 3,
-                cost: '₹1,20,000'
-            },
-            {
-                id: 'camshaft',
-                name: 'GSC S1 Camshafts',
-                icon: '🎛️',
-                category: 'Head/Valvetrain',
-                description: 'High-lift GSC S1 performance camshafts',
-                hpBoost: 90,
-                torqueBoost: 85,
-                speedBoost: 5,
-                cost: '₹1,40,000'
-            },
-            {
-                id: 'studs',
-                name: 'ARP 625+ Head Studs',
-                icon: '📍',
-                category: 'Head/Valvetrain',
-                description: 'ARP 625+ head studs + main studs for reliability',
-                hpBoost: 30,
-                torqueBoost: 25,
-                speedBoost: 1,
-                cost: '₹60,000'
-            },
-            {
-                id: 'damper',
-                name: 'Fluidampr Crankshaft Pulley',
-                icon: '⚡',
-                category: 'Head/Valvetrain',
-                description: 'Titan Motorsports or Fluidampr pulley for smooth powerband',
-                hpBoost: 35,
-                torqueBoost: 30,
-                speedBoost: 2,
-                cost: '₹70,000'
-            },
-            
-            // FUEL & INTAKE
-            {
-                id: 'injectors',
-                name: 'Siemens 2400cc Injectors',
-                icon: '💉',
-                category: 'Fuel & Intake',
-                description: 'Siemens 2400cc or Bosch 1000cc+ injectors',
-                hpBoost: 100,
-                torqueBoost: 95,
-                speedBoost: 6,
-                cost: '₹1,20,000'
-            },
-            {
-                id: 'fuel-rail',
-                name: 'Powerhouse Fuel Rail',
-                icon: '🛢️',
-                category: 'Fuel & Intake',
-                description: 'Titan Motorsports or Powerhouse Racing fuel rail',
-                hpBoost: 60,
-                torqueBoost: 55,
-                speedBoost: 3,
-                cost: '₹90,000'
-            },
-            {
-                id: 'fuel-pump',
-                name: 'Dual Aeromotive Pumps',
-                icon: '🚿',
-                category: 'Fuel & Intake',
-                description: 'Dual Aeromotive Stealth 340 fuel pumps',
-                hpBoost: 80,
-                torqueBoost: 75,
-                speedBoost: 4,
-                cost: '₹1,00,000'
-            },
-            {
-                id: 'intercooler',
-                name: 'Front Mount Intercooler',
-                icon: '❄️',
-                category: 'Fuel & Intake',
-                description: 'High-performance FMIC with upgraded piping',
-                hpBoost: 150,
-                torqueBoost: 130,
-                speedBoost: 10,
-                cost: '₹1,80,000'
-            },
-            {
-                id: 'intake',
-                name: 'Ported Intake Manifold',
-                icon: '💨',
-                category: 'Fuel & Intake',
-                description: 'Upgraded intake manifold with ported throttle body',
-                hpBoost: 75,
-                torqueBoost: 70,
-                speedBoost: 5,
-                cost: '₹1,00,000'
-            },
-            
-            // ELECTRONICS & ECU
-            {
-                id: 'ecu-maxx',
-                name: 'MaxxECU Standalone',
-                icon: '🖥️',
-                category: 'Electronics',
-                description: 'MaxxECU, ProEFI, or AEM Infinity standalone ECU',
-                hpBoost: 200,
-                torqueBoost: 180,
-                speedBoost: 15,
-                cost: '₹2,50,000'
-            },
-            {
-                id: 'ignition',
-                name: 'Upgraded Ignition Coils',
-                icon: '⚡',
-                category: 'Electronics',
-                description: 'High-output ignition coils for better spark',
-                hpBoost: 40,
-                torqueBoost: 35,
-                speedBoost: 2,
-                cost: '₹60,000'
-            },
-            {
-                id: 'gauges',
-                name: 'Defi/Greddy Gauges',
-                icon: '📊',
-                category: 'Electronics',
-                description: 'Boost, EGT, Oil Pressure, Water Temp monitoring',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹1,50,000'
-            },
-            
-            // COOLING SYSTEM
-            {
-                id: 'radiator',
-                name: 'Fluidyne Aluminum Radiator',
-                icon: '🌊',
-                category: 'Cooling',
-                description: 'High-performance aluminum radiator',
-                hpBoost: 60,
-                torqueBoost: 50,
-                speedBoost: 4,
-                cost: '₹80,000'
-            },
-            {
-                id: 'oil-cooler',
-                name: '19-Line Oil Cooler',
-                icon: '🧊',
-                category: 'Cooling',
-                description: 'Large capacity oil cooler kit for extreme builds',
-                hpBoost: 80,
-                torqueBoost: 70,
-                speedBoost: 5,
-                cost: '₹1,10,000'
-            },
-            {
-                id: 'e-fan',
-                name: 'Electric Fan Kit',
-                icon: '🌬️',
-                category: 'Cooling',
-                description: 'Flex-a-Lite electric fan for consistent cooling',
-                hpBoost: 40,
-                torqueBoost: 35,
-                speedBoost: 2,
-                cost: '₹70,000'
-            },
-            
-            // DRIVETRAIN & TRANSMISSION
-            {
-                id: 'clutch',
-                name: 'RPS Twin Carbon Clutch',
-                icon: '🔄',
-                category: 'Drivetrain',
-                description: 'RPS twin or triple carbon clutch for power handling',
-                hpBoost: 20,
-                torqueBoost: 15,
-                speedBoost: 0,
-                cost: '₹1,40,000'
-            },
-            {
-                id: 'gearbox',
-                name: 'V160/V161 6-Speed Rebuild',
-                icon: '⚙️',
-                category: 'Drivetrain',
-                description: 'V160 overhaul or Getrag 6-speed conversion',
-                hpBoost: 15,
-                torqueBoost: 20,
-                speedBoost: 1,
-                cost: '₹1,80,000'
-            },
-            {
-                id: 'lsd',
-                name: 'TRD Limited Slip Diff',
-                icon: '🔧',
-                category: 'Drivetrain',
-                description: 'TRD LSD for improved traction and acceleration',
-                hpBoost: 30,
-                torqueBoost: 35,
-                speedBoost: 2,
-                cost: '₹95,000'
-            },
-            {
-                id: 'driveshaft',
-                name: 'PHR 3.5" Driveshaft',
-                icon: '🛣️',
-                category: 'Drivetrain',
-                description: 'PHR 3.5-inch performance driveshaft',
-                hpBoost: 10,
-                torqueBoost: 10,
-                speedBoost: 1,
-                cost: '₹60,000'
-            },
-            
-            // SUSPENSION & BRAKES
-            {
-                id: 'suspension',
-                name: 'KW V3 Coilovers',
-                icon: '🎯',
-                category: 'Suspension',
-                description: 'D2 Racing, KW V3, or HKS premium coilovers',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹2,00,000'
-            },
-            {
-                id: 'brakes',
-                name: 'Brembo Big Brake Kit',
-                icon: '🛑',
-                category: 'Suspension',
-                description: 'D2 Racing 8-piston (356mm) or Brembo kit',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹1,80,000'
-            },
-            {
-                id: 'struts',
-                name: 'TRD Strut Braces',
-                icon: '🏗️',
-                category: 'Suspension',
-                description: 'TRD or Greddy front & rear strut braces',
-                hpBoost: 20,
-                torqueBoost: 18,
-                speedBoost: 1,
-                cost: '₹70,000'
-            },
-            
-            // EXTERIOR & INTERIOR
-            {
-                id: 'body',
-                name: 'Carbon Fiber Aero Kit',
-                icon: '🎨',
-                category: 'Exterior',
-                description: 'Carbon front spoiler, diffuser, TRD rear spoiler',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹2,50,000'
-            },
-            {
-                id: 'interior',
-                name: 'Racing Seats & Harness',
-                icon: '🪑',
-                category: 'Exterior',
-                description: 'Bimarco/Recaro seats, 6-point harness, roll cage',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹1,50,000'
-            },
-            {
-                id: 'lighting',
-                name: 'LED Headlight Upgrade',
-                icon: '💡',
-                category: 'Exterior',
-                description: 'Modernized OEM headlights with LED bulbs',
-                hpBoost: 0,
-                torqueBoost: 0,
-                speedBoost: 0,
-                cost: '₹80,000'
-            }
-        ];
-        
-        let selectedMods = new Set();
-        
-        const stockStats = {
-            hp: 321,
-            torque: 315,
-            time: 4.6,
-            speed: 155
-        };
-        
-        // Initialize modifications grid
-        function initializeMods() {
-            const grid = document.getElementById('mods-grid');
-            const categories = {};
-            
-            // Group by category
-            modifications.forEach(mod => {
-                if (!categories[mod.category]) {
-                    categories[mod.category] = [];
-                }
-                categories[mod.category].push(mod);
-            });
-            
-            // Create category sections
-            Object.entries(categories).forEach(([category, mods]) => {
-                const categoryTitle = document.createElement('h3');
-                categoryTitle.style.gridColumn = '1 / -1';
-                categoryTitle.style.marginTop = '2rem';
-                categoryTitle.style.color = '#000000';
-                categoryTitle.style.fontSize = '1.3rem';
-                categoryTitle.style.borderBottom = '2px solid #000000';
-                categoryTitle.style.paddingBottom = '0.5rem';
-                categoryTitle.textContent = '📌 ' + category;
-                grid.appendChild(categoryTitle);
-                
-                // Create cards for this category
-                mods.forEach(mod => {
-                    const card = document.createElement('div');
-                    card.className = 'mod-card';
-                    card.innerHTML = `
-                        <div class="mod-checkbox"></div>
-                        <div class="mod-icon">${mod.icon}</div>
-                        <div class="mod-name">${mod.name}</div>
-                        <div class="mod-description">${mod.description}</div>
-                        <div class="mod-boost">+${mod.hpBoost} HP / +${mod.torqueBoost} lb-ft</div>
-                        <div style="font-size: 0.8rem; color: #666666; margin-top: 0.5rem; font-weight: 600;">${mod.cost}</div>
-                    `;
-                    card.addEventListener('click', () => toggleMod(mod.id, card));
-                    grid.appendChild(card);
-                });
-            });
-        }
-        
-        // Toggle modification selection
-        function toggleMod(modId, cardElement) {
-            if (selectedMods.has(modId)) {
-                selectedMods.delete(modId);
-                cardElement.classList.remove('selected');
-            } else {
-                selectedMods.add(modId);
-                cardElement.classList.add('selected');
-            }
-            updateStats();
-        }
-        
-        // Update stats based on selected mods
-        function updateStats() {
-            let totalHp = stockStats.hp;
-            let totalTorque = stockStats.torque;
-            let totalSpeed = stockStats.speed;
-            let totalTime = stockStats.time;
-            
-            selectedMods.forEach(modId => {
-                const mod = modifications.find(m => m.id === modId);
-                totalHp += mod.hpBoost;
-                totalTorque += mod.torqueBoost;
-                totalSpeed += mod.speedBoost;
-                totalTime -= (mod.speedBoost * 0.12);
-            });
-            
-            // Ensure minimum values
-            totalTime = Math.max(totalTime, 1.8);
-            
-            // Animate stat updates
-            animateStatUpdate('hp-display', totalHp);
-            animateStatUpdate('torque-display', totalTorque);
-            animateStatUpdate('time-display', totalTime.toFixed(2));
-            animateStatUpdate('speed-display', totalSpeed);
-            
-            updateTotalPower(totalHp);
-            updateProgressBar(totalHp);
-            updateBuildInfo(selectedMods.size, totalHp);
-        }
-        
-        // Animate stat changes
-        function animateStatUpdate(elementId, newValue) {
-            const element = document.getElementById(elementId);
-            element.style.animation = 'none';
-            setTimeout(() => {
-                element.textContent = newValue;
-                element.style.animation = 'pulse 0.6s ease';
-            }, 10);
-        }
-        
-        // Update total power display
-        function updateTotalPower(hp) {
-            const totalPowerEl = document.getElementById('total-power');
-            totalPowerEl.textContent = hp + ' HP';
-        }
-        
-        // Update progress bar - now 2500 HP max
-        function updateProgressBar(hp) {
-            const maxHp = 2500;
-            const percentage = (hp / maxHp) * 100;
-            document.getElementById('progress-fill').style.width = Math.min(percentage, 100) + '%';
-        }
-        
-        // Update build info with tier system
-        function updateBuildInfo(modsCount, hp) {
-            const infoEl = document.getElementById('build-info');
-            let tier = '';
-            
-            if (hp <= 400) tier = 'Stock/Light Tune';
-            else if (hp <= 600) tier = 'Stage 1 Build';
-            else if (hp <= 900) tier = 'Stage 2 Build';
-            else if (hp <= 1300) tier = 'Stage 2+ Build';
-            else if (hp <= 1800) tier = 'Stage 3 Build';
-            else if (hp <= 2200) tier = 'Extreme Build (1800+ HP)';
-            else tier = 'Maximum Power (2500 HP+)';
-            
-            infoEl.textContent = `${tier} - ${modsCount} part${modsCount !== 1 ? 's' : ''} selected - ₹${calculateTotalCost().toLocaleString('en-IN')}`;
-        }
-        
-        // Calculate total cost
-        function calculateTotalCost() {
-            let total = 0;
-            selectedMods.forEach(modId => {
-                const mod = modifications.find(m => m.id === modId);
-                const costValue = parseInt(mod.cost.replace(/[₹,]/g, ''));
-                total += costValue;
-            });
-            return total;
-        }
-        
-        // Reset to stock
-        function resetBuild() {
-            selectedMods.clear();
-            document.querySelectorAll('.mod-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            updateStats();
-        }
-        
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            initializeMods();
-            updateStats();
+</div>
+
+<div class="wrap">
+    <!-- MAIN -->
+    <div class="main">
+        <div class="img-wrap">
+            <img src="../images/flux_krea_00021_.png" alt="Toyota Supra MK4 2JZ-GTE">
+            <div class="img-cap">
+                <span>TOYOTA SUPRA A80 · 1993–2002</span>
+                <span>2JZ-GTE INLINE-6 TWIN-TURBO</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="sc">
+                <div class="sc-lbl">Horsepower</div>
+                <div class="sc-val" id="v-hp">321</div>
+                <div class="sc-unit">HP</div>
+                <span class="sc-dt" id="d-hp"></span>
+            </div>
+            <div class="sc">
+                <div class="sc-lbl">Torque</div>
+                <div class="sc-val" id="v-tq">315</div>
+                <div class="sc-unit">LB-FT</div>
+                <span class="sc-dt" id="d-tq"></span>
+            </div>
+            <div class="sc">
+                <div class="sc-lbl">0–60 MPH</div>
+                <div class="sc-val" id="v-t">4.6</div>
+                <div class="sc-unit">SEC</div>
+                <span class="sc-dt" id="d-t"></span>
+            </div>
+            <div class="sc">
+                <div class="sc-lbl">Top Speed</div>
+                <div class="sc-val" id="v-s">155</div>
+                <div class="sc-unit">MPH</div>
+                <span class="sc-dt" id="d-s"></span>
+            </div>
+        </div>
+
+        <div class="sh">
+            <h2>MODIFICATIONS</h2>
+            <span class="badge" id="sel-badge">0 SELECTED</span>
+        </div>
+
+        <div id="mods-out"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side">
+        <div class="sb">
+            <div class="sbh"><span>Build Output</span><span id="sb-parts">0 parts</span></div>
+            <div class="sbb">
+                <div class="thp" id="sb-hp">321</div>
+                <div class="thpsub">HORSEPOWER</div>
+                <div class="hptrack">
+                    <div class="hptop"><span>321</span><span>650 SAFE</span><span>1400</span><span>2500</span></div>
+                    <div class="hpouter"><div class="hpfill" id="sb-bar" style="width:12.84%"></div></div>
+                    <div class="hpzone" id="sb-zone" style="color:var(--grn)">SAFE ZONE</div>
+                </div>
+                <div class="tier" id="sb-tier">STOCK CONFIGURATION</div>
+            </div>
+        </div>
+
+        <div class="sb">
+            <div class="sbh"><span>Risk Assessment</span><span id="sb-wc">0 warnings</span></div>
+            <div class="sbb">
+                <div class="dlrow">
+                    <span class="dlbl">Danger Level</span>
+                    <span class="dpill safe" id="dpill">SAFE</span>
+                </div>
+                <div class="dbaro"><div class="dbari" id="dbar" style="width:0%"></div></div>
+                <div style="margin-top:1rem" id="warns-wrap">
+                    <div class="nowarn" id="no-warn">NO ACTIVE WARNINGS</div>
+                    <div class="wlist" id="wlist" style="display:none"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sb">
+            <div class="sbh"><span>Build Summary</span></div>
+            <div class="sbb">
+                <div class="sbrow"><span class="sblbl">Total Cost</span><span class="sbval" id="sb-cost">₹0</span></div>
+                <div class="sbrow"><span class="sblbl">0–60 Time</span><span class="sbval" id="sb-time">4.60s</span></div>
+                <div class="sbrow"><span class="sblbl">Top Speed</span><span class="sbval" id="sb-spd">155 mph</span></div>
+                <div class="sbrow"><span class="sblbl">Torque</span><span class="sbval" id="sb-tq">315 lb-ft</span></div>
+            </div>
+        </div>
+
+        <div class="btnrow">
+            <button class="btn danger" onclick="resetBuild()">Reset Build</button>
+            <a href="../index.html" class="btn primary">← Home</a>
+        </div>
+    </div>
+</div>
+
+<div class="ft" style="max-width:1320px;margin:0 auto;">
+    <span class="ftnote">BIKKYCODER · SUPRA MK4 TRIBUTE · ENGINEERING DATA BASED ON REAL 2JZ-GTE SPECIFICATIONS</span>
+    <span class="ftnote">SELECT PARTS ABOVE · ALL CONSEQUENCES UPDATE IN REAL TIME</span>
+</div>
+
+<script>
+const MODS=[
+    {id:'tp',name:'Precision 6870 Single Turbo',cat:'Turbo System',desc:'Ball-bearing Precision 6870 supporting 800–1000 WHP on a built 2JZ. Requires custom manifold, 3-inch downpipe, standalone ECU, and upgraded intercooler. Without these, this turbo will destroy the engine within minutes.',hp:280,tq:250,spd:20,cost:350000,cx:['tg']},
+    {id:'tg',name:'Garrett G42-1200 Single Turbo',cat:'Turbo System',desc:'Twin-scroll Garrett G42-1200 supporting up to 1,200 WHP. Demands E85 or methanol at full power. Incompatible with the Precision 6870 — two large single turbos cannot share one 2JZ exhaust manifold.',hp:260,tq:230,spd:18,cost:300000,cx:['tp']},
+    {id:'mani',name:'Stainless Twin-Entry Manifold',cat:'Turbo System',desc:'Equal-length stainless manifold for improved spool and exhaust flow. Mandatory for any single-turbo conversion targeting above 600 HP.',hp:120,tq:100,spd:8,cost:150000,cx:[]},
+    {id:'wgate',name:'Tial MVS 60mm External Wastegate',cat:'Turbo System',desc:'Precision boost control above 25 PSI. Without this, boost creep causes uncontrolled pressure spikes that can over-boost and detonate the engine.',hp:40,tq:35,spd:3,cost:80000,cx:[]},
+
+    {id:'pist',name:'CP Forged Pistons (9:1)',cat:'Engine Internals',desc:'Mandatory above 650 HP. Stock cast pistons crack under sustained high boost. Ring lands fail first, the piston crown separates, fragments destroy the cylinder wall. Total engine destruction.',hp:100,tq:90,spd:5,cost:180000,cx:[]},
+    {id:'rods',name:'Eagle H-Beam Connecting Rods',cat:'Engine Internals',desc:'Non-negotiable above 700 HP. Stock rods bend and snap at high RPM under boost load. A snapped rod becomes a projectile through the block wall — total engine destruction in milliseconds.',hp:80,tq:75,spd:4,cost:150000,cx:[]},
+    {id:'bear',name:'ACL Tri-Metal Race Bearings',cat:'Engine Internals',desc:'Stock bimetal bearings fail under sustained high loads. A spun bearing causes immediate journal scoring. At high RPM, the crankshaft seizes and the engine locks up violently.',hp:50,tq:45,spd:2,cost:80000,cx:[]},
+
+    {id:'valv',name:'Ferrea Titanium Valves & Seals',cat:'Head & Valvetrain',desc:'Titanium valves resist float above 7,500 RPM. Stock steel valves under aggressive cam profiles float, make contact with the piston crown, and bend — destroying the cylinder head.',hp:70,tq:60,spd:3,cost:120000,cx:[]},
+    {id:'cams',name:'GSC S1 Billet Camshafts',cat:'Head & Valvetrain',desc:'272-degree high-lift cams giving strong midrange and top-end power. Must be paired with upgraded valve springs — running S1 cams on stock springs causes spring coil-bind and catastrophic valve float.',hp:90,tq:85,spd:5,cost:140000,cx:[]},
+    {id:'stud',name:'ARP 625+ Head Studs',cat:'Head & Valvetrain',desc:'Stock head bolts stretch above 800 HP. When the head lifts, coolant floods the combustion chamber. Hydrolock at high RPM bends every connecting rod simultaneously.',hp:30,tq:25,spd:1,cost:60000,cx:[]},
+    {id:'damp',name:'Fluidampr Harmonic Damper',cat:'Head & Valvetrain',desc:'Crank harmonic vibration at high RPM destroys the stock rubber damper. A failed damper at 8,000 RPM tears off the timing cover and drains the oil pan dry.',hp:35,tq:30,spd:2,cost:70000,cx:[]},
+
+    {id:'inj',name:'Siemens 2400cc Injectors',cat:'Fuel & Intake',desc:'Stock 550cc injectors max out at 500–550 HP. Beyond that the engine runs lean. Lean detonation at full boost melts piston crowns within seconds, then grenades the block.',hp:100,tq:95,spd:6,cost:120000,cx:[]},
+    {id:'rail',name:'Powerhouse Racing Fuel Rail',cat:'Fuel & Intake',desc:'Billet fuel rail prevents pressure drop under high fuel demand at 800+ HP. Stock fuel rail causes delivery inconsistencies that show up as dangerous lean spikes on the dyno.',hp:60,tq:55,spd:3,cost:90000,cx:[]},
+    {id:'pump',name:'Dual Aeromotive Stealth 340 Pumps',cat:'Fuel & Intake',desc:'Single stock pump adequate only to 400 WHP. Above that, fuel pressure drops under sustained boost. Fuel starvation at 7,000 RPM means instant lean spike — backfire, possibly engine fire.',hp:80,tq:75,spd:4,cost:100000,cx:[]},
+    {id:'ic',name:'Front Mount Intercooler (FMIC)',cat:'Fuel & Intake',desc:'Without an intercooler, boost air enters at 150–180°C. At those temps detonation is unavoidable. The 2JZ cannot survive sustained pulls without an intercooler above 15 PSI.',hp:150,tq:130,spd:10,cost:180000,cx:[]},
+    {id:'itk',name:'Ported Intake Manifold & 90mm TB',cat:'Fuel & Intake',desc:'Removes intake restriction above 700 HP where the stock manifold and throttle body become a genuine choke point limiting airflow and top-end power.',hp:75,tq:70,spd:5,cost:100000,cx:[]},
+
+    {id:'ecu',name:'MaxxECU Race Standalone',cat:'Electronics & ECU',desc:'The stock ECU has fixed fuel and timing maps. Without a standalone, any large turbo runs the engine on the wrong map. It will detonate and fail on the very first hard pull.',hp:200,tq:180,spd:15,cost:250000,cx:[]},
+    {id:'coil',name:'High-Output COP Ignition Coils',cat:'Electronics & ECU',desc:'Stock coils misfire under high boost. Misfires at 30+ PSI send unburned fuel into the exhaust where it ignites, destroying the catalytic converter and potentially cracking the manifold.',hp:40,tq:35,spd:2,cost:60000,cx:[]},
+    {id:'gaug',name:'Defi Gauge Cluster (Boost/EGT/Oil)',cat:'Electronics & ECU',desc:'Zero power gain — maximum survivability. Without monitoring boost, EGT, and oil pressure you cannot detect impending failure. High EGT before a turbo melt. Low oil pressure before a spun bearing. This saves engines.',hp:0,tq:0,spd:0,cost:150000,cx:[]},
+
+    {id:'rad',name:'Fluidyne 3-Row Aluminum Radiator',cat:'Cooling System',desc:'Stock radiator is marginal at stock power. Above 600 HP coolant temps climb past 110°C under sustained load. Overheating causes head gasket lift, then detonation, then total engine failure.',hp:60,tq:50,spd:4,cost:80000,cx:[]},
+    {id:'oil',name:'Mocal 19-Row Oil Cooler',cat:'Cooling System',desc:'Oil temps exceed 160°C without an oil cooler above 700 HP. At 160°C oil loses viscosity. Bearing surfaces run metal-to-metal. Engine seizes at speed — catastrophic and potentially fatal.',hp:80,tq:70,spd:5,cost:110000,cx:[]},
+    {id:'fan',name:'Spal Dual Electric Fan Kit',cat:'Cooling System',desc:'Frees up power lost by the mechanical fan. Required for FMIC setups for adequate cooling airflow management through the stacked heat exchangers.',hp:40,tq:35,spd:2,cost:70000,cx:[]},
+
+    {id:'clut',name:'RPS Twin Carbon Clutch',cat:'Drivetrain',desc:'Stock clutch is rated to ~400 lb-ft. Above that it slips under boost. Prolonged slip generates extreme heat — the pressure plate reaches ignition temperature. Clutch fires are documented in exactly this failure mode.',hp:20,tq:15,spd:0,cost:140000,cx:[]},
+    {id:'gbox',name:'V160 6-Speed Full Rebuild',cat:'Drivetrain',desc:'Stock V160 3rd gear is the weak point above 800 lb-ft. Repeated hard 2nd-to-3rd shifts at full torque shatter the synchroniser hub. The box then locks in gear at speed.',hp:15,tq:20,spd:1,cost:180000,cx:[]},
+    {id:'lsd',name:'TRD 2-Way Limited Slip Diff',cat:'Drivetrain',desc:'Without an LSD above 600 HP, an aggressive launch sends 100% torque to one spinning wheel. When it bites, the shock load can snap a halfshaft. A broken halfshaft at speed locks one rear wheel — the car spins.',hp:30,tq:35,spd:2,cost:95000,cx:[]},
+    {id:'ds',name:'PHR 3.5" Carbon Driveshaft',cat:'Drivetrain',desc:'Stock two-piece driveshaft vibrates harmonically above 150 MPH and can detach from the u-joint, piercing the floorpan and fuel tank from underneath.',hp:10,tq:10,spd:1,cost:60000,cx:[]},
+
+    {id:'coil2',name:'KW V3 Coilovers',cat:'Suspension & Brakes',desc:'1,000 HP on stock 30-year-old shocks means no chassis control. At speed, body roll compresses tires unevenly, kills corner entry grip, and induces snap oversteer that cannot be corrected before the barrier.',hp:0,tq:0,spd:0,cost:200000,cx:[]},
+    {id:'brk',name:'Brembo GT 8-Piston Big Brake Kit',cat:'Suspension & Brakes',desc:'Stock brakes on a 600+ HP car will fade under repeated hard stops. Brake fluid at 160°C vapourises. The pedal goes to the floor. At 180+ MPH with zero stopping power, you will not survive.',hp:0,tq:0,spd:0,cost:180000,cx:[]},
+    {id:'strut',name:'TRD Front & Rear Strut Braces',cat:'Suspension & Brakes',desc:'Chassis flex under hard cornering changes suspension geometry unpredictably. Strut braces stiffen the shell and give consistent handling for high-power builds.',hp:20,tq:18,spd:1,cost:70000,cx:[]},
+
+    {id:'aero',name:'Carbon Aero Kit (Wing + Splitter)',cat:'Exterior & Safety',desc:'Above 180 MPH the stock body generates significant front lift. At 1,200+ HP you reach these speeds in 3rd gear. Without a splitter and rear wing, the front tyres unload and steering becomes weightless. Drivers have died from this.',hp:0,tq:0,spd:0,cost:250000,cx:[]},
+    {id:'cage',name:'Roll Cage, Recaro Seats & 6-Pt Harness',cat:'Exterior & Safety',desc:'Zero power gain. Above 900 HP any structural collision is unsurvivable in a stock passenger car shell at these speeds. The roll cage is the difference between a survivable and unsurvivable impact.',hp:0,tq:0,spd:0,cost:150000,cx:[]},
+    {id:'led',name:'Projector HID / LED Headlights',cat:'Exterior & Safety',desc:'At 180 MPH you cover 80 metres per second. Stock halogens illuminate roughly 40–50 metres ahead. You are outrunning your own headlights at the speeds this build can reach.',hp:0,tq:0,spd:0,cost:80000,cx:[]},
+];
+
+const RULES=[
+    {id:'r1',chk:(s,h)=>s.has('tp')&&s.has('tg'),lv:'fatal',ic:'💥',t:'IMPOSSIBLE — TWO LARGE TURBOS ON ONE 2JZ',m:'One exhaust outlet. Two large single turbos cannot share one manifold. Catastrophic exhaust collision, instant boost-line failure, superheated gas backflow, engine fire. This build will explode.'},
+    {id:'r2',chk:(s,h)=>(s.has('tp')||s.has('tg'))&&!s.has('ecu'),lv:'fatal',ic:'⚠',t:'TURBO WITHOUT STANDALONE ECU — ENGINE DESTROYED ON FIRST PULL',m:'The stock MKIV ECU has fixed maps. Under boost it runs lean. Lean detonation at 25+ PSI erodes piston crowns in minutes. The engine will not survive the first hard run.'},
+    {id:'r3',chk:(s,h)=>(s.has('tp')||s.has('tg'))&&!s.has('ic'),lv:'fatal',ic:'🌡',t:'TURBO WITHOUT INTERCOOLER — DETONATION GUARANTEED',m:'A large single turbo at 30+ PSI raises charge air to 150–180°C. Without cooling that air, detonation knock is continuous and violent. Piston crown erosion begins immediately.'},
+    {id:'r4',chk:(s,h)=>(s.has('tp')||s.has('tg'))&&!s.has('inj'),lv:'fatal',ic:'💉',t:'LARGE TURBO + STOCK INJECTORS — LEAN DETONATION',m:'Stock 550cc injectors max at 500 HP. A large single turbo demands 1,000cc+ of fuel. The engine runs critically lean under boost. Combustion temps reach piston-melting thresholds within seconds.'},
+    {id:'r5',chk:(s,h)=>h>650&&!s.has('pist'),lv:'critical',ic:'🔩',t:'STOCK CAST PISTONS ABOVE 650 HP',m:'2JZ stock cast pistons are rated to ~650 HP. Above that, micro-fractures develop. Ring lands crack, the piston crown separates, fragments destroy the cylinder wall.'},
+    {id:'r6',chk:(s,h)=>h>700&&!s.has('rods'),lv:'fatal',ic:'🔗',t:'STOCK CONNECTING RODS ABOVE 700 HP — CATASTROPHIC',m:'Stock 2JZ rods are not designed for sustained loads above 700 HP. A failed rod bolt sends the rod through the block wall. Oil spills onto a 900°C exhaust manifold. Immediate engine fire. This has killed people.'},
+    {id:'r7',chk:(s,h)=>h>800&&!s.has('stud'),lv:'critical',ic:'📍',t:'STOCK HEAD BOLTS ABOVE 800 HP',m:'Stock head bolts lose clamping force above 800 HP. The head lifts. Coolant enters combustion. Hydrolock occurs — every connecting rod bends simultaneously. All power cuts instantly at speed with no warning.'},
+    {id:'r8',chk:(s,h)=>h>600&&!s.has('pump'),lv:'critical',ic:'🚿',t:'INADEQUATE FUEL DELIVERY ABOVE 600 HP',m:'The stock pump cannot sustain fuel pressure above 600 HP under continuous boost. Fuel pressure drop causes lean spikes even with upgraded injectors. Each spike risks detonation.'},
+    {id:'r9',chk:(s,h)=>h>600&&!s.has('rad')&&!s.has('oil'),lv:'danger',ic:'🌡',t:'NO COOLING UPGRADES ABOVE 600 HP',m:'Without upgraded cooling, oil temps exceed 150°C and coolant passes 110°C under sustained runs. Degraded oil viscosity accelerates bearing wear. The engine is being destroyed with every run.'},
+    {id:'r10',chk:(s,h)=>h>600&&!s.has('brk'),lv:'fatal',ic:'🛑',t:'STOCK BRAKES WITH 600+ HP — BRAKE FAILURE WILL KILL YOU',m:'Stock brakes on a 600+ HP car will fade under repeated hard stops from high speed. Brake fluid boils in the caliper. The pedal goes to the floor. At 180+ MPH with no braking ability you will not survive.'},
+    {id:'r11',chk:(s,h)=>h>600&&!s.has('clut'),lv:'danger',ic:'🔄',t:'STOCK CLUTCH ABOVE 600 HP — SLIP AND FIRE RISK',m:'The stock clutch is rated to ~400 lb-ft. Above that it slips under hard acceleration, generating extreme heat. The disc disintegrates. Clutch fires have occurred in exactly this scenario.'},
+    {id:'r12',chk:(s,h)=>h>1000&&!s.has('cage'),lv:'fatal',ic:'💀',t:'OVER 1000 HP WITHOUT A ROLL CAGE',m:'At 1,000+ HP this car can exceed 200 MPH. The stock Supra is a 1990s passenger car shell. In a high-speed incident it provides zero protection at these velocities. A roll cage is the difference between a survivable and unsurvivable crash.'},
+    {id:'r13',chk:(s,h)=>h>1200&&!s.has('aero'),lv:'fatal',ic:'🎨',t:'EXTREME POWER WITHOUT AERO DOWNFORCE',m:'Above 180 MPH the stock body generates front aerodynamic lift. At 1,200+ HP you exceed these speeds in 3rd gear. Without a splitter and rear wing the front tyres unload and steering input stops working. Drivers have been killed by this.'},
+    {id:'r14',chk:(s,h)=>h>600&&!s.has('lsd'),lv:'danger',ic:'🔧',t:'OPEN DIFF WITH HIGH TORQUE — HALFSHAFT SNAP RISK',m:'Without an LSD, a hard launch at this torque sends full power to one spinning wheel. When that wheel bites, the shock load can snap a halfshaft. A locked rear wheel at speed causes an immediate unrecoverable spin.'},
+    {id:'r15',chk:(s,h)=>h>800&&!s.has('coil2'),lv:'danger',ic:'🎯',t:'800+ HP ON STOCK 30-YEAR-OLD SUSPENSION',m:'At this power level on worn stock dampers, weight transfer is uncontrolled. Mid-corner throttle at high speed can trigger rear step-out that is impossible to catch.'},
+    // positive
+    {id:'g1',chk:(s,h)=>s.has('inj')&&s.has('pump')&&s.has('rail')&&s.has('ecu'),lv:'info',ic:'✓',t:'COMPLETE FUEL SYSTEM — SOLID FOUNDATION',m:'Matched injectors, dual pumps, fuel rail, and standalone ECU. The ECU can now manage the complete fuel and boost strategy across the RPM range. This is the correct foundation for any serious build.'},
+    {id:'g2',chk:(s,h)=>s.has('pist')&&s.has('rods')&&s.has('bear')&&s.has('stud'),lv:'info',ic:'✓',t:'FULLY BUILT ENGINE — READY FOR EXTREME POWER',m:'Forged pistons, H-beam rods, race bearings, and ARP head studs. A properly built 2JZ bottom end. The block can now reliably support 1,200–1,500 HP. This is the legendary combination that made the 2JZ famous worldwide.'},
+    {id:'g3',chk:(s,h)=>s.has('brk')&&s.has('coil2')&&s.has('cage'),lv:'info',ic:'✓',t:'FULL SAFETY PACKAGE — RESPONSIBLE BUILD',m:'Big brakes, coilovers, and a roll cage. You have built the safety infrastructure to match the power. This is how a high-performance car should be built.'},
+    {id:'g4',chk:(s,h)=>s.has('rad')&&s.has('oil')&&s.has('ic'),lv:'info',ic:'✓',t:'COMPLETE THERMAL MANAGEMENT — ENGINE WILL LAST',m:'Upgraded radiator, oil cooler, and intercooler together. Charge air, coolant, and oil temperatures are all controlled. The engine can sustain full-power runs without thermal degradation.'},
+];
+
+const STOCK={hp:321,tq:315,t:4.6,s:155};
+let SEL=new Set();
+
+function render(){
+    const out=document.getElementById('mods-out');
+    const cats={};
+    MODS.forEach((m,i)=>{
+        if(!cats[m.cat])cats[m.cat]=[];
+        cats[m.cat].push({...m,idx:i+1});
+    });
+    Object.entries(cats).forEach(([cat,items])=>{
+        const cl=document.createElement('div');
+        cl.className='cat';cl.textContent=cat.toUpperCase();out.appendChild(cl);
+        items.forEach(mod=>{
+            const r=document.createElement('div');
+            r.className='mrow';r.id=`r-${mod.id}`;
+            const hp=mod.hp>0?`+${mod.hp}`:'—';
+            const hpc=mod.hp===0?' z':'';
+            const cf='₹'+mod.cost.toLocaleString('en-IN');
+            const ix=String(mod.idx).padStart(2,'0');
+            r.innerHTML=`
+                <div class="midx">${ix}</div>
+                <div class="mcontent">
+                    <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.15rem">
+                        <span class="mname">${mod.name}</span>
+                        <span class="mchip" id="ch-${mod.id}"></span>
+                    </div>
+                    <div class="mdesc">${mod.desc}</div>
+                    <div class="mwarn" id="mw-${mod.id}"></div>
+                </div>
+                <div class="mright">
+                    <div class="mtick" id="tk-${mod.id}">
+                        <svg viewBox="0 0 10 10" fill="none" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="1.5,5.5 4,8 8.5,2"/>
+                        </svg>
+                    </div>
+                    <div class="mhp${hpc}">${hp}</div>
+                    <div class="mhplbl">${mod.hp>0?'HP GAIN':'NO HP GAIN'}</div>
+                    <div class="mcost">${cf}</div>
+                </div>`;
+            r.addEventListener('click',()=>tog(mod.id));
+            out.appendChild(r);
         });
-    </script>
+    });
+}
+
+function tog(id){SEL.has(id)?SEL.delete(id):SEL.add(id);upd();}
+
+function calc(){
+    let hp=STOCK.hp,tq=STOCK.tq,t=STOCK.t,s=STOCK.s;
+    SEL.forEach(id=>{const m=MODS.find(x=>x.id===id);if(m){hp+=m.hp;tq+=m.tq;s+=m.spd;t-=m.spd*.12;}});
+    return{hp,tq,t:Math.max(t,1.6),s};
+}
+
+function evalR(st){return RULES.filter(r=>r.chk(SEL,st.hp));}
+
+function dlvl(ar){
+    if(ar.some(r=>r.lv==='fatal'))return'fatal';
+    if(ar.some(r=>r.lv==='critical'))return'critical';
+    if(ar.some(r=>r.lv==='danger'))return'warning';
+    if(SEL.size>0)return'caution';
+    return'safe';
+}
+
+let pv={hp:321,tq:315,t:4.6,s:155};
+
+function upd(){
+    const st=calc();
+    const ar=evalR(st);
+    const dl=dlvl(ar);
+
+    // stat cells
+    anim('v-hp',Math.round(st.hp),'d-hp',pv.hp,false);
+    anim('v-tq',Math.round(st.tq),'d-tq',pv.tq,false);
+    anim('v-t',st.t.toFixed(2),'d-t',pv.t,true);
+    anim('v-s',Math.round(st.s),'d-s',pv.s,false);
+    document.getElementById('v-hp').className='sc-val'+(st.hp>1400?' red':'');
+    pv={hp:st.hp,tq:st.tq,t:st.t,s:st.s};
+
+    document.getElementById('sel-badge').textContent=SEL.size+' SELECTED';
+
+    // sidebar HP
+    const shp=document.getElementById('sb-hp');
+    shp.textContent=Math.round(st.hp);
+    shp.className='thp'+(st.hp>1400?' red':'');
+
+    // HP bar
+    const pct=Math.min((st.hp/2500)*100,100);
+    const bar=document.getElementById('sb-bar');
+    bar.style.width=pct+'%';
+    const zone=document.getElementById('sb-zone');
+    if(st.hp<=650){bar.className='hpfill';zone.textContent='SAFE ZONE — BELOW BLOCK LIMIT';zone.style.color='var(--grn)';}
+    else if(st.hp<=1400){bar.className='hpfill w';zone.textContent='CAUTION — BUILT ENGINE REQUIRED';zone.style.color='var(--org)';}
+    else{bar.className='hpfill d';zone.textContent='DANGER — FULL BUILD + SAFETY GEAR MANDATORY';zone.style.color='var(--red)';}
+
+    // tier
+    const TIERS=[{m:400,l:'STOCK / LIGHT TUNE',c:''},{m:600,l:'STAGE 1 BUILD',c:''},{m:800,l:'STAGE 2 BUILD',c:''},{m:1100,l:'STAGE 2+ HIGH POWER',c:'w'},{m:1500,l:'STAGE 3 EXTREME',c:'w'},{m:9999,l:'COMPETITION / TRACK ONLY',c:'d'}];
+    const tier=TIERS.find(x=>st.hp<=x.m)||TIERS[TIERS.length-1];
+    const tel=document.getElementById('sb-tier');
+    tel.textContent=tier.l;tel.className='tier '+tier.c;
+
+    // danger
+    const fat=ar.filter(x=>x.lv==='fatal').length;
+    const crit=ar.filter(x=>x.lv==='critical').length;
+    const dng=ar.filter(x=>x.lv==='danger').length;
+    const dpct=Math.min(fat*30+crit*15+dng*8+(st.hp>600?10:0),100);
+    const db=document.getElementById('dbar');
+    db.style.width=dpct+'%';
+    db.className='dbari'+(dl==='fatal'?' f':dl==='critical'?' c':dl==='warning'?' w':'');
+    const pill=document.getElementById('dpill');
+    const pm={fatal:['fatal','☠ FATAL'],critical:['critical','CRITICAL RISK'],warning:['warning','DANGEROUS'],caution:['caution','USE CAUTION'],safe:['safe','SAFE']};
+    const[pc,pt]=pm[dl];pill.textContent=pt;pill.className='dpill '+pc;
+
+    // warnings
+    const non=ar.filter(x=>x.lv!=='info');
+    const inf=ar.filter(x=>x.lv==='info');
+    document.getElementById('sb-wc').textContent=non.length+(non.length===1?' warning':' warnings');
+    const nw=document.getElementById('no-warn'),wl=document.getElementById('wlist');
+    if(ar.length===0){nw.style.display='block';wl.style.display='none';wl.innerHTML='';}
+    else{
+        nw.style.display='none';wl.style.display='flex';wl.innerHTML='';
+        const ord={fatal:0,critical:1,danger:2,caution:3,info:4};
+        [...non,...inf].sort((a,b)=>ord[a.lv]-ord[b.lv]).forEach(r=>{
+            const d=document.createElement('div');
+            d.className='witem '+r.lv;
+            d.innerHTML=`<div class="wtitle">${r.ic} ${r.t}</div><div class="wtext">${r.m}</div>`;
+            wl.appendChild(d);
+        });
+    }
+
+    // summary
+    const cost=Array.from(SEL).reduce((s,id)=>{const m=MODS.find(x=>x.id===id);return s+(m?m.cost:0);},0);
+    document.getElementById('sb-parts').textContent=SEL.size+' parts';
+    document.getElementById('sb-cost').textContent='₹'+cost.toLocaleString('en-IN');
+    document.getElementById('sb-time').textContent=st.t.toFixed(2)+'s';
+    document.getElementById('sb-spd').textContent=Math.round(st.s)+' mph';
+    document.getElementById('sb-tq').textContent=Math.round(st.tq)+' lb-ft';
+
+    // mod rows
+    updRows(st);
+}
+
+function anim(vid,nv,did,prev,decGood){
+    const el=document.getElementById(vid);
+    const dt=document.getElementById(did);
+    const cv=parseFloat(el.textContent);
+    const nf=parseFloat(nv);
+    if(cv!==nf){
+        el.classList.remove('nup');void el.offsetWidth;
+        el.textContent=nv;el.classList.add('nup');
+        const diff=nf-cv;
+        const good=decGood?diff<0:diff>0;
+        dt.textContent=(diff>0?'+':'')+(typeof nv==='string'?parseFloat(diff.toFixed(2)):Math.round(diff));
+        dt.style.color=good?'var(--grn)':'var(--red)';
+        dt.classList.add('show');clearTimeout(dt._t);
+        dt._t=setTimeout(()=>dt.classList.remove('show'),2000);
+    }
+}
+
+function getCardRisk(id,st){
+    const s=SEL,h=st.hp;
+    switch(id){
+        case 'tp':case 'tg':
+            if(s.has('tp')&&s.has('tg'))return{l:'f',c:'☠ CONFLICT',m:'FATAL — Two large single turbos cannot share one 2JZ manifold. Explosion guaranteed.'};
+            if((s.has('tp')||s.has('tg'))&&!s.has('ecu'))return{l:'f',c:'☠ NO ECU',m:'FATAL — Turbo without standalone ECU. Engine detonates on first hard pull.'};
+            if((s.has('tp')||s.has('tg'))&&!s.has('ic'))return{l:'f',c:'☠ NO INTERCOOLER',m:'FATAL — No intercooler. 150–180°C charge air causes guaranteed detonation.'};
+            if((s.has('tp')||s.has('tg'))&&!s.has('inj'))return{l:'f',c:'☠ LEAN',m:'FATAL — Stock injectors will run lean under boost. Pistons will melt.'};
+            break;
+        case 'rods':if(!s.has('rods')&&h>700)return{l:'f',c:'☠ REQUIRED',m:'FATAL — Over 700 HP. Stock rods will snap through the block at high RPM.'};break;
+        case 'pist':if(!s.has('pist')&&h>650)return{l:'d',c:'⚠ NEEDED',m:'DANGER — Over 650 HP. Stock cast pistons will fracture under this cylinder pressure.'};break;
+        case 'brk':if(!s.has('brk')&&h>600)return{l:'f',c:'☠ NO BRAKES',m:'FATAL — Over 600 HP without upgraded brakes. Brake fade at speed leaves zero stopping ability.'};break;
+        case 'ecu':if(!s.has('ecu')&&(s.has('tp')||s.has('tg')))return{l:'f',c:'☠ REQUIRED',m:'FATAL — Turbo selected. Standalone ECU is required or engine detonates.'};break;
+        case 'cage':if(!s.has('cage')&&h>1000)return{l:'f',c:'☠ ADD CAGE',m:'FATAL — Over 1000 HP without a roll cage. Crash at these speeds is unsurvivable.'};break;
+        case 'aero':if(!s.has('aero')&&h>1200)return{l:'f',c:'☠ FRONT LIFT',m:'FATAL — Over 1200 HP. Front lift at 190+ MPH makes the car uncontrollable.'};break;
+        case 'clut':if(!s.has('clut')&&h>600)return{l:'d',c:'⚠ SLIP RISK',m:'DANGER — Stock clutch slips above 600 HP and can catch fire.'};break;
+        case 'stud':if(!s.has('stud')&&h>800)return{l:'d',c:'⚠ HEAD LIFT',m:'DANGER — Over 800 HP. Stock head bolts will allow the head to lift. Hydrolock imminent.'};break;
+        case 'oil':if(!s.has('oil')&&h>700)return{l:'d',c:'⚠ OIL TEMPS',m:'DANGER — Over 700 HP. Oil temps will destroy bearing surfaces without an oil cooler.'};break;
+        case 'lsd':if(!s.has('lsd')&&h>600)return{l:'d',c:'⚠ HALFSHAFT',m:'DANGER — High torque + open diff = halfshaft snap risk at full-power launch.'};break;
+        case 'ic':if(!s.has('ic')&&(s.has('tp')||s.has('tg')))return{l:'f',c:'☠ REQUIRED',m:'FATAL — Turbo selected without intercooler. Detonation is guaranteed.'};break;
+        case 'inj':if(!s.has('inj')&&(s.has('tp')||s.has('tg')))return{l:'f',c:'☠ LEAN DEATH',m:'FATAL — Turbo selected with stock injectors. Pistons will melt under boost.'};break;
+    }
+    return null;
+}
+
+function updRows(st){
+    MODS.forEach(mod=>{
+        const row=document.getElementById(`r-${mod.id}`);
+        const chip=document.getElementById(`ch-${mod.id}`);
+        const mw=document.getElementById(`mw-${mod.id}`);
+        if(!row)return;
+        SEL.has(mod.id)?row.classList.add('sel'):row.classList.remove('sel');
+        row.classList.remove('risk-d','risk-f');
+        chip.className='mchip';chip.textContent='';
+        mw.className='mwarn';mw.textContent='';
+        const risk=getCardRisk(mod.id,st);
+        if(risk){
+            if(risk.l==='f'){
+                row.classList.add('risk-f');
+                chip.className='mchip on cf';chip.textContent=risk.c;
+                mw.className='mwarn on wf';mw.textContent=risk.m;
+            }else if(risk.l==='d'){
+                row.classList.add('risk-d');
+                chip.className='mchip on cd';chip.textContent=risk.c;
+                mw.className='mwarn on wd';mw.textContent=risk.m;
+            }
+        }
+    });
+}
+
+function resetBuild(){SEL.clear();upd();}
+window.addEventListener('DOMContentLoaded',()=>{render();upd();});
+</script>
 </body>
 </html>
